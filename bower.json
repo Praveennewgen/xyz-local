@@ -1,7 +1,7 @@
 {
-  "name": "angular-gulp-boilerplate",
+  "name": "iot",
   "authors": [
-    "Danila Loginov <loginovdanila@gmail.com> (https://loginov.rocks)"
+    "iot"
   ],
   "dependencies": {
     "angular": "^1.6.4",
