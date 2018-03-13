@@ -1,0 +1,87 @@
+@-ms-viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@-o-viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: $table-margin-bottom;
+}
+
+.table th,
+.table td {
+    padding: $table-cell-padding;
+    text-align: $table-cell-text-align;
+    border-top: $table-cell-border-top;
+}
+
+.table th {
+    font-weight: $table-header-font-weight;
+    vertical-align: bottom;
+}
+
+.table td {
+    vertical-align: top;
+}
+
+.table thead:first-child tr th,
+.table thead:first-child tr td {
+    border-top: 0;
+}
+
+.table tbody+tbody {
+    border-top: $table-body-border-top;
+}
+
+.table-condensed th,
+.table-condensed td {
+    padding: $table-condensed-padding;
+}
+
+.table-bordered {
+    border: $table-bordered-border;
+    border-collapse: separate;
+    *border-collapse: collapsed;
+    border-radius: $table-bordered-border-radius;
+}
+
+.table-bordered th+th,
+.table-bordered td+td .table-bordered th+td .table-bordered td+th {
+    border-left: $table-border-left;
+}
+
+.table-bordered thead:first-child tr:first-child th .table-bordered tbody:first-child tr:first-child th .table-bordered tbody:first-child tr:first-child td {
+    border-top: 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:first-child .table-bordered tbody:first-child tr:first-child td:first-child {
+    border-radius: $table-bordered-child-radius 0 0 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:last-child .table-bordered tbody:first-child tr:first-child td:last-child {
+    border-radius: 0 $table-bordered-child-radius 0 0;
+}
+
+.table-bordered thead:last-child tr:last-child th:first-child .table-bordered tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 $table-bordered-child-radius;
+}
+
+.table-bordered thead:last-child tr:last-child th:last-child .table-bordered tbody:last-child tr:last-child td:last-child {
+    border-radius: 0 0 $table-bordered-child-radius 0;
+}

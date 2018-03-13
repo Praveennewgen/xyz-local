@@ -1,0 +1,317 @@
+*,
+*::before,
+*::after {
+    outline: none !important;
+}
+
+// @font-face {
+//     font-family: 'helveticaneuelight';
+//     src: url('../fonts/helveticaneue_light-webfont.woff2') format('woff2'), url('../fonts/helveticaneue_light-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'helveticaneuethin';
+//     src: url('../fonts/helveticaneue_thin-webfont.woff2') format('woff2'), url('../fonts/helveticaneue_thin-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'helveticaneueregular';
+//     src: url('../fonts/helveticaneue-webfont.woff2') format('woff2'), url('../fonts/helveticaneue-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'segoiui';
+//     src: url('../fonts/Segoe-UI.woff2') format('woff2'), url('../fonts/Segoe-UI.woff') format('woff'), url('../fonts/Segoe-UI.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'segoiui';
+//     src: url('../fonts/Segoe-UI-Semibold.woff2') format('woff2'), url('../fonts/Segoe-UI-Semibold.woff') format('woff'), url('../fonts/Segoe-UI-Semibold.ttf') format('truetype');
+//     font-weight: 600;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'segoiui';
+//     src: url('../fonts/Segoe-UI-Bold.woff2') format('woff2'), url('../fonts/Segoe-UI-Bold.woff') format('woff'), url('../fonts/Segoe-UI-Bold.ttf') format('truetype');
+//     font-weight: 700;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'segoiui';
+//     src: url('../fonts/Segoe-UI-Light.woff2') format('woff2'), url('../fonts/Segoe-UI-Light.woff') format('woff'), url('../fonts/Segoe-UI-Light.ttf') format('truetype');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #b9ccdd;
+    outline: 1px solid #b9ccdd;
+    border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-family;
+    font-weight: $font-size-weight700;
+    small,
+    .small {
+        font-weight: normal;
+        line-height: 1;
+    }
+}
+
+h1,
+.h1 {
+    font-size: $font-size-h1;
+}
+
+h2,
+.h2 {
+    font-size: $font-size-h2;
+}
+
+h3,
+.h3 {
+    font-size: $font-size-h3;
+}
+
+h4,
+.h4 {
+    font-size: $font-size-h4;
+}
+
+h5,
+.h5 {
+    font-size: $font-size-h5;
+}
+
+h6,
+.h6 {
+    font-size: $font-size-h6;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.aquab {
+    color: #00b4ff;
+}
+
+.pinkish {
+    color: #ff2cb3;
+}
+
+.greenish {
+    color: #56c344;
+}
+
+.width100 {
+    width: $global-width-100 !important;
+}
+
+.height100 {
+    height: $global-height-100 !important;
+}
+
+.width30 {
+    width: 30% !important;
+}
+
+.width35 {
+    width: 35% !important;
+}
+
+.width40 {
+    width: 40% !important;
+}
+
+.width70 {
+    width: 70% !important;
+}
+
+.width65 {
+    width: 65% !important;
+}
+
+.width60 {
+    width: 60% !important;
+}
+
+.violet {
+    color: #7986cb;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.floatNone {
+    float: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.cursor-normal {
+    cursor: initial !important;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.padding-16 {
+    padding: $padding-large-horizontal;
+}
+
+.padding-left-16 {
+    padding-left: $padding-large-horizontal;
+}
+
+.noPadding {
+    padding: 0 !important;
+}
+
+.paddingLeft {
+    padding-left: 0 !important;
+}
+
+.noMargin {
+    margin: 0 !important;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+.marginRight {
+    margin-right: 0 !important;
+}
+
+.heightAuto {
+    height: auto !important;
+}
+
+
+/** for modal css **/
+
+.custom_dialog_body {
+    .md-dialog-container {
+        justify-content: flex-end;
+        -o-justify-content: flex-end;
+        -webkit-justify-content: flex-end;
+        -moz-justify-content: flex-end;
+    }
+}
+
+md-dialog:not(.md-default-theme) {
+    min-width: 75%;
+    min-height: 100%;
+    border-radius: 0px;
+    // transform: translate(100%, 0) scale(1);
+    // -webkit-transform: translate(100%, 0) scale(1);
+    // -moz-transform: translate(100%, 0) scale(1);
+    // -o-transform: translate(100%, 0) scale(1);
+    &.md-default-theme {
+        border-radius: 0px;
+    }
+}
+
+.textarea_short_height {
+    height: 80px !important;
+}
+
+.textarea_long_height {
+    height: 130px !important;
+}
+
+md-progress-circular {
+    svg {
+        -webkit-animation: transparentGlow 1500ms 5 !important;
+        -moz-animation: transparentGlow 1500ms 5 !important;
+        -o-animation: transparentGlow 1500ms 5 !important;
+        animation: transparentGlow 1500ms 5 !important;
+    }
+}
+
+@keyframes transparentGlow {
+    0% {
+        box-shadow: 0 0 3px transparent;
+    }
+    50% {
+        border-color: transparent;
+        color: transparent;
+        box-shadow: 0 0 40px transparent;
+    }
+    100% {
+        box-shadow: 0 0 3px transparent;
+    }
+}
+
+footer.footer_main {
+    text-align: center;
+    color: #000;
+    margin: 15px 0 0;
+    font-size: 0.8rem;
+    padding: 10px 0 0;
+    border-top: 1px solid #cee0ff;
+    >img {
+        width: 68px;
+        height: auto;
+        vertical-align: middle;
+    }
+    span {
+        vertical-align: middle;
+        min-height: 17px;
+    }
+}

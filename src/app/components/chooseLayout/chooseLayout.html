@@ -1,0 +1,92 @@
+<div id="page-wrapper">
+
+    <toolbar></toolbar>
+    <div id="content-wrapper" layout="row">
+        <!--<sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
+
+        <md-content class="main-container trialContainer dashboard" id="" layout-align="space-around center" layout-padding>
+            <h2 class="text-capitaliz heading">Choose Layout</h2>            
+            <div class="trial_view_main" layout="row" layout-align="space-around center">
+                <div class="overview_box selected-box">
+                    <div class="box-header">
+                        <h3 class="subheading">Small</h3>
+                        <p class="text-right">Standarad</p>
+                    </div>
+                    <div class="list-item">
+                        <ul>
+                            <li layout="row">
+                                <span flex="70">Power Scott</span>
+                                <span class="text-center" flex="30">10</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Weather</span>
+                                <span class="text-center" flex="30">1</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Sensors</span>
+                                <span class="text-center" flex="30">10</span>                               
+                            </li>
+                        </ul>                        
+                    </div>
+                    <div class="box-footer" layout="row" layout-align="center center">
+                        <md-button class="md-raised md-disabled" ui-sref="view">Selected</md-button>
+                    </div>
+                </div>  
+                 <div class="overview_box">
+                    <div class="box-header">
+                        <h3 class="subheading">Medium</h3>
+                        <p class="text-right">Professional</p>
+                    </div>
+                    <div class="list-item">
+                        <ul>
+                            <li layout="row">
+                                <span flex="70">Power Scott</span>
+                                <span class="text-center" flex="30">50</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Weather</span>
+                                <span class="text-center" flex="30">10</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Sensors</span>
+                                <span class="text-center" flex="30">30</span>                               
+                            </li>
+                        </ul>                        
+                    </div>
+                    <div class="box-footer" layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" ui-sref="view">Select</md-button>
+                    </div>
+                </div> 
+                 <div class="overview_box">
+                    <div class="box-header">
+                        <h3 class="subheading">Large</h3>
+                        <p class="text-right">Enterperise</p>
+                    </div>
+                    <div class="list-item">
+                        <ul>
+                            <li layout="row">
+                                <span flex="70">Power Scott</span>
+                                <span class="text-center" flex="30">100</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Weather</span>
+                                <span class="text-center" flex="30">1</span>                               
+                            </li>
+                            <li layout="row">
+                                <span flex="70">Sensors</span>
+                                <span class="text-center" flex="30">100</span>                               
+                            </li>
+                        </ul>                        
+                    </div>
+                    <div class="box-footer" layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" ui-sref="view">Select</md-button>
+                    </div>
+                </div> 
+            </div>
+            <!-- </div> -->
+            <div class="show_loading" ng-if="vm.showProjectLoading">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+        </md-content>
+    </div>
+</div>

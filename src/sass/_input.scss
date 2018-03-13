@@ -1,0 +1,399 @@
+body {
+    min-height: 100%;
+    overflow: auto;
+    font-family: "Segoe UI";
+    color:#595959;
+    font-size:14px;
+}
+
+label {
+    pointer-events: auto !important;
+}
+
+button,
+select,
+html,
+textarea,
+input {
+    font-family: "Segoe UI";
+}
+
+select,
+textarea,
+input {
+   font-family: "Segoe UI";
+    font-size: 88%;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: #c6c6c6 !important;
+    font-size: 0.9rem;
+}
+
+::-moz-placeholder {
+    color: #c6c6c6 !important;
+    font-size: 0.9rem;
+}
+
+:-ms-input-placeholder {
+    color: #c6c6c6 !important;
+    font-size: 0.9rem;
+}
+
+:-moz-placeholder {
+    color: #c6c6c6 !important;
+    font-size: 0.9rem;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: $label-color;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -moz-box-shadow: 0 0 0 30px white inset !important;
+    -o-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: $input-default-color !important;
+}
+
+md-checkbox {
+    .md-icon {
+        border-color: #b9ccdd;
+    }
+    &.md-checked {
+        .md-icon {
+            background: $input-default-color;
+        }
+    }
+    &:not(.md-checked) {
+        .md-icon {
+            border-color: #b9ccdd;
+        }
+    }
+}
+
+md-input-container {
+    &:not(.md-input-invalid) {
+        &.md-input-focused {
+            .md-input {
+                border-color: $input-default-color;
+            }
+            label {
+                color: #478bca;
+            }
+        }
+    }
+}
+
+md-input-container label:not(.md-no-float):not(.md-container-ignore),
+md-input-container .md-placeholder,
+md-input-container.md-input-focused label:not(.md-no-float) {
+    transform: translate3d(0, 0px, 0) scale(1);
+    -webkit-transform: translate3d(0, 0px, 0) scale(1);
+    -moz-transform: translate3d(0, 0px, 0) scale(1);
+    -o-transform: translate3d(0, 0px, 0) scale(1);
+    -ms-transform: translate3d(0, 0px, 0) scale(1);
+    position: static;
+    display: block;
+    padding: 0;
+    margin: 0 0 10px;
+    color: $label-color;
+    font-weight: 400;
+    opacity: $btn-color-opacity;
+    font-size: 0.93rem;
+    pointer-events: auto;
+}
+
+md-input-container.md-default-theme:not(.md-input-focused):not(.md-input-invalid) label.md-required:after,
+md-input-container:not(.md-input-focused):not(.md-input-invalid) label.md-required:after {
+    color: rgb(221, 44, 0);
+}
+
+md-select {
+    .md-select-value {
+        border-color: $input-default-border;
+        border-style: solid;
+        border-width: 1px;
+        color: $input-default-color;
+        @include border-radius($input-border-radius);
+        @include padding(2px, 33px, 1px, 10px);
+        .md-select-icon {
+            height: $global-height-100;
+            margin: 0;
+            background: #e3ebf1;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate3d(0, 0, 0);
+            border-radius: 0 5px 5px 0;
+            width: 30px;
+            &::after {
+                position: absolute;
+                left: 50%;
+                transform: scaleY(0.6) scaleX(0.8) translate(-50%, 0);
+                -o-transform: scaleY(0.6) scaleX(0.8) translate(-50%, 0);
+                -webkit-transform: scaleY(0.6) scaleX(0.8) translate(-50%, 0);
+                -moz-transform: scaleY(0.6) scaleX(0.8) translate(-50%, 0);
+                top: 16%;
+                font-size: 18px;
+                color: $input-default-color;
+            }
+        }
+    }
+    &:not([disabled]) {
+        .ng-invalid.ng-touched {
+            border-color: rgb(221, 44, 0);
+        }
+        &:focus {
+            .md-select-value {
+                border-width: 1px;
+                border-color: $input-default-color;
+                color: $input-default-color;
+            }
+        }
+    }
+    &[disabled] {
+        .md-select-value {
+            background-image: none;
+            border-bottom-color: $input-default-border;
+        }
+    }
+    &.select_new {
+        .md-select-value {
+            .md-select-icon {
+                background: none;
+                &::after {
+                    content: '';
+                    transform: scale(1) translate(0, 0) rotate(-45deg);
+                    -o-transform: scale(1) translate(0, 0) rotate(-45deg);
+                    -webkit-transform: scale(1) translate(0, 0) rotate(-45deg);
+                    -moz-transform: scale(1) translate(0, 0) rotate(-45deg);
+                    width: 10px;
+                    height: 10px;
+                    border: 3px solid;
+                    background: none;
+                    display: inline-block;
+                    border-color: transparent transparent #43a8f5 #43a8f5;
+                    transform-origin: 50% 50%;
+                    left: 10px;
+                    top: 22%;
+                }
+            }
+        }
+    }
+}
+
+md-select:not([disabled]):focus .md-select-value md-select.md-default-theme {
+    .md-select-value {
+        border-color: $input-default-border;
+        border-style: solid;
+        border-width: 1px;
+        position: $position-relative;
+        color: $input-default-color;
+        @include border-radius($input-border-radius);
+        @include padding(1px, 33px, 1px, 10px);
+        .md-select-icon {
+            height: $global-height-100;
+            margin: 0;
+            background: #e3ebf1;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate3d(0, 0, 0);
+            border-radius: 0 5px 5px 0;
+            width: 30px;
+            color: $input-default-color;
+        }
+    }
+    &:not([disabled]) {
+        .ng-invalid.ng-touched {
+            border-color: rgb(221, 44, 0);
+        }
+        &:focus {
+            .md-select-value {
+                border-width: 1px;
+                border-color: $input-default-color;
+            }
+        }
+    }
+}
+
+md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
+    transform: translateY(0px) translateX(0px) scale(1);
+    -webkit-transform: translateY(0px) translateX(0px) scale(1);
+    -o-transform: translateY(0px) translateX(0px) scale(1);
+    -moz-transform: translateY(0px) translateX(0px) scale(1);
+}
+
+md-input-container {
+    .md-input {
+        border-width: 1px;
+        border-color: $input-default-border;
+        @include border-radius($input-border-radius);
+        padding: 0 10px;
+        height: 32px;
+        color: $input-default-color;
+        &.ng-invalid.ng-dirty {
+            border-width: 1px;
+        }
+    }
+    textarea.md-input {
+        height: auto;
+    }
+    &.md-input-focused {
+        .md-input {
+            border-width: 1px;
+            &.ng-invalid.ng-dirty {
+                border-width: 1px;
+            }
+        }
+    }
+    &.md-input-resized {
+        .md-input {
+            border-width: 1px;
+        }
+    }
+}
+
+md-chips.md-default-theme .md-chips,
+md-chips .md-chips {
+    border-width: 1px;
+    border-color: $input-default-border;
+    border-style: solid;
+    @include border-radius($input-border-radius);
+    padding: 0 10px;
+    color: $input-default-color;
+    box-shadow: none;
+    // height: 32px;
+    &.md-focused {
+        border-width: 1px;
+        box-shadow: none;
+    }
+    .md-chip-input-container {
+        margin: 0;
+        //width: 100%;
+    }
+}
+
+md-input-container.md-default-theme.md-input-invalid .md-input,
+md-input-container.md-input-invalid .md-input,
+md-input-container.md-input-invalid md-select.md-default-theme .md-select-value,
+md-input-container.md-input-invalid md-select .md-select-value,
+md-select.md-default-theme.ng-invalid.ng-touched .md-select-value,
+md-select.ng-invalid.ng-touched .md-select-value {
+    border-color: rgb(221, 44, 0);
+}
+
+[disabled] md-input-container.md-default-theme .md-input,
+[disabled] md-input-container .md-input,
+md-input-container.md-default-theme .md-input[disabled],
+md-input-container .md-input[disabled] {
+    border-bottom-color: $input-default-border;
+    background: rgba(202, 213, 222, 0.34);
+}
+
+button {
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 0.93rem;
+    @include border-radius($border-radius-small);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    &.button-primary {
+        color: $btn-default-bg;
+        background-color: $btn-primary-bg;
+        border: 1px solid;
+        border-color: $btn-primary-bg;
+        &:hover {
+            background-color: $btn-primary-bg;
+            color: $btn-default-bg;
+        }
+        &:not([disabled]) {
+            &:hover,
+            .md-focused {
+                background-color: $btn-primary-bg;
+                color: $btn-default-bg;
+            }
+        }
+        &:disabled {
+            background-color: $btn-disabled-bg;
+            color: $btn-default-bg;
+            border-color: $btn-disabled-bg;
+        }
+        &.md-button.md-default-theme:not([disabled]):hover,
+        &.md-button.md-default-theme:not([disabled]).md-focused,
+        &.md-button:not([disabled]):hover,
+        &.md-button:not([disabled]).md-focused {
+            background-color: $btn-primary-bg;
+        }
+    }
+    &.button-default {
+        color: $btn-default-color;
+        background-color: $btn-default-bg;
+        border: 1px solid;
+        border-color: $btn-default-border;
+        &:hover {
+            color: $btn-default-color;
+            background-color: $btn-default-bg;
+        }
+        &:not([disabled]) {
+            &:hover,
+            .md-focused {
+                color: $btn-default-color;
+                background-color: $btn-default-bg;
+            }
+        }
+        &.md-button.md-default-theme:not([disabled]):hover,
+        &.md-button.md-default-theme:not([disabled]).md-focused,
+        &.md-button:not([disabled]):hover,
+        &.md-button:not([disabled]).md-focused {
+            background-color: $btn-default-bg;
+        }
+    }
+    &.button-secondary {
+        color: $btn-secondary-color;
+        background-color: $btn-secondary-bg;
+        border: 1px solid;
+        border-color: $btn-secondary-border;
+        &:hover {
+            background-color: $btn-secondary-bg;
+            color: $btn-secondary-color;
+        }
+        &:not([disabled]) {
+            &:hover,
+            .md-focused {
+                background-color: $btn-secondary-bg;
+                color: $btn-secondary-color;
+            }
+        }
+        &:disabled {
+            background-color: $btn-secondary-disabled-bg;
+            color: $btn-secondary-color;
+            border-color: $btn-secondary-disabled-bg;
+        }
+        &.md-button.md-default-theme:not([disabled]):hover,
+        &.md-button.md-default-theme:not([disabled]).md-focused,
+        &.md-button:not([disabled]):hover,
+        &.md-button:not([disabled]).md-focused {
+            background-color: $btn-secondary-bg;
+        }
+    }
+}
+
+button.md-button {
+    @extend button;
+}
+
+md-autocomplete,
+md-autocomplete md-autocomplete-wrap {
+    height: 30px;
+}

@@ -1,0 +1,20 @@
+// border radius mixin
+@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// padding mixin
+@mixin padding($pTop, $pRight, $pBottom, $pLeft) {
+    padding-top: $pTop;
+    padding-right: $pRight;
+    padding-bottom: $pBottom;
+    padding-left: $pLeft;
+}
+
+// font weight mixin
+@mixin font-weight($fontValue) {
+    font-weight: $fontValue;
+}

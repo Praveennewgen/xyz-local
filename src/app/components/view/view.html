@@ -1,0 +1,149 @@
+<div id="page-wrapper">
+    <toolbar></toolbar>
+    <div id="content-wrapper" layout="row">
+       <!-- <sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
+       <div class="side-pannel " ng-class="{'open_pannel' : vm.togglePannel}">
+           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel"><img src="../img/left_arrow.png"></span>
+           <div class="pannel-header">
+               <h2 class="heading">Details</h2>  
+            </div>
+            <div class="date-row" layout="row">
+                <div  flex="50" class="border-right">
+                    <input type="text" class="readonly-date" value="12 MAR 2018" readonly>
+                </div>
+                <div flex="50" class="temprature">
+                    <span>
+                        <img src="../img/weather.png"> 18<sup>&#8457;</sup>
+                    </span>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div flex="50" class="layout-filter">
+                    <md-menu-bar>
+                        <md-menu>
+                            <md-input-container class="md-block">
+                                <label>First name</label>
+                                <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
+                                    <p class="title_label">
+                                        <span class="category">Small</span>
+                                        <span class="category_type">(Standard)</span>
+                                    </p>
+                                </div>
+                            </md-input-container>
+                            <md-menu-content>
+                                <md-menu-content  class="organizationMenu">
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Small</span>
+                                                    <span class="category_type">(Standard)</span>
+                                                </p>
+                                                <p layout="row" class="reading_row"   layout-align="space-between center">
+                                                    <span>
+                                                        <img src="../img/powerscout.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/sensor.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/weather.png"> 10
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu-content>
+                        </md-menu>
+                     </md-menu-bar>
+                </div>
+                <div flex="50"></div>
+            </div>
+            <div class="selected-value-box">
+                 <h4>Selected Powerscout</h4>
+                 <p class="selected-item"><img src="../img/svg/electric-tower.svg" height="15px">PS1029</p>
+                 <ul>
+                     <li layout="row">
+                         <div class="label" flex="50">Breaker Details</div>
+                         <div class="" flex="50"><input type="text" value="New (2013) 3rd floor panel" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Breaker label</div>
+                         <div class="" flex="50"><input type="text" value="PP31- 3rd FI Eelectrical Rm" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Building</div>
+                         <div class="" flex="50"><input type="text" value="Building 2" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Modbus base address</div>
+                         <div class="" flex="50"><input type="text" value="2" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Rated Amperage address</div>
+                         <div class="" flex="50"><input type="text" value="200" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Serial Number</div>
+                         <div class="" flex="50"><input type="text" value="5" readonly></div>
+                     </li>
+                     <li layout="row">
+                         <div class="label" flex="50">Type</div>
+                         <div class="" flex="50"><input type="text" value="PowerScout 3037" readonly></div>
+                     </li>
+                 </ul>  
+            </div>
+            <div class="simulate-row">
+               <button class="button">Simulate</button>
+            </div> 
+            <div class="clearfix"></div> 
+        </div>
+        <md-content class="main-container trialContainer " ng-class="{'push_container' : vm.togglePannel}" id="trailContent" layout-align="center center" layout-padding>
+        
+        <div class="overview-header" layout="row">
+            <div flex="30">
+                <h2 class="heading">Building Overview</h2>
+            </div>
+            <div flex="70" layout="row" layout-align="end center">
+                <div class="option-box">
+                    <span class="icon-box orange"><img src="../img/powerscout.png"></span>
+                    <span class="reading-value ">Powerscout- 10</span>
+                </div>
+                <div class="option-box">
+                    <span class="icon-box green"><img src="../img/sensor.png"></span>
+                    <span class="reading-value ">Sensors- 10</span>
+                </div>
+                <div class="option-box">
+                    <span class="icon-box violet"><img src="../img/weather.png"></span>
+                    <span class="reading-value ">Weather- 1</span>
+                </div>
+            </div>            
+        </div>
+        <div class="content-section">
+            <div class="content-header" layout="row" layout-align="start">
+                <div class="icon-row" layout="row" layout-align="start">
+                    <span class="icon orange"><img src="../img/powerscout.png" width="20px" height="20px"></span>
+                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">1</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">1</div></md-button>
+                </div>
+                <div class="icon-row" layout="row" layout-align="start">
+                    <span class="icon green"><img src="../img/sensor.png" width="20px" height="20px"></span>
+                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">1</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">1</div></md-button>
+                </div>
+            </div>
+            <div class="svg-mapping">
+               <svg id="svg"></svg>
+            </div>
+        </div>
+            <!-- ui-view for child states starts here -->
+            <ui-view class="display-block content_area">
+                
+            </ui-view>
+            <!-- ui-view for child states ends here -->
+
+        </md-content>
+    </div>
+</div>

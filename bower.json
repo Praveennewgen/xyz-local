@@ -1,0 +1,25 @@
+{
+  "name": "angular-gulp-boilerplate",
+  "authors": [
+    "Danila Loginov <loginovdanila@gmail.com> (https://loginov.rocks)"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.5",
+    "normalize-css": "^7.0.0",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.5",
+    "angular-recaptcha": "^4.1.0",
+    "angular-mocks": "1.6.5",
+    "underscore": "^1.8.3",
+    "angular-data-grid": "*",
+    "Snap.svg": "snap.svg#^0.5.1"
+  },
+  "devDependencies": {
+    "auth0.js": "^8.8.0"
+  },
+  "resolutions": {
+    "angular": "1.6.5",
+    "angular-mocks": "1.6.5"
+  }
+}
