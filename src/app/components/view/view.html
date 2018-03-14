@@ -1,9 +1,22 @@
 <div id="page-wrapper">
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
+
+        <!--overlay background for simulating data process
+        <div class="overlay">
+            <div class="overlay_content" layout="row" layout-align="center center">
+                <div class="overlay_text" flex>
+                <h2>Simulating data on pushing the IOT hub...</h2>
+                </div>
+            </div>
+        </div>
+        <!-- ends here-->
+
        <!-- <sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
        <div class="side-pannel " ng-class="{'open_pannel' : vm.togglePannel}">
-           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel"><img src="../img/left_arrow.png"></span>
+           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel">
+               <i class="material-icons">{{vm.togglePannel?'keyboard_arrow_right':'keyboard_arrow_left'}}</i>               
+            </span>
            <div class="pannel-header">
                <h2 class="heading">Details</h2>  
             </div>
@@ -17,12 +30,12 @@
                     </span>
                 </div>
             </div>
-            <div class="filter-row">
-                <div flex="50" class="layout-filter">
+            <div class="filter-row" layout="row" layout-align="space-between center">
+                <div flex="45" class="layout-filter" >
                     <md-menu-bar>
                         <md-menu>
                             <md-input-container class="md-block">
-                                <label>First name</label>
+                                <label>Select Layout</label>
                                 <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
                                         <span class="category">Small</span>
@@ -30,11 +43,11 @@
                                     </p>
                                 </div>
                             </md-input-container>
-                            <md-menu-content>
-                                <md-menu-content  class="organizationMenu">
+                            
+                                <md-menu-content  class="select_menu">
                                     <md-menu-item >
                                         <div layout="row">
-                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="selected-icon active_catrgory"><img src="../img/setting.png"></div>
                                             <div class="layout-label">
                                                 <p class="title_label">
                                                     <span class="category">Small</span>
@@ -52,14 +65,144 @@
                                                     </span>
                                                 </p>
                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Medium</span>
+                                                    <span class="category_type">(Professional)</span>
+                                                </p>
+                                                <p layout="row" class="reading_row"   layout-align="space-between center">
+                                                    <span>
+                                                        <img src="../img/powerscout.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/sensor.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/weather.png"> 10
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Large</span>
+                                                    <span class="category_type">(Professional)</span>
+                                                </p>
+                                                <p layout="row" class="reading_row"   layout-align="space-between center">
+                                                    <span>
+                                                        <img src="../img/powerscout.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/sensor.png"> 10
+                                                    </span>
+                                                    <span>
+                                                        <img src="../img/weather.png"> 10
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
                                         </div>
                                     </md-menu-item>
                                 </md-menu-content>
-                            </md-menu-content>
+                          
                         </md-menu>
                      </md-menu-bar>
                 </div>
-                <div flex="50"></div>
+                <div flex="45" class="layout-filter">
+                    <md-menu-bar>
+                        <md-menu>
+                            <md-input-container class="md-block">
+                                <label>Select Range</label>
+                                <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
+                                    <p class="title_label">
+                                        <span class="category">Daily</span>
+                                    </p>
+                                </div>
+                            </md-input-container>
+                            
+                                <md-menu-content  class="select_menu select_date">
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon active_catrgory "><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Daily</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Weekly</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Monthly</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item> 
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Quaterly</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Half-Yearly</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item >
+                                        <div layout="row">
+                                            <div class="selected-icon"><img src="../img/setting.png"></div>
+                                            <div class="layout-label">
+                                                <p class="title_label">
+                                                    <span class="category">Yearly</span>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </md-menu-item>
+                                </md-menu-content>
+                          
+                        </md-menu>
+                     </md-menu-bar>
+                </div>
             </div>
             <div class="selected-value-box">
                  <h4>Selected Powerscout</h4>
@@ -96,7 +239,7 @@
                  </ul>  
             </div>
             <div class="simulate-row">
-               <button class="button">Simulate</button>
+               <button class="button" ng-click="showAlert($event)">Simulate</button>
             </div> 
             <div class="clearfix"></div> 
         </div>
