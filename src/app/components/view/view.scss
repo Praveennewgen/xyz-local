@@ -604,7 +604,7 @@ md-nav-bar md-nav-ink-bar {
         height: 50px;
         cursor: pointer;
         color: #fff;
-        padding: 16px 5px;
+        padding: 16px 0px;
         font-size: 20px;
         font-weight: bold;
         float: left;
@@ -1327,7 +1327,7 @@ md-nav-bar md-nav-ink-bar {
         height: 50px;
         cursor: pointer;
         color: #fff;
-        padding: 16px 5px;
+        padding: 16px 0px;
         font-size: 20px;
         font-weight: bold;
         float: left;
@@ -1525,7 +1525,10 @@ md-nav-bar md-nav-ink-bar {
         }   
         md-menu-item:last-child{
             border:0px;
-        }         
+        } 
+        &.select_date{
+            height:190px;
+        }        
     }
 
 
@@ -1554,9 +1557,20 @@ md-nav-bar md-nav-ink-bar {
     right: 0px;
     position: fixed;
     left: 0px;
-    background: rgba(43, 55, 66, 0.4);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 3;
-    display:none;
+    text-align: center;
+    .overlay_content{
+        width: 100%;
+        height:100%;
+        .overlay_text{
+            color: #fff;
+            h2{
+                font-size: 34px;
+                font-weight: 100
+            }
+        }
+    }
 }
 // CSS for Dynamic SVG map
 

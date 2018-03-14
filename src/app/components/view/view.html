@@ -2,13 +2,21 @@
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
 
-        <!--overlay background for simulating data process-->
-        <div class="overlay"></div>
+        <!--overlay background for simulating data process
+        <div class="overlay">
+            <div class="overlay_content" layout="row" layout-align="center center">
+                <div class="overlay_text" flex>
+                <h2>Simulating data on pushing the IOT hub...</h2>
+                </div>
+            </div>
+        </div>
         <!-- ends here-->
 
        <!-- <sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
        <div class="side-pannel " ng-class="{'open_pannel' : vm.togglePannel}">
-           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel"><img src="../img/left_arrow.png"></span>
+           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel">
+               <i class="material-icons">{{vm.togglePannel?'keyboard_arrow_right':'keyboard_arrow_left'}}</i>               
+            </span>
            <div class="pannel-header">
                <h2 class="heading">Details</h2>  
             </div>
@@ -36,7 +44,7 @@
                                 </div>
                             </md-input-container>
                             
-                                <md-menu-content  class="organizationMenu select_menu">
+                                <md-menu-content  class="select_menu">
                                     <md-menu-item >
                                         <div layout="row">
                                             <div class="selected-icon active_catrgory"><img src="../img/setting.png"></div>
@@ -123,7 +131,7 @@
                                 </div>
                             </md-input-container>
                             
-                                <md-menu-content  class="organizationMenu select_menu">
+                                <md-menu-content  class="select_menu select_date">
                                     <md-menu-item >
                                         <div layout="row">
                                             <div class="selected-icon active_catrgory "><img src="../img/setting.png"></div>

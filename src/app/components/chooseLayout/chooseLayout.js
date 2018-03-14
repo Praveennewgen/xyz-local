@@ -11,7 +11,7 @@
     chooseLayoutController.$inject = [];
 
     function chooseLayoutController() {
-       var vm = this;
+      // var vm = this;
     }    
 
 })();
