@@ -2,8 +2,8 @@
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
 
-        <!--overlay background for simulating data process
-        <div class="overlay">
+        <!--overlay background for simulating data process-->
+        <div class="overlay" ng-class="{'open_overlay' : vm.openOverlay}">
             <div class="overlay_content" layout="row" layout-align="center center">
                 <div class="overlay_text" flex>
                 <h2>Simulating data on pushing the IOT hub...</h2>
@@ -239,12 +239,12 @@
                  </ul>  
             </div>
             <div class="simulate-row">
-               <button class="button" ng-click="showAlert($event)">Simulate</button>
+               <button class="button" ng-click="vm.openOverlay = !vm.openOverlay">Simulate</button>
             </div> 
             <div class="clearfix"></div> 
         </div>
-        <md-content class="main-container trialContainer " ng-class="{'push_container' : vm.togglePannel}" id="trailContent" layout-align="center center" layout-padding>
-        
+        <md-content class="main-container trialContainer "  id="trailContent" layout-align="center center" layout-padding>
+        <div class="push_content_div" ng-class="{'push_container' : vm.togglePannel}">
         <div class="overview-header" layout="row">
             <div flex="30">
                 <h2 class="heading">Building Overview</h2>
@@ -286,7 +286,7 @@
                 
             </ui-view>
             <!-- ui-view for child states ends here -->
-
+    </div>
         </md-content>
     </div>
 </div>

@@ -4,98 +4,12 @@
             <span class="logo_image logo_image_icon" ui-sref="chooseLayout">
                 <img src="./img/logo.png" alt="Qualdable Logo" width="114px" height="50px" />
             </span>
-           <!-- <span class="logo_image oracle_logo_image" ng-class="{'maxWidth100px': vm.publicPath}" ng-if="vm.publicPath">
-                <a href="http://cloud.oracle.com/JumpStart">
-                    <img src="../../../img/qloudable_logo1.png" width="160" height="50" alt="Oracle Cloud" />
-                </a>
-            </span>-->
-            <!--<input type="text" ng-model="color" placeholder="Search">-->
-            <!--<md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>-->
-            <!-- fill up the space between left and right area -->
             <span flex></span>
             <div layout="row" style="position: relative;" ng-if="!vm.publicPath || vm.showUser">
-                <!--<md-button ng-click="goFullscreen()" aria-label="toggle fullscreen">
-                    <i class="material-icons">fullscreen</i>
-                </md-button>-->
-
-                <!-- <md-button ng-click="vm.showPanel($event)">
-                    <i class="material-icons">settings</i>
-                </md-button> -->
-
-                
-
-                <!-- <md-menu-bar ng-if="!vm.publicPath">
-                    <md-menu>
-                        <md-button class="md-primary dropdown user_pro_btn" ng-click="$mdMenu.open()" ng-class="{'active':vm.myDropdownIsActive}">
-                            <span class="user_profile_img"><img class="user-img" ng-src="{{vm.userProfile.picture}}" /></span>
-                            <span class="user_profile_name">
-                                <b class="org_name">{{vm.orgname}}</b>
-                                <b class="user_name">{{vm.username}}</b>
-                            </span>
-                        </md-button>
-                        <md-menu-content> -->
-                <!-- <md-menu-item class="organization_list_parent">
-                                <md-list class="organization_list">
-                                    <md-list-item>
-                                        Organization 1
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 2
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 3
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 4
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 5
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 6
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 7
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 8
-                                    </md-list-item>
-                                    <md-list-item>
-                                        Organization 9
-                                    </md-list-item>
-                                </md-list>
-                            </md-menu-item>
-                            <md-menu-divider></md-menu-divider>
-                            <md-menu-item>
-                                <md-button><i class="material-icons">add</i>&nbsp;Create Organization</md-button>
-                            </md-menu-item>
-                            <md-menu-divider></md-menu-divider>
-                            <md-menu-item>
-                                <md-button>Settings</md-button>
-                            </md-menu-item>
-                            <md-menu-divider></md-menu-divider> -->
-                <!-- <md-menu-item>
-                                <md-button ng-click="vm.logout()">Log out</md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                </md-menu-bar>
-                <div class="user_profile_otherProvider" ng-if="vm.publicPath && vm.showUser">
-                    <md-button class="md-primary dropdown user_pro_btn">
-                        <span class="user_profile_img"><img class="user-img" ng-src="{{vm.userProfile.picture}}" /></span>
-                        <span class="user_profile_name">
-                            <b class="user_name">{{vm.username}}</b>
-                        </span>
-                    </md-button>
-                </div> -->
-
                 <md-menu-bar ng-class="{'user_profile_otherProvider': vm.publicPath && vm.showUser}">
                     <md-menu>
                         <md-button class="md-primary dropdown user_pro_btn" ng-click="$mdMenu.open()" ng-class="{'active':vm.myDropdownIsActive}">
-                            <!-- vm.openDropdown() -->
-                            <!-- <span class="user_profile_img">
-                                <img class="user-img" ng-src="{{vm.userProfile.picture}}" />
-                            </span> -->
+                           
                             <span class="user_profile_name">
                                 <!--<b class="user_name">{{vm.username}}</b>-->
                                 <b class="user_name">Bruntely Cristan</b>
@@ -103,57 +17,11 @@
                             <span> <img src="./img/user.png" alt=""  /></span>
                         </md-button>
                         <md-menu-content>
-                            <!-- <div ng-if="!vm.publicPath">
-                                <md-menu-item class="organization_list_parent">
-                                    <md-list class="organization_list">
-                                        <md-list-item>
-                                            Organization 1
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 2
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 3
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 4
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 5
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 6
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 7
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 8
-                                        </md-list-item>
-                                        <md-list-item>
-                                            Organization 9
-                                        </md-list-item>
-                                    </md-list>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                                <md-menu-item>
-                                    <md-button><i class="material-icons">add</i>&nbsp;Create Organization</md-button>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                                <md-menu-item>
-                                    <md-button>Settings</md-button>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                            </div> -->
                             <md-menu-content ng-if="!vm.publicPath" class="organizationMenu">
                                 <md-menu-item ng-repeat="org in vm.orgList">
                                     <md-button ng-click="vm.changeOrg(org)" layout="row" layout-align="space-between center"><span>{{org}}</span><i ng-if="org === vm.selectedOrg" class="material-icons currentOrg">done</i></md-button>
                                 </md-menu-item>
                             </md-menu-content>
-                            <md-menu-divider ng-if="!vm.publicPath"></md-menu-divider>
-                            <md-menu-item ng-if="!vm.publicPath">
-                                <md-button ng-click="vm.addOrgPopup()">Create Organization</md-button>
-                            </md-menu-item>
                             <md-menu-divider ng-if="!vm.publicPath"></md-menu-divider>
                             <md-menu-item>
                                 <md-button ng-click="vm.logout()">Log out</md-button>
