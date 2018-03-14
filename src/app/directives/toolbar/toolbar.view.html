@@ -3,11 +3,13 @@
         <div class="md-toolbar-tools">
             <span class="logo_image logo_image_icon" ui-sref="chooseLayout">
                 <img src="./img/logo.png" alt="Qualdable Logo" width="114px" height="50px" />
-            </span>            
+            </span>
+            <span flex></span>
             <div layout="row" style="position: relative;" ng-if="!vm.publicPath || vm.showUser">
                 <md-menu-bar ng-class="{'user_profile_otherProvider': vm.publicPath && vm.showUser}">
                     <md-menu>
-                        <md-button class="md-primary dropdown user_pro_btn" ng-click="$mdMenu.open()" ng-class="{'active':vm.myDropdownIsActive}">                          
+                        <md-button class="md-primary dropdown user_pro_btn" ng-click="$mdMenu.open()" ng-class="{'active':vm.myDropdownIsActive}">
+                           
                             <span class="user_profile_name">
                                 <!--<b class="user_name">{{vm.username}}</b>-->
                                 <b class="user_name">Bruntely Cristan</b>
@@ -15,17 +17,23 @@
                             <span> <img src="./img/user.png" alt=""  /></span>
                         </md-button>
                         <md-menu-content>
-                            <md-menu-content ng-if="" class="organizationMenu">
-                                <md-menu-item ng-repeat="">
-                                    <md-button ng-click="" layout="row" layout-align="space-between center"><span></span><i ng-if="org === vm.selectedOrg" class="material-icons currentOrg">done</i></md-button>
+                            <md-menu-content ng-if="!vm.publicPath" class="organizationMenu">
+                                <md-menu-item ng-repeat="org in vm.orgList">
+                                    <md-button ng-click="vm.changeOrg(org)" layout="row" layout-align="space-between center"><span>{{org}}</span><i ng-if="org === vm.selectedOrg" class="material-icons currentOrg">done</i></md-button>
                                 </md-menu-item>
                             </md-menu-content>
+                            <md-menu-divider ng-if="!vm.publicPath"></md-menu-divider>
                             <md-menu-item>
                                 <md-button ng-click="vm.logout()">Log out</md-button>
                             </md-menu-item>
                         </md-menu-content>
                     </md-menu>
                 </md-menu-bar>
+                <md-button class="setting_button" ng-if="!vm.publicPath" aria-label="help">
+                    <!-- <i class="material-icons">help_outline</i> -->
+                    <a href="http://help.qloudable.com/" target="_blank"><img src="../../../img/setting.png" width="24" height="24" alt="Setting" /></a>
+                </md-button>
+
             </div>
         </div>
     </md-toolbar>
