@@ -2,8 +2,8 @@
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
 
-        <!--overlay background for simulating data process
-        <div class="overlay">
+        <!--overlay background for simulating data process-->
+        <div class="overlay" ng-class="{'open_overlay' : vm.openOverlay}">
             <div class="overlay_content" layout="row" layout-align="center center">
                 <div class="overlay_text" flex>
                 <h2>Simulating data on pushing the IOT hub...</h2>
@@ -239,7 +239,7 @@
                  </ul>  
             </div>
             <div class="simulate-row">
-               <button class="button" ng-click="showAlert($event)">Simulate</button>
+               <button class="button" ng-click="vm.openOverlay = !vm.openOverlay">Simulate</button>
             </div> 
             <div class="clearfix"></div> 
         </div>

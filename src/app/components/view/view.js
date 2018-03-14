@@ -13,6 +13,7 @@
         var vm = this;
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
+        vm.openOverlay=false;
         
         var indexSet = [];
         var counter = 1;
