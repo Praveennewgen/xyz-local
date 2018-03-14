@@ -19,44 +19,56 @@
         var canvas = '';
         var objPos = [
             {
-                x: 250,
-                y: 60
+                x: 160,
+                y: 110
             }, 
             {
-                x: 410,
+                x: 215,
+                y: 180
+            },
+            {
+                x: 280,
+                y: 290
+            },
+            {
+                x: 390,
+                y: 210
+            },
+            {
+                x: 390,
+                y: 330
+            },
+            {
+                x: 450,
+                y: 430
+            },
+            {
+                x: 510,
                 y: 60
             },
             {
-                x: 410,
-                y: 220
+                x: 545,
+                y: 130
             },
             {
-                x: 250,
-                y: 220
+                x: 595,
+                y: 385
             },
             {
-                x: 460,
-                y: 60
+                x: 680,
+                y: 40
             },
             {
-                x: 615,
-                y: 135
+                x: 710,
+                y: 300
             },
             {
-                x: 770,
-                y: 140
+                x: 710,
+                y: 420
             },
             {
-                x: 1020,
-                y: 60
-            },
-            {
-                x: 700,
-                y: 400
-            },
-            {
-                x: 470,
-                y: 360
+                x: 925,
+                y: 295
             }
         ];
 
@@ -71,28 +83,49 @@
 
         function activate() {
             canvas = Snap("#svg");
-            canvas.attr({ viewBox: "0 0 1300 510", preserveAspectRatio: "xMidYMin meet" });
-            var bg = canvas.image("./img/building_bg.png", 200, 0, 900, 510); 
+            canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
+            var bg = canvas.image("./img/building_bg.png", 100, 0, 900, 510); 
 
             while(counter <= 6) {
-            var index = Math.floor((Math.random() * 10));
-            if(isRepeated(index)) { continue; }
-            else { 
-                var pos = objPos[index];
-                createIcon(pos.x, pos.y, 'PS-173'+ counter);
-                counter++;
+                var index = Math.floor((Math.random() * objPos.length));
+                if(isRepeated(index)) { continue; }
+                else { 
+                    var pos = objPos[index];
+                    createPowerIcon(pos.x, pos.y);
+                    counter++;
+                }
             }
-        }     
+            counter = 0;
+            while(counter <= 4) {
+                var index = Math.floor((Math.random() * objPos.length));
+                if(isRepeated(index)) { continue; }
+                else { 
+                    var pos = objPos[index];
+                    createSensorIcon(pos.x, pos.y);
+                    counter++;
+                }
+            }    
         }
         activate();
 
-        function createIcon(x, y, text) {
+        function createPowerIcon(x, y) {
+            createIcon(x, y, 'Powerscout &lt;PS1039&gt;', 'powerscout');
+        }
+
+        function createSensorIcon(x, y, text) {
+            createIcon(x, y, 'Sensor &lt;SR1039&gt;', 'sensor');
+        }
+
+        function createIcon(x, y, text, iconName) {
+        var colorClass = iconName==='powerscout'?'orange':'green';
         var fobjectSVG = 
                 '<foreignObject x="' + x + '" y="' + y +'">' +
                     '<body>' + 
                         '<div class="icon-wrapper">' +
                             '<div class="img-wrapper">' + 
-                                '<span class="icon-box orange"><img src="../img/powerscout.png"></span>' + 
+                                '<span class="icon-box ' + 
+                                  colorClass + 
+                                 '"><img src="../img/' + iconName + '.png"></span>' + 
                             '</div>' + 
                             '<div class="dialog">' + 
                                 '<div class="dialog-text">' + 
