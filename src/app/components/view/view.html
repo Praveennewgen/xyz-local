@@ -243,8 +243,8 @@
             </div> 
             <div class="clearfix"></div> 
         </div>
-        <md-content class="main-container trialContainer " ng-class="{'push_container' : vm.togglePannel}" id="trailContent" layout-align="center center" layout-padding>
-        
+        <md-content class="main-container trialContainer "  id="trailContent" layout-align="center center" layout-padding>
+        <div class="push_content_div" ng-class="{'push_container' : vm.togglePannel}">
         <div class="overview-header" layout="row">
             <div flex="30">
                 <h2 class="heading">Building Overview</h2>
@@ -286,7 +286,7 @@
                 
             </ui-view>
             <!-- ui-view for child states ends here -->
-
+    </div>
         </md-content>
     </div>
 </div>
