@@ -89,6 +89,13 @@
             }
         ];
 
+        vm.selectLayoutOption = function(layoutOption){
+            vm.selectedMenu = layoutOption;
+        }
+        vm.selectedRangeOption= function(range){
+            vm.selectedRange=range;
+        }
+
         activate();
         var dialogBox = createDialog(0,0);
         console.log(dialogBox);
@@ -188,49 +195,6 @@
                 //dialogBox.addClass('hide');
             });
         }
-
-<<<<<<< HEAD
-        vm.selectLayoutOption = function(layoutOption){
-            vm.selectedMenu = layoutOption;
-        }
-        vm.selectedRangeOption= function(range){
-            vm.selectedRange=range;
-        }
-=======
-
-
-        // function createIcon(x, y, text, iconName) {
-        // var colorClass = iconName==='powerscout'?'orange':'green';
-        // var fobjectSVG = 
-        //         '<foreignObject x="' + x + '" y="' + y +'">' +
-        //             '<body>' + 
-        //                 '<div class="icon-wrapper">' +
-        //                     '<div class="img-wrapper">' + 
-        //                         '<span class="icon-box ' + 
-        //                           colorClass + 
-        //                          '"><img src="../img/' + iconName + '.png"></span>' + 
-        //                     '</div>' + 
-        //                     '<div class="dialog">' + 
-        //                         '<div class="dialog-text">' + 
-        //                             text
-        //                         '</div>' + 
-        //                         '<div class="switch-wrapper">' + 
-        //                             '<label class="switch">' + 
-        //                                 '<input type="checkbox">' + 
-        //                                 '<span class="slider round"></span>' + 
-        //                             '</label>' + 
-        //                         '</div>' + 
-        //                     '</div>' + 
-        //                 '</div>' + 
-        //             '</body>' + 
-        //         '</foreignObject>';
-        //     var parseAbc = Snap.parse( fobjectSVG );
-        //     canvas.append(parseAbc);
-        // }
-
-        
-
->>>>>>> cee830a43e29f24eea13b4b3c2216fe9df29b72c
     }
 
 })();
