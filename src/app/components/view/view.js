@@ -98,7 +98,6 @@
 
         activate();
         var dialogBox = createDialog(0,0);
-        console.log(dialogBox);
 
         function activate() {
             canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
@@ -109,8 +108,7 @@
                 if(isRepeated(index)) { continue; }
                 else { 
                     var pos = objPos[index];
-                    createIcon(pos.x, pos.y)
-                    // createPowerIcon(pos.x, pos.y);
+                    createPowerIcon(pos.x, pos.y);
                     counter++;
                 }
             }
@@ -120,7 +118,7 @@
                 if(isRepeated(index)) { continue; }
                 else { 
                     var pos = objPos[index];
-                    // createSensorIcon(pos.x, pos.y);
+                    createSensorIcon(pos.x, pos.y);
                     counter++;
                 }
             }    
@@ -146,8 +144,8 @@
                                 }).addClass('hide');
 
             var diaBox = dialog.rect(24, 0, 215, 36, 3, 3).attr({ fill: "#22221E"});
-            var leftArrow = dialog.polygon(15,18, 25,13, 25,23).attr({ fill: "#22221E"});
-            //var rightArrow = dialog.polygon(252,18, 243,14, 243,23).attr({ fill: "#22221E"});
+            var leftArrow = dialog.polygon(16,18, 25,13, 25,23).attr({ fill: "#22221E"});
+            var rightArrow = dialog.polygon(247,18, 238,14, 238,23).attr({ fill: "#22221E"});
 
             var sliderBg = dialog.rect(195, 13, 30, 10, 6, 10).attr({ fill: "red", stroke: "white", strikeWidth: "1"});
             var sliderBtn = dialog.circle(200, 18, 8).attr({ fill: "white"});
@@ -170,7 +168,7 @@
                                     }
                                 }).attr({ cursor: "pointer"});
             
-            return {dialog, slider, diaText};
+            return {dialog, slider, diaText, leftArrow, rightArrow};
         }
 
 
@@ -183,14 +181,30 @@
         }
 
 
-        function createIcon(x, y) {
-            var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: "#ff5e00"});
-            var icon = canvas.image("./img/powerscout.png", x, y, 17, 17);
+        function createIcon(x, y, text, sensorType) {
+            var fillColor = '#669933';
+            if(sensorType === 'powerscout') {
+                fillColor = '#ff5e00';
+            }
+            var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
+            var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
 
             var g = canvas.g(bgBox, icon);
 
             g.hover(function(){
-                dialogBox.dialog.attr({ x: x, y: y-10}).removeClass('hide');
+                var diaX = x;
+                var diaY = y;
+
+                if(x + 260 > 1100) {
+                    diaX = x - 250;
+                    dialogBox.leftArrow.addClass('hide');
+                    dialogBox.rightArrow.removeClass('hide');
+                } else {
+                    dialogBox.leftArrow.removeClass('hide');
+                    dialogBox.rightArrow.addClass('hide');
+                }
+                dialogBox.diaText.node.innerHTML = text;
+                dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
             }, function(){
                 //dialogBox.addClass('hide');
             });
