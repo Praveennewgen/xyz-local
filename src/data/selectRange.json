@@ -1,0 +1,20 @@
+{
+    "range":[{
+        "title":"Daily"
+    },
+    {
+        "title":"Weekly"
+    },
+    {
+        "title":"Monthly"
+    },
+    {
+        "title":"Quaterly"
+    },
+    {
+        "title":"Half-yearly"
+    },
+    {
+        "title":"Yearly"
+    }]
+}

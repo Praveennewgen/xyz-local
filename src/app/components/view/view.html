@@ -31,83 +31,38 @@
                 </div>
             </div>
             <div class="filter-row" layout="row" layout-align="space-between center">
-                <div flex="45" class="layout-filter" >
+                <div flex="50" class="layout-filter" >
                     <md-menu-bar>
                         <md-menu>
                             <md-input-container class="md-block">
                                 <label>Select Layout</label>
                                 <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
-                                        <span class="category">Small</span>
-                                        <span class="category_type">(Standard)</span>
+                                        <span class="category">{{vm.selectedMenu.category}}</span>
+                                        <span class="category_type">({{vm.selectedMenu.subCategory}})</span>
                                     </p>
                                 </div>
-                            </md-input-container>
-                            
+                            </md-input-container>                            
                                 <md-menu-content  class="select_menu">
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon active_catrgory"><i class="material-icons">&#xE876;</i></div>
+                                    <md-menu-item ng-repeat="item in vm.menuData">
+                                        <div layout="row" ng-class="{'select_layout_menu': vm.selectedMenu.category === item.category}" ng-click="vm.selectedMenu.category !== item.category && vm.selectLayoutOption(item)">
+                                            <div class="selected_icon_div">
+                                                <div class="selected-icon active_catrgory" ng-if="vm.selectedMenu.category === item.category"><i class="material-icons">&#xE876;</i></div>
+                                                </div>
                                             <div class="layout-label">
                                                 <p class="title_label">
-                                                    <span class="category">Small</span>
-                                                    <span class="category_type">(Standard)</span>
+                                                    <span class="category">{{item.category}}</span>
+                                                    <span class="category_type">{{item.subCategory}}</span>
                                                 </p>
                                                 <p layout="row" class="reading_row"   layout-align="space-between center">
                                                     <span>
-                                                        <img src="../img/powerscout.png"> 10
+                                                        <img src="{{item.powerscott.img}}"> {{item.powerscott.quantity}}
                                                     </span>
                                                     <span>
-                                                        <img src="../img/sensor.png"> 10
+                                                       <img src="{{item.weather.img}}"> {{item.weather.quantity}}
                                                     </span>
                                                     <span>
-                                                        <img src="../img/weather.png"> 10
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Medium</span>
-                                                    <span class="category_type">(Professional)</span>
-                                                </p>
-                                                <p layout="row" class="reading_row"   layout-align="space-between center">
-                                                    <span>
-                                                        <img src="../img/powerscout.png"> 10
-                                                    </span>
-                                                    <span>
-                                                        <img src="../img/sensor.png"> 10
-                                                    </span>
-                                                    <span>
-                                                        <img src="../img/weather.png"> 10
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Large</span>
-                                                    <span class="category_type">(Professional)</span>
-                                                </p>
-                                                <p layout="row" class="reading_row"   layout-align="space-between center">
-                                                    <span>
-                                                        <img src="../img/powerscout.png"> 10
-                                                    </span>
-                                                    <span>
-                                                        <img src="../img/sensor.png"> 10
-                                                    </span>
-                                                    <span>
-                                                        <img src="../img/weather.png"> 10
+                                                        <img src="{{item.sensors.img}}"> {{item.sensors.quantity}}
                                                     </span>
                                                 </p>
                                             </div>
@@ -126,73 +81,22 @@
                                 <label>Select Range</label>
                                 <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
-                                        <span class="category">Daily</span>
+                                        <span class="category">{{vm.selectedRange.title}}</span>
                                     </p>
                                 </div>
-                            </md-input-container>
-                            
+                            </md-input-container>                            
                                 <md-menu-content  class="select_menu select_date">
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon active_catrgory "><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Daily</span>
-                                                </p>
+                                    <md-menu-item ng-repeat="filterRange in vm.range">
+                                        <div layout="row" ng-click="vm.selectedRange.title !== filterRange.title && vm.selectedRangeOption(filterRange)">
+                                            <div class="selected_icon_div">
+                                                <div class="selected-icon active_catrgory" ng-if="vm.selectedRange.title===filterRange.title">
+                                                    <i class="material-icons">&#xE876;
+                                                </i>
+                                                </div>
                                             </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
                                             <div class="layout-label">
                                                 <p class="title_label">
-                                                    <span class="category">Weekly</span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Monthly</span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item> 
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Quaterly</span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Half-Yearly</span>
-                                                </p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </md-menu-item>
-                                    <md-menu-item >
-                                        <div layout="row">
-                                            <div class="selected-icon"><i class="material-icons">&#xE876;</i></div>
-                                            <div class="layout-label">
-                                                <p class="title_label">
-                                                    <span class="category">Yearly</span>
+                                                    <span class="category">{{filterRange.title}}</span>
                                                 </p>
                                             </div>
                                             <div class="clearfix"></div>

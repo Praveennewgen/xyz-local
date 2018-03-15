@@ -1,0 +1,61 @@
+{
+    "layoutOption": [{
+            "category": "small",
+            "subCategory": "standard",
+            "powerscott": {
+                "name":"powerscott",
+                "quantity": "5",
+                "img":"img/powerscout.png"
+            },
+            "weather": {
+                "name":"weather",
+                "quantity": "1",
+                "img":"img/weather.png"
+            },
+            "sensors": {
+                "name":"sensosrs",
+                "quantity": "10",
+                "img":"img/sensor.png"
+            }
+        },
+        {
+            "category": "medium",
+            "subCategory": "professional",
+            "powerscott": {
+                "name":"powerscott",
+                "quantity": "10",
+                "img":"img/powerscout.png"
+            },
+            "weather": {
+                "name":"weather",
+                "quantity": "5",
+                "img":"img/weather.png"
+            },
+            "sensors": {
+                "name":"sensosrs",
+                "quantity": "10",
+                "img":"img/sensor.png"
+            }
+        },
+        {
+            "category": "large",
+            "subCategory": "enterprise",
+            "powerscott": {
+                "name":"powerscott",
+                "quantity": "5",
+                "img":"img/powerscout.png"
+            },
+            "weather": {
+                "name":"weather",
+                "quantity": "1",
+                "img":"img/weather.png"
+            },
+            "sensors": {
+                "name":"sensosrs",
+                "quantity": "10",
+                "img":"img/sensor.png"
+            }
+        }
+
+    ]
+}

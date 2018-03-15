@@ -1,0 +1,44 @@
+
+<div class="login_page" layout="row">
+    <div class="login_left_div" flex="65" layout="row" layout-align="center center">
+        <img src="../img/login.png">
+    </div>
+    <div class="login_right_div" flex="35"> 
+         <div class="login_logo" layout="row" layout-align="center center">
+             <img src="../img/login-logo.png">
+         </div>
+         <div class="login_form" layout="row" layout-align="center center">
+               <md-content layout-padding>
+                    <form name="loginForm">
+                        <div class="login_row">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label class="display-none"></label>
+                                <i class="material-icons">person</i>
+                                <input type="email" placeholder="Email" name="email"  required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                                <div ng-messages="loginForm.email.$error">
+                                    <div ng-message="required">This field is required</div>
+                                    <div ng-message="pattern">Your email must be between 10 and 100 characters long and look like an e-mail address.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="login_row">
+                            <md-input-container class="md-block">
+                                <label class="display-none"></label>
+                                <i class="material-icons">no_encryption</i>
+                                <input placeholder="Password" type="password"  name="password" required ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$/" autocomplete="off" />
+                                <div ng-messages="loginForm.password.$error">
+                                    <div ng-message="required">This field is required</div>
+                                    <div ng-message="pattern">Password should be between 8 and 16 characters long and should contain one number, one character and one special character
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="login_row">
+                            <md-button class="md-primary login_submit">Login</md-button>
+                        </div>
+                    </form>
+               </md-content>
+         </div>
+    </div>
+</div>

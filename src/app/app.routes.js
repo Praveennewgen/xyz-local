@@ -19,6 +19,10 @@
       .state('view', {
           url: '/view',
           component: 'view',
+      })
+      .state('login', {
+          url: '/login',
+          component: 'login',
       });
 
     $urlRouterProvider.otherwise('/');

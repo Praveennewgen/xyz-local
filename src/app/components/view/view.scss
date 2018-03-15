@@ -609,7 +609,7 @@ md-nav-bar md-nav-ink-bar {
                         color:#4a5359;
                     }
                     .select_dropdown{
-                        padding: 0px 25px 0px 0px;
+                        padding: 0px 18px 0px 0px;
                         width: 100%;
                         border-top: none;
                         border-right: none;
@@ -689,29 +689,32 @@ md-nav-bar md-nav-ink-bar {
     height: auto;
     outline: none;
 }
-  .selected-icon{
-    width: 18px;
-    margin-right: 10px;
-    height: 18px;
-    border-radius: 50%;
-    background: #65ce64;
-    padding: 1px;
-    visibility: hidden;
-    .material-icons{
-        font-size:16px;
-        color:#000;
-    }
-    &.active_catrgory{
-         visibility: visible;          
+.selected_icon_div{
+    width:18px;
+    margin-right:10px;
+    .selected-icon{
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #65ce64;
+        padding: 1px;
+        visibility: hidden;
+        .material-icons{
+            font-size:16px;
+            color:#000;
+        }
+        &.active_catrgory{
+            visibility: visible;          
+        }
     }
 }
-
 .layout-label{
     .title_label{ 
         margin:0px;
         .category{
             color:#fff;
             font-size:14px;
+            text-transform: capitalize;
         }
         .category_type{
             color:#4a5359;
@@ -759,6 +762,7 @@ md-nav-bar md-nav-ink-bar {
         .category{
             color:#fff;
             font-size:14px;
+            text-transform: capitalize;
         }
         .category_type{
             color:#4a5359;

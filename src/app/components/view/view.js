@@ -7,14 +7,30 @@
         templateUrl: 'app/components/view/view.html',
     });
 
-     viewLayoutController.$inject = [];
+     viewLayoutController.$inject = ['$scope', '$http'];
 
-    function viewLayoutController() {
+    function viewLayoutController($scope, $http) {
         var vm = this;
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
         
+        $http.get('./data/category.json', false)
+            .then(function(res) {
+                vm.menuData = res.data.layoutOption;
+                vm.selectedMenu= vm.menuData[0];
+            }, function(err) {
+                console.log("Error in fetching data from json: " + err);
+            });
+
+        $http.get('./data/selectRange.json', false)
+             .then(function(res){
+                 vm.range=res.data.range;
+                 vm.selectedRange=vm.range[0];
+             }, function(err){
+                 console.log("Error in fetching data from json: " + err);
+             });
+
         var indexSet = [];
         var counter = 1;
         var canvas = '';
@@ -146,8 +162,12 @@
             canvas.append(parseAbc);
         }
 
-        
-
+        vm.selectLayoutOption = function(layoutOption){
+            vm.selectedMenu = layoutOption;
+        }
+        vm.selectedRangeOption= function(range){
+            vm.selectedRange=range;
+        }
     }
 
 })();
