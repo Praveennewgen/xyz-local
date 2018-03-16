@@ -167,7 +167,11 @@
                                 }).attr({ cursor: "pointer"});
             
             return {
-                dialog, slider, diaText, leftArrow, rightArrow
+                dialog: dialog, 
+                slider: slider, 
+                diaText: diaText, 
+                leftArrow: leftArrow, 
+                rightArrow: rightArrow
             }
         }
 
