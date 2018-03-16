@@ -534,9 +534,9 @@ md-nav-bar md-nav-ink-bar {
     background: #797979;
 }
 .side-pannel{
-    right: -350px;
+    right: -400px;
     height: 100%;
-    width: 350px;
+    width: 400px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -567,18 +567,18 @@ md-nav-bar md-nav-ink-bar {
         .readonly-date{
             padding: 10px;
             background: transparent;
-            color: #fff;
+            color: #e0e1e3;
             border: none;
             background: url(../img/calendar.png) no-repeat;
-            font-size: 16px;
+            font-size: 18px;
             background-position: 0px;
             padding-left: 30px;
             background-size: 24px;
         }
         .temprature{
             text-align: right;
-            font-size: 16px;
-            color: #fff;
+            font-size: 18px;
+            color: #e0e1e3;
             padding:7px 0px;
             img{
                 height:24px;
@@ -590,11 +590,11 @@ md-nav-bar md-nav-ink-bar {
         border-right:1px solid #3c4e5c;
     }
     .filter-row{
-        background-color:#1b2933;
-        border-top:1px solid #466377;
-        border-bottom:1px solid #466377;
-        height:90px;
-        padding:15px;
+        background-color: #1b2933;
+        border-top: 1px solid #538ea6;
+        border-bottom: 1px solid #466377;
+        height: 80px;
+        padding: 15px;
         .layout-filter{
             md-menu{
                 width:100%;
@@ -617,7 +617,7 @@ md-nav-bar md-nav-ink-bar {
                         border-right: none;
                         border-left: none;
                         border-image: initial;
-                        border-bottom: 1px solid #466377;
+                        border-bottom: 1px solid #323f48;
                         border-radius: 0px;
                         height: auto;
                         line-height: 20px;
@@ -644,9 +644,12 @@ md-nav-bar md-nav-ink-bar {
             padding-left:15px;
         } 
         ul li{
-            border-bottom:1px solid #3c4e5c;
+            border-bottom:1px solid #3e515e;
             line-height:36px;
-            font-size:13px;
+            font-size:14px;
+            .label {
+                color:#61676c;
+            }
         }
         input[type="text"]{
             background: transparent;
@@ -678,7 +681,7 @@ md-nav-bar md-nav-ink-bar {
 }
 .open_pannel{right:0px;}
 .push_container{
-    margin-right:350px;
+    margin-right:400px;
 }
 .button{
     background: #16a3f9;
@@ -718,13 +721,13 @@ md-nav-bar md-nav-ink-bar {
     .title_label{ 
         margin:0px;
         .category{
-            color:#fff;
-            font-size:14px;
+            color: #b3b3b3;
+            font-size: 16px;
             text-transform: capitalize;
         }
         .category_type{
-            color:#4a5359;
-            font-size:13px;
+            color:#6e6e6e;
+            font-size:14px;
         }
     }
 }
@@ -766,13 +769,13 @@ md-nav-bar md-nav-ink-bar {
     .title_label{ 
         margin:0px;
         .category{
-            color:#fff;
-            font-size:14px;
+            color:#b3b3b3;
+            font-size:16px;
             text-transform: capitalize;
         }
         .category_type{
-            color:#4a5359;
-            font-size:13px;
+            color:#6e6e6e;
+            font-size:14px;
         }
     }
     .reading_row {
