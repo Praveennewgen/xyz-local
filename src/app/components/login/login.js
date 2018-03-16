@@ -10,7 +10,7 @@
         /** @ngInject */
     loginController.$inject = [];
 
-    function loginController($scope) {
+    function loginController() {
       // var vm = this;
     }    
 

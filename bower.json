@@ -19,7 +19,6 @@
     "auth0.js": "^8.8.0"
   },
   "resolutions": {
-    "angular": "1.6.5",
-    "angular-mocks": "1.6.5"
+    "angular": "1.6.5"    
   }
 }
