@@ -14,7 +14,7 @@
             },
             "sensors": {
                 "name":"sensosrs",
-                "quantity": "10",
+                "quantity": "5",
                 "img":"img/sensor.png"
             }
         },
@@ -42,7 +42,7 @@
             "subCategory": "enterprise",
             "powerscott": {
                 "name":"powerscott",
-                "quantity": "5",
+                "quantity": "20",
                 "img":"img/powerscout.png"
             },
             "weather": {
@@ -52,7 +52,7 @@
             },
             "sensors": {
                 "name":"sensosrs",
-                "quantity": "10",
+                "quantity": "20",
                 "img":"img/sensor.png"
             }
         }

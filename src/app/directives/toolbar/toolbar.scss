@@ -184,11 +184,11 @@ md-toolbar input {
         text-transform: none;
         font-weight: 400;
         line-height: 1;
-        margin:5px 10px 5px 0px;
-        color: #d7dadf;
+        margin:10px 10px 5px 0px;
+        color: #4c4d4d;
         &.user_name {
             font-size: 14px;
-            color: #d7dadf;
+            color: #4c4d4d;
         }
     }
 }
@@ -200,14 +200,10 @@ toolbar .md-toolbar-tools {
         padding-right: 0px;
         &::after {
             position: absolute;
-            content: '';
-            border-width: 6px;
-            border-style: solid;
-            // border-color: #0091ea transparent transparent transparent;
-            border-color: #000 transparent transparent transparent;
-            top: 50%;
+            content: url('../img/down_arrow.png');
             right:-15px;
-            margin-top:4px;
+            margin-top:1px;
+            bottom:5px;
         }
         &:not([disabled]):hover {
             background: none;
@@ -349,7 +345,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
       background: #fff;
 }
 md-menu-bar{
-    border-right: 1px solid #e2e2e2;
+    border-right: 1px solid #eaedf0;
     margin: 0px 10px;
     padding-right:25px;
 }
