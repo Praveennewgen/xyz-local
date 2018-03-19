@@ -860,44 +860,26 @@ md-nav-bar md-nav-ink-bar {
         .switch {
             display: none;
         }
+
+        
     }
 
-    // .icon-wrapper {
-    //     .img-wrapper {
-    //         display: inline-block;
-    //         vertical-align: middle;
-    //         width: 30px;
-    //         height: 30px;
+    .icon > .halo {
+        opacity: 0;
+    }
 
-    //         .icon-box{
-    //             display: block;
-    //             width:17px;
-    //             border:1px solid #fff;
-    //             margin: 6px auto;
-    //             height:18px;
-    //             text-align: center;
-    //             border-radius:3px;
 
-    //             img{
-    //                 vertical-align: top; 
-    //                 width: 90%; 
-    //                 height: 90%;
-    //             }
-    //         }
+    .icon:hover > .halo {
+        animation: pulse 4s infinite linear;
+    }
 
-    //     }
+    
+}
 
-        
-        
-
-    //     &:hover {
-    //         width: 250px;
-            
-    //         .dialog {
-    //             display: inline-block;
-    //         }          
-    //     }
-    // }
+@keyframes pulse {
+    0% { opacity: 0;}
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /*mozila specific css*/

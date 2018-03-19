@@ -36,56 +36,56 @@
         var canvas = Snap("#svg");
         var objPos = [
             {
-                x: 160,
-                y: 110
+                x: 170,
+                y: 120
             }, 
             {
-                x: 215,
-                y: 180
+                x: 225,
+                y: 190
             },
             {
-                x: 280,
-                y: 290
-            },
-            {
-                x: 390,
-                y: 210
-            },
-            {
-                x: 390,
-                y: 330
-            },
-            {
-                x: 450,
-                y: 430
-            },
-            {
-                x: 510,
-                y: 60
-            },
-            {
-                x: 545,
-                y: 130
-            },
-            {
-                x: 595,
-                y: 385
-            },
-            {
-                x: 680,
-                y: 40
-            },
-            {
-                x: 710,
+                x: 290,
                 y: 300
             },
             {
-                x: 710,
-                y: 420
+                x: 400,
+                y: 220
             },
             {
-                x: 925,
-                y: 295
+                x: 400,
+                y: 340
+            },
+            {
+                x: 460,
+                y: 440
+            },
+            {
+                x: 520,
+                y: 70
+            },
+            {
+                x: 555,
+                y: 140
+            },
+            {
+                x: 605,
+                y: 395
+            },
+            {
+                x: 690,
+                y: 50
+            },
+            {
+                x: 720,
+                y: 310
+            },
+            {
+                x: 720,
+                y: 430
+            },
+            {
+                x: 935,
+                y: 305
             }
         ];
 
@@ -135,9 +135,9 @@
         function createDialog(x, y){          
 
             var dialog = canvas.svg(x-10, y, 255, 36, 0, 0, 250, 36)
-                                .hover(function() {
+                                .mouseover(function() {
                                     this.removeClass('hide');
-                                }, function(){
+                                }).mouseout(function(){
                                     this.addClass('hide');
                                 }).addClass('hide');
 
@@ -185,17 +185,26 @@
 
 
         function createIcon(x, y, text, sensorType) {
+
+            var animating = true;
+
             var fillColor = '#669933';
             if(sensorType === 'powerscout') {
                 fillColor = '#ff5e00';
             }
             var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
             var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
+            var halo1 = canvas.circle(x+8.5, y+9, 21).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo2 = canvas.circle(x+8.5, y+9, 17).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo3 = canvas.circle(x+8.5, y+9, 13).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
 
-            var g = canvas.g(bgBox, icon);
+            var haloGroup = canvas.g(halo1, halo2, halo3).addClass('halo');
 
+            var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
+
+            animating = true;
             g.hover(function(){
-                var diaX = x;
+                var diaX = x + 12;
                 var diaY = y;
 
                 if(x + 260 > 1100) {
@@ -206,11 +215,45 @@
                     dialogBox.leftArrow.removeClass('hide');
                     dialogBox.rightArrow.addClass('hide');
                 }
+
                 dialogBox.diaText.node.innerHTML = text;
                 dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
+
+
+
             }, function(){
                 //dialogBox.addClass('hide');
+                animating = false;
             });
+
+            
+
+            //animation
+            function animOn(){
+                if( animating ) {
+                    halo1.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                    halo2.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                    halo3.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                }
+            }
+
+            function animOut() {
+                halo1.animate({
+                    r: 21
+                }, 750, mina.linear, animOn);
+                halo2.animate({
+                    r: 17
+                }, 750, mina.linear, animOn);
+                halo3.animate({
+                    r: 13
+                }, 750, mina.linear, animOn);
+            }
         }
     }
 
