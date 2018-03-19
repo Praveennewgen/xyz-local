@@ -124,8 +124,7 @@
             }    
         }
 
-        function isRepeated(index) {
-            
+        function isRepeated(index) {            
             for(var i = 0; i < indexSet.length; i++) {
                 if(indexSet[i] === index) { return true; }
             }
@@ -133,8 +132,7 @@
             return false;
         }
         
-        function createDialog(x, y){
-            
+        function createDialog(x, y){          
 
             var dialog = canvas.svg(x-10, y, 255, 36, 0, 0, 250, 36)
                                 .mouseover(function() {
@@ -168,9 +166,14 @@
                                     }
                                 }).attr({ cursor: "pointer"});
             
-            return {dialog, slider, diaText, leftArrow, rightArrow};
+            return {
+                dialog: dialog, 
+                slider: slider, 
+                diaText: diaText, 
+                leftArrow: leftArrow, 
+                rightArrow: rightArrow
+            }
         }
-
 
         function createPowerIcon(x, y) {
             createIcon(x, y, 'Powerscout &lt;PS1039&gt;', 'powerscout');

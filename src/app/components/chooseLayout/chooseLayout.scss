@@ -1,28 +1,43 @@
 .trialContainer{
         padding: 60px 35px 0;
 }
+.md-button{
+    height: 31px;
+    min-height: 31px;
+    padding: 0px 15px;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size:14px;
+    transition: 0.4s;
+}
+
 .dashboard{
     .heading{
-            padding: 0px 0px 5px;
+            padding: 0px 0px 0px;
+            margin-bottom:30px;            
     }
     .selected-box{
-        -webkit-box-shadow: -2px 2px 12px 1px rgba(204,204,204,0.86);
-        -moz-box-shadow: -2px 2px 12px 1px rgba(204,204,204,0.86);
-        box-shadow: -2px 2px 12px 1px rgba(204,204,204,0.86);
+        -webkit-box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.3);
+        box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.3);
     }
     .overview_box {
         min-height:100px;
         border:1px solid #e2e2e2;
-        width:270px;
+        width:325px;
         background: #fff;
         padding: 0px 0px 0px 0px;
         .box-footer{
             background: #F8F8F8;
             padding:5px;
+            height:49px;
             border-top:1px solid #e2e2e2;
            .md-primary{
                 background: #0E96D1;
                 text-transform: capitalize;
+            }
+            .md-primary:hover{
+                background: #0d6a92 !important;
             }
             .md-disabled{
                 background: #DBDBDB;
@@ -31,56 +46,84 @@
             }
         }
         .list-item{
-            padding:10px;
+            padding:20px 15px;
             ul{
                 padding:0px;
                 margin:0px;
                 list-style-type:none;
             }
             ul li{
-                line-height:33px;
-                margin-bottom:35px;
+               /*line-height: 33px;*/
+                margin-bottom: 32px;
+                text-transform: capitalize;
+                color: #4c4d4d;
+                font-size: 16px;
+               
             }
             ul li:last-child{margin-bottom:0px;}
             ul li span:first-child{
                 width:70%;
+                line-height:28px;
+                 .country_name{
+                    color: #8c8c8c;
+                    max-width: auto !important;
+                    font-size: 16px;
+                    background: none !important;
+                    padding: 0px !important;
+                    border-radius: 0px !important;
+                    border:0px !important;
+                }
             }
              ul li span:last-child{
-                   max-width: 20%;
-                    background: #d8e6ef;
-                    padding: 0px 10px;
-                    border-radius: 16px;
-                    width: auto;               
+                max-width: 40px;
+                background: #e6f5fa;
+                padding: 2px 2px;
+                border-radius: 15px;
+                width: 40px;
+                height: 30px;
+                border: 1px solid #e7e7e7;
+                font-size: 20px;             
             }
              ul li::before{
-                 width:25px;
-                 text-align:center;
-                 color:#31cccc;
-                 content:"\2713";
+                line-height:28px;
+                width: 11px;
+                text-align: center;
+                color: #31cccc;
+                content: "\2713";
+                margin-right: 10px;
              }
             ul li::after{clear:both}
         }
     }
     .trial_view_main{
-        width: 90%;
+        width: 100%;
         margin: 40px auto;
+        padding:0px;
     }
     .box-header{
         background: #F8F8F8;
-        padding:20px 10px  10px 20px;
+        padding:24px 10px  10px 15px;
+        height:79px;
         border-bottom:1px solid #e2e2e2;
         .subheading{
             margin:0px;
             font-weight: 100;
+            font-size:22px;
+            text-transform: capitalize;
+            color: #4c4d4d;
         }
         P{
-            text-align:right;
-            font-size:15px;
-            color:#a2a2a2;
+            text-transform: capitalize;
+            font-size:16px;
+            color:#adadad;
             margin:5px 0px 0px;
         }
         
     }
+}
+.layout_view{
+    margin-top:0px !important;
+    padding-top:0px;
 }
 .project_block_header {
     text-align: left;

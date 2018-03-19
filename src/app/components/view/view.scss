@@ -8,7 +8,7 @@
 }
 .trialContainer {
     padding: 0;
-    padding: 42px 40px 0px;
+    padding: 50px 40px 0px;
     height: 100vh;
     background: #F1F1F1;
     width: 100%;
@@ -409,10 +409,13 @@ md-nav-bar md-nav-ink-bar {
 .heading{
     /* font-family: serif; */
     font-size: 24px;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     /* line-height: 0; */
     color: #4c4d4d;
     font-weight:100;
+        span{
+            border-bottom:1px solid #4c4d4d;
+        }
     }
 /*css for iot*/
 .overview-header{
@@ -421,7 +424,6 @@ md-nav-bar md-nav-ink-bar {
     .heading{
         /* font-family: serif; */
         font-size: 24px;
-        text-decoration: underline;
         /* line-height: 0; */
         color: #4c4d4d;
     }
@@ -493,6 +495,7 @@ md-nav-bar md-nav-ink-bar {
         }
         .status-btn{
             width: 96px;
+            height:29px;
             border: 1px solid #d0d0d0;
             border-radius: 3px;
             padding: 4px 30px 4px 10px;
@@ -532,9 +535,9 @@ md-nav-bar md-nav-ink-bar {
     background: #797979;
 }
 .side-pannel{
-    right: -350px;
+    right: -400px;
     height: 100%;
-    width: 350px;
+    width: 400px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -565,18 +568,18 @@ md-nav-bar md-nav-ink-bar {
         .readonly-date{
             padding: 10px;
             background: transparent;
-            color: #fff;
+            color: #e0e1e3;
             border: none;
             background: url(../img/calendar.png) no-repeat;
-            font-size: 16px;
+            font-size: 18px;
             background-position: 0px;
             padding-left: 30px;
             background-size: 24px;
         }
         .temprature{
             text-align: right;
-            font-size: 16px;
-            color: #fff;
+            font-size: 18px;
+            color: #e0e1e3;
             padding:7px 0px;
             img{
                 height:24px;
@@ -588,11 +591,11 @@ md-nav-bar md-nav-ink-bar {
         border-right:1px solid #3c4e5c;
     }
     .filter-row{
-        background-color:#1b2933;
-        border-top:1px solid #466377;
-        border-bottom:1px solid #466377;
-        height:90px;
-        padding:15px;
+        background-color: #1b2933;
+        border-top: 1px solid #538ea6;
+        border-bottom: 1px solid #466377;
+        height: 80px;
+        padding: 15px;
         .layout-filter{
             md-menu{
                 width:100%;
@@ -615,7 +618,7 @@ md-nav-bar md-nav-ink-bar {
                         border-right: none;
                         border-left: none;
                         border-image: initial;
-                        border-bottom: 1px solid #466377;
+                        border-bottom: 1px solid #323f48;
                         border-radius: 0px;
                         height: auto;
                         line-height: 20px;
@@ -627,7 +630,7 @@ md-nav-bar md-nav-ink-bar {
       
     }
     .selected-value-box{
-        height:calc(100% - 240px);
+        height:calc(100% - 233px);
         background: #283d4c;
         padding: 15px;
         h4{
@@ -642,9 +645,15 @@ md-nav-bar md-nav-ink-bar {
             padding-left:15px;
         } 
         ul li{
-            border-bottom:1px solid #3c4e5c;
+            border-bottom:1px solid #3e515e;
             line-height:36px;
-            font-size:13px;
+            font-size:14px;
+            .label {
+                color:#61676c;
+            }
+        }
+        ul li:last-child{
+            border-bottom:0px;
         }
         input[type="text"]{
             background: transparent;
@@ -667,7 +676,7 @@ md-nav-bar md-nav-ink-bar {
         font-size: 14px;
         background: #3f515f;
         text-align: right;
-        padding: 7px;
+        padding:2px 10px;
     }
     .date-row{
         height:58px;
@@ -676,7 +685,7 @@ md-nav-bar md-nav-ink-bar {
 }
 .open_pannel{right:0px;}
 .push_container{
-    margin-right:350px;
+    margin-right:400px;
 }
 .button{
     background: #16a3f9;
@@ -686,8 +695,12 @@ md-nav-bar md-nav-ink-bar {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     min-height: auto;
+   text-transform: capitalize;
     height: auto;
     outline: none;
+}
+.button:hover{
+    background: #0d6a92 !important;
 }
 .selected_icon_div{
     width:18px;
@@ -712,13 +725,13 @@ md-nav-bar md-nav-ink-bar {
     .title_label{ 
         margin:0px;
         .category{
-            color:#fff;
-            font-size:14px;
+            color: #b3b3b3;
+            font-size: 16px;
             text-transform: capitalize;
         }
         .category_type{
-            color:#4a5359;
-            font-size:13px;
+            color:#6e6e6e;
+            font-size:14px;
         }
     }
 }
@@ -760,13 +773,13 @@ md-nav-bar md-nav-ink-bar {
     .title_label{ 
         margin:0px;
         .category{
-            color:#fff;
-            font-size:14px;
+            color:#b3b3b3;
+            font-size:16px;
             text-transform: capitalize;
         }
         .category_type{
-            color:#4a5359;
-            font-size:13px;
+            color:#6e6e6e;
+            font-size:14px;
         }
     }
     .reading_row {

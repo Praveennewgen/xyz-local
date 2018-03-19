@@ -4,84 +4,34 @@
     <div id="content-wrapper" layout="row">
         <!--<sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
 
-        <md-content class="main-container trialContainer dashboard" id="" layout-align="space-around center" layout-padding>
-            <h2 class="text-capitaliz heading">Choose Layout</h2>            
-            <div class="trial_view_main" layout="row" layout-align="space-around center">
-                <div class="overview_box selected-box">
+        <md-content class="main-container trialContainer dashboard" id="" layout-align="space-between center" layout-padding>
+            <h3 class="text-capitaliz heading"><span>Choose Layout</span></h3>            
+            <div class="trial_view_main layout_view"  layout="row"  layout-align="space-between center">
+                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.category === layoutItem.category}" ng-click="vm.selectedLayout.category !== layoutItem.category && vm.selectLayoutCategory(layoutItem)" ng-repeat="layoutItem in vm.layoutData">
                     <div class="box-header">
-                        <h3 class="subheading">Small</h3>
-                        <p class="text-right">Standarad</p>
+                        <h3 class="subheading">{{layoutItem.category}}</h3>
+                        <p class="text-right">{{layoutItem.subCategory}}</p>
                     </div>
                     <div class="list-item">
                         <ul>
                             <li layout="row">
-                                <span flex="70">Power Scott</span>
-                                <span class="text-center" flex="30">10</span>                               
+                                <span flex="70">{{layoutItem.powerscott.name}}</span>
+                                <span class="text-center" flex="30">{{layoutItem.powerscott.quantity}}</span>                               
                             </li>
                             <li layout="row">
-                                <span flex="70">Weather</span>
-                                <span class="text-center" flex="30">1</span>                               
+                                <span flex="70">{{layoutItem.weather.name}} <span class="country_name">(US)</span></span>
+                                <span class="text-center" flex="30">{{layoutItem.weather.quantity}}</span>                               
                             </li>
                             <li layout="row">
-                                <span flex="70">Sensors</span>
-                                <span class="text-center" flex="30">10</span>                               
+                                <span flex="70">{{layoutItem.sensors.name}}</span>
+                                <span class="text-center" flex="30">{{layoutItem.sensors.quantity}}</span>                               
                             </li>
                         </ul>                        
                     </div>
                     <div class="box-footer" layout="row" layout-align="center center">
-                        <md-button class="md-raised md-disabled" ui-sref="view">Selected</md-button>
+                       <md-button class="md-raised md-primary" ui-sref="view">Select</md-button>
                     </div>
                 </div>  
-                 <div class="overview_box">
-                    <div class="box-header">
-                        <h3 class="subheading">Medium</h3>
-                        <p class="text-right">Professional</p>
-                    </div>
-                    <div class="list-item">
-                        <ul>
-                            <li layout="row">
-                                <span flex="70">Power Scott</span>
-                                <span class="text-center" flex="30">50</span>                               
-                            </li>
-                            <li layout="row">
-                                <span flex="70">Weather</span>
-                                <span class="text-center" flex="30">10</span>                               
-                            </li>
-                            <li layout="row">
-                                <span flex="70">Sensors</span>
-                                <span class="text-center" flex="30">30</span>                               
-                            </li>
-                        </ul>                        
-                    </div>
-                    <div class="box-footer" layout="row" layout-align="center center">
-                        <md-button class="md-raised md-primary" ui-sref="view">Select</md-button>
-                    </div>
-                </div> 
-                 <div class="overview_box">
-                    <div class="box-header">
-                        <h3 class="subheading">Large</h3>
-                        <p class="text-right">Enterperise</p>
-                    </div>
-                    <div class="list-item">
-                        <ul>
-                            <li layout="row">
-                                <span flex="70">Power Scott</span>
-                                <span class="text-center" flex="30">100</span>                               
-                            </li>
-                            <li layout="row">
-                                <span flex="70">Weather</span>
-                                <span class="text-center" flex="30">1</span>                               
-                            </li>
-                            <li layout="row">
-                                <span flex="70">Sensors</span>
-                                <span class="text-center" flex="30">100</span>                               
-                            </li>
-                        </ul>                        
-                    </div>
-                    <div class="box-footer" layout="row" layout-align="center center">
-                        <md-button class="md-raised md-primary" ui-sref="view">Select</md-button>
-                    </div>
-                </div> 
             </div>
             <!-- </div> -->
             <div class="show_loading" ng-if="vm.showProjectLoading">
