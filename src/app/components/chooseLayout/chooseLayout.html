@@ -4,24 +4,24 @@
         <md-content class="main-container trialContainer dashboard" id="" layout-align="space-between center" layout-padding>
             <h3 class="text-capitaliz heading"><span>Choose Layout</span></h3>            
             <div class="trial_view_main layout_view"  layout="row"  layout-align="space-between center">
-                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.category === layoutItem.category}" ng-click="vm.selectedLayout.category !== layoutItem.category && vm.selectLayoutCategory(layoutItem)" ng-repeat="layoutItem in vm.layoutData">
+                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.LayoutType === layoutItem.LayoutType}" ng-click="vm.selectedLayout.LayoutType !== layoutItem.LayoutType && vm.selectLayoutCategory(layoutItem)" ng-repeat="layoutItem in vm.layoutData">
                     <div class="box-header">
-                        <h3 class="subheading">{{layoutItem.category}}</h3>
-                        <p class="text-right">{{layoutItem.subCategory}}</p>
+                        <h3 class="subheading">{{layoutItem.LayoutType}}</h3>
+                        <p class="text-right">{{layoutItem.LayoutName}}</p>
                     </div>
                     <div class="list-item">
                         <ul>
                             <li layout="row">
-                                <span flex="70">{{layoutItem.powerscott.name}}</span>
-                                <span class="text-center" flex="30">{{layoutItem.powerscott.quantity}}</span>                               
+                                <span flex="70">Powerscout</span>
+                                <span class="text-center" flex="30">{{layoutItem.PowerscoutSize}}</span>                               
                             </li>
                             <li layout="row">
-                                <span flex="70">{{layoutItem.weather.name}} <span class="country_name">(US)</span></span>
-                                <span class="text-center" flex="30">{{layoutItem.weather.quantity}}</span>                               
+                                <span flex="70">Weather <span class="country_name">(US)</span></span>
+                                <span class="text-center" flex="30">{{layoutItem.WeatherSize}}</span>                               
                             </li>
                             <li layout="row">
-                                <span flex="70">{{layoutItem.sensors.name}}</span>
-                                <span class="text-center" flex="30">{{layoutItem.sensors.quantity}}</span>                               
+                                <span flex="70">Sensor</span>
+                                <span class="text-center" flex="30">{{layoutItem.SensorSize}}</span>                               
                             </li>
                         </ul>                        
                     </div>
