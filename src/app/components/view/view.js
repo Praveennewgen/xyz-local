@@ -101,7 +101,10 @@
 
         function activate() {
             canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
-            var bg = canvas.image("./img/building_bg.png", 100, 0, 900, 510); 
+            var bg = canvas.image("./img/building_bg.png", 100, 0, 900, 510)
+                        .click(function(){
+                            dialogBox.dialog.addClass('hide');
+                        }); 
 
             while(counter <= 6) {
                 var index = Math.floor((Math.random() * objPos.length));
@@ -121,7 +124,7 @@
                     createSensorIcon(pos.x, pos.y);
                     counter++;
                 }
-            }    
+            }  
         }
 
         function isRepeated(index) {            
@@ -136,9 +139,9 @@
 
             var dialog = canvas.svg(x-10, y, 255, 36, 0, 0, 250, 36)
                                 .mouseover(function() {
-                                    this.removeClass('hide');
+                                    //this.removeClass('hide');
                                 }).mouseout(function(){
-                                    this.addClass('hide');
+                                    //this.addClass('hide');
                                 }).addClass('hide');
 
             var diaBox = dialog.rect(24, 0, 215, 36, 3, 3).attr({ fill: "#22221E"});
@@ -148,7 +151,7 @@
             var sliderBg = dialog.rect(195, 13, 30, 10, 6, 10).attr({ fill: "red", stroke: "white", strikeWidth: "1"});
             var sliderBtn = dialog.circle(200, 18, 8).attr({ fill: "white"});
 
-            var diaText = dialog.text(34, 22, 'PowerScout <PS1309>').attr({fill: "#4a5359"});
+            var diaText = dialog.text(34, 22, 'PowerScout <PS1309>').attr({fill: "#6e6e6e"});
 
             var diaBg = dialog.g(diaBox,leftArrow,diaText);
             var slider = dialog.g(sliderBg,sliderBtn)
@@ -186,8 +189,6 @@
 
         function createIcon(x, y, text, sensorType) {
 
-            var animating = true;
-
             var fillColor = '#669933';
             if(sensorType === 'powerscout') {
                 fillColor = '#ff5e00';
@@ -202,7 +203,6 @@
 
             var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
 
-            animating = true;
             g.hover(function(){
                 var diaX = x + 12;
                 var diaY = y;
@@ -217,43 +217,15 @@
                 }
 
                 dialogBox.diaText.node.innerHTML = text;
+                g.attr({width: 300});
                 dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
 
 
 
             }, function(){
-                //dialogBox.addClass('hide');
-                animating = false;
+                //dialogBox.dialog.addClass('hide');
+                
             });
-
-            
-
-            //animation
-            function animOn(){
-                if( animating ) {
-                    halo1.animate({
-                        r: 8
-                    }, 750, mina.linear, animOut);
-                    halo2.animate({
-                        r: 8
-                    }, 750, mina.linear, animOut);
-                    halo3.animate({
-                        r: 8
-                    }, 750, mina.linear, animOut);
-                }
-            }
-
-            function animOut() {
-                halo1.animate({
-                    r: 21
-                }, 750, mina.linear, animOn);
-                halo2.animate({
-                    r: 17
-                }, 750, mina.linear, animOn);
-                halo3.animate({
-                    r: 13
-                }, 750, mina.linear, animOn);
-            }
         }
     }
 
