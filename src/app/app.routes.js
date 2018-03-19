@@ -17,7 +17,7 @@
           },
       })
       .state('view', {
-          url: '/view',
+          url: '/view/:layoutType',
           component: 'view',
       })
       .state('login', {

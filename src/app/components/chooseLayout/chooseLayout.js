@@ -8,9 +8,9 @@
     });
 
     /** @ngInject */
-    chooseLayoutController.$inject = ['$scope', '$http'];
+    chooseLayoutController.$inject = ['$scope', '$http', '$state'];
 
-    function chooseLayoutController($scope, $http) {
+    function chooseLayoutController($scope, $http, $state) {
       var vm = this;
       $http.get('./data/category.json', false)
             .then(function(res) {
@@ -22,7 +22,11 @@
             
             vm.selectLayoutCategory = function(layoutOption){
                 vm.selectedLayout = layoutOption;
-            } 
+            }
+
+      vm.evtSelectLayout = function(category) {
+          $state.go('view', { layoutType: category});
+      }
     } 
       
 
