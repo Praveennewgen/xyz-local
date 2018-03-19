@@ -13,7 +13,7 @@
                         <div class="login_row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label class="display-none"></label>
-                                <i class="material-icons">person</i>
+                                <i class="material-icons"><img src="../img/login_user.png"></i>
                                 <input type="email" placeholder="Email" name="email" ng-model="email"  required ng-pattern="/^.+@.+\..+$/" />
                                 <div ng-messages="loginForm.email.$error">
                                     <div ng-message="required">This field is required</div>
@@ -25,7 +25,7 @@
                         <div class="login_row">
                             <md-input-container class="md-block">
                                 <label class="display-none"></label>
-                                <i class="material-icons">no_encryption</i>
+                                <i class="material-icons"><img src="../img/login_pwd.png"></i>
                                 <input placeholder="Password" type="password" ng-model="password"  name="password" required ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$/" autocomplete="off" />
                                 <div ng-messages="loginForm.password.$error">
                                     <div ng-message="required">This field is required</div>
@@ -35,7 +35,7 @@
                             </md-input-container>
                         </div>
                         <div class="login_row">
-                            <md-button type="submit" class="md-primary login_submit">Login</md-button>
+                            <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-primary login_submit">Login</md-button>
                         </div>
                     </form>
                </md-content>
