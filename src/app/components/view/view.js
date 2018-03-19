@@ -185,17 +185,26 @@
 
 
         function createIcon(x, y, text, sensorType) {
+
+            var animating = true;
+
             var fillColor = '#669933';
             if(sensorType === 'powerscout') {
                 fillColor = '#ff5e00';
             }
             var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
             var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
+            var halo1 = canvas.circle(x+8.5, y+9, 21).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo2 = canvas.circle(x+8.5, y+9, 17).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo3 = canvas.circle(x+8.5, y+9, 13).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
 
-            var g = canvas.g(bgBox, icon);
+            var haloGroup = canvas.g(halo1, halo2, halo3).addClass('halo');
 
+            var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
+
+            animating = true;
             g.hover(function(){
-                var diaX = x;
+                var diaX = x + 12;
                 var diaY = y;
 
                 if(x + 260 > 1100) {
@@ -206,11 +215,45 @@
                     dialogBox.leftArrow.removeClass('hide');
                     dialogBox.rightArrow.addClass('hide');
                 }
+
                 dialogBox.diaText.node.innerHTML = text;
                 dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
+
+
+
             }, function(){
-                dialogBox.addClass('hide');
+                //dialogBox.addClass('hide');
+                animating = false;
             });
+
+            
+
+            //animation
+            function animOn(){
+                if( animating ) {
+                    halo1.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                    halo2.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                    halo3.animate({
+                        r: 8
+                    }, 750, mina.linear, animOut);
+                }
+            }
+
+            function animOut() {
+                halo1.animate({
+                    r: 21
+                }, 750, mina.linear, animOn);
+                halo2.animate({
+                    r: 17
+                }, 750, mina.linear, animOn);
+                halo3.animate({
+                    r: 13
+                }, 750, mina.linear, animOn);
+            }
         }
     }
 
