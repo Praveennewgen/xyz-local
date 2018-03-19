@@ -36,56 +36,56 @@
         var canvas = Snap("#svg");
         var objPos = [
             {
-                x: 160,
-                y: 110
+                x: 170,
+                y: 120
             }, 
             {
-                x: 215,
-                y: 180
+                x: 225,
+                y: 190
             },
             {
-                x: 280,
-                y: 290
-            },
-            {
-                x: 390,
-                y: 210
-            },
-            {
-                x: 390,
-                y: 330
-            },
-            {
-                x: 450,
-                y: 430
-            },
-            {
-                x: 510,
-                y: 60
-            },
-            {
-                x: 545,
-                y: 130
-            },
-            {
-                x: 595,
-                y: 385
-            },
-            {
-                x: 680,
-                y: 40
-            },
-            {
-                x: 710,
+                x: 290,
                 y: 300
             },
             {
-                x: 710,
-                y: 420
+                x: 400,
+                y: 220
             },
             {
-                x: 925,
-                y: 295
+                x: 400,
+                y: 340
+            },
+            {
+                x: 460,
+                y: 440
+            },
+            {
+                x: 520,
+                y: 70
+            },
+            {
+                x: 555,
+                y: 140
+            },
+            {
+                x: 605,
+                y: 395
+            },
+            {
+                x: 690,
+                y: 50
+            },
+            {
+                x: 720,
+                y: 310
+            },
+            {
+                x: 720,
+                y: 430
+            },
+            {
+                x: 935,
+                y: 305
             }
         ];
 
@@ -137,9 +137,9 @@
             
 
             var dialog = canvas.svg(x-10, y, 255, 36, 0, 0, 250, 36)
-                                .hover(function() {
+                                .mouseover(function() {
                                     this.removeClass('hide');
-                                }, function(){
+                                }).mouseout(function(){
                                     this.addClass('hide');
                                 }).addClass('hide');
 
@@ -206,7 +206,7 @@
                 dialogBox.diaText.node.innerHTML = text;
                 dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
             }, function(){
-                //dialogBox.addClass('hide');
+                dialogBox.addClass('hide');
             });
         }
     }
