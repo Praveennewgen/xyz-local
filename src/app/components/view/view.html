@@ -111,35 +111,35 @@
             </div>
             <div class="selected-value-box">
                  <h4>Selected Powerscout</h4>
-                 <p class="selected-item"><img src="../img/svg/electric-tower.svg" height="15px">PS1029</p>
+                 <p class="selected-item" ng-model="vm.properties.iconName"><img  src="../img/svg/{{vm.properties.iconName}}.svg" height="15px">{{vm.properties.id}}</p>
                  <ul>
                      <li layout="row">
                          <div class="label" flex="50">Breaker Details</div>
-                         <div class="" flex="50"><input type="text" value="New (2013) 3rd floor panel" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.breakerDetails}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Breaker label</div>
-                         <div class="" flex="50"><input type="text" value="PP31- 3rd FI Eelectrical Rm" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.breakerLabel}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Building</div>
-                         <div class="" flex="50"><input type="text" value="Building 2" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.building}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Modbus base address</div>
-                         <div class="" flex="50"><input type="text" value="2" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.modbusAdd}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Rated Amperage address</div>
-                         <div class="" flex="50"><input type="text" value="200" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.ratedAmperage}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Serial Number</div>
-                         <div class="" flex="50"><input type="text" value="5" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.serialNumber}}" readonly></div>
                      </li>
                      <li layout="row">
                          <div class="label" flex="50">Type</div>
-                         <div class="" flex="50"><input type="text" value="PowerScout 3037" readonly></div>
+                         <div class="" flex="50"><input type="text" value="{{vm.properties.type}}" readonly></div>
                      </li>
                  </ul>  
             </div>

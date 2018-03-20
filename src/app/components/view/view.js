@@ -14,9 +14,8 @@
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
-
-        $http.get('./data/chooseLayout.json', false)
         var layoutType = $stateParams.layoutType;
+        vm.properties = {};
 
         $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
@@ -39,182 +38,23 @@
         var indexSet = [];
         var dialogBox = null;
         var canvas = Snap("#svg");
-        var objPos = [
-            {
-                x: 170,
-                y: 120
-            }, 
-            {
-                x: 225,
-                y: 190
-            },
-            {
-                x: 290,
-                y: 120
-            },
-            {
-                x: 290,
-                y: 300
-            },
-            {
-                x: 170,
-                y: 300
-            },
-            {
-                x: 400,
-                y: 220
-            },
-            {
-                x: 400,
-                y: 340
-            },
-            {
-                x: 460,
-                y: 440
-            },
-            {
-                x: 520,
-                y: 70
-            },
-            {
-                x: 555,
-                y: 140
-            },
-            {
-                x: 605,
-                y: 395
-            },
-            {
-                x: 690,
-                y: 50
-            },
-            {
-                x: 720,
-                y: 310
-            },
-            {
-                x: 720,
-                y: 430
-            },
-            {
-                x: 930,
-                y: 305
-            },
-            {
-                x: 930,
-                y: 425
-            },
-            {
-                x: 850,
-                y: 425
-            },
-            {
-                x: 935,
-                y: 45
-            },
-            {
-                x: 832,
-                y: 305
-            },
-            {
-                x: 970,
-                y: 118
-            },
-            {
-                x: 840,
-                y: 49
-            },
-            {
-                x: 545,
-                y: 300
-            },
-            {
-                x: 450,
-                y: 140
-            },
-            {
-                x: 425,
-                y: 75
-            },
-            {
-                x: 315,
-                y: 185
-            },
-            {
-                x: 643,
-                y: 145
-            },
-            {
-                x: 865,
-                y: 215
-            },
-            {
-                x: 585,
-                y: 265
-            },
-            {
-                x: 828,
-                y: 140
-            },
-            {
-                x: 452,
-                y: 378
-            },
-            {
-                x: 652,
-                y: 450
-            },
-            {
-                x: 718,
-                y: 360
-            },
-            {
-                x: 885,
-                y: 370
-            },
-            {  
-                x: 125,
-                y: 188
-            },
-            {  
-                x: 594,
-                y: 343
-            },
-            {  
-                x: 525,
-                y: 440
-            },
-            {  
-                x: 655,
-                y: 215
-            },
-            {  
-                x: 455,
-                y: 235
-            },
-            {  
-                x: 555,
-                y: 45
-            },
-            {  
-                x: 940,
-                y: 190
-            }
-        ];
 
         vm.selectLayoutOption = function(layoutOption){
             vm.selectedMenu = layoutOption;
         }
+
         vm.selectedRangeOption= function(range){
             vm.selectedRange=range;
         }
 
-        activate();
+        InitializeSVG();
 
 
-        
+        function InitializeSVG() {
+            var powerData = null;
+            var sensorData = null;
+            var objPos = null;
 
-        function activate() {
             canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
             var pseudoRect = canvas.rect(0, 0, 1100, 510).attr({ fill: 'white'})
                             .click(function(){
@@ -226,16 +66,22 @@
                             dialogBox.dialog.addClass('hide');
                             clearActives();
                         }); 
-            var powerData = null;
-            var sensorData = null;
+            
 
             $http.get('./data/layoutDetails-' + layoutType +'.json', false)
                     .then(function(res) {
                          powerData = res.data.powerscout.data;
                          sensorData = res.data.sensors.data;
-                         renderDataToSVG(powerData, sensorData);
+
+                         $http.get('./data/iconCoordinates.json',false)
+                                .then(function(res){
+                                    objPos = res.data.positions;
+                                    renderDataToSVG(powerData, sensorData);
+                                },  function(err) {
+                                    console.log("Error in fetching data: " + err);
+                                });
                     }, function(err) {
-                        console.log("Error in fetching data from json: " + err);
+                        console.log("Error in fetching data: " + err);
                     });
 
             function renderDataToSVG(powerData, sensorData) {
@@ -269,22 +115,20 @@
         }
 
         function createPowerIcon(x, y, powerElement) {
-            createIcon(x, y, 'Powerscout &lt;'+ powerElement.Powerscout + '&gt;+ ', 'powerscout');
+            createIcon(x, y, 'Powerscout &lt;'+ powerElement.Powerscout + '&gt;+ ', 'powerscout', powerElement);
         }
 
         function createSensorIcon(x, y, sensorElement) {
-            createIcon(x, y, 'Sensor &lt;' + sensorElement.SensorId + '&gt;', 'sensor');
+            createIcon(x, y, 'Sensor &lt;' + sensorElement.SensorId + '&gt;', 'sensor', sensorElement);
         }
 
 
-        function createIcon(x, y, text, sensorType) {
+        function createIcon(x, y, text, type, objProperties) {
 
-            var fillColor = '#669933';
-            if(sensorType === 'powerscout') {
-                fillColor = '#ff5e00';
-            }
+            var fillColor = type === 'powerscout'? '#ff5e00' : '#669933';
+
             var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
-            var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
+            var icon = canvas.image("./img/" + type + ".png", x, y, 17, 17);
             var halo1 = canvas.circle(x+8.5, y+9, 21).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
             var halo2 = canvas.circle(x+8.5, y+9, 17).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
             var halo3 = canvas.circle(x+8.5, y+9, 13).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
@@ -310,12 +154,15 @@
                 clearActives();
                 haloGroup.addClass('active');
                 dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
-
-
-
-            }, function(){
-                //dialogBox.dialog.addClass('hide');
+            })
+            .click(function(){
+                $scope.$apply(function() {
+                    vm.togglePannel = true;
+                    vm.properties = updatePropertyWindow(type, objProperties);
+                })
+                                
                 
+                //console.log(vm.properties);
             });
         }
 
@@ -370,6 +217,32 @@
             }
         }
 
+        function updatePropertyWindow(type, objProperties) {
+
+            var properties = {};
+            
+            properties.type = objProperties['Type'];
+            properties.building = objProperties['Building'];
+           if(type === 'powerscout') {
+               properties.iconName = 'electric-tower';
+               properties.id = objProperties['Powerscout'];
+               properties.breakerDetails = objProperties['Breaker Details'];
+               properties.breakerLabel = objProperties['Breaker Label'];
+               properties.modbusAdd = objProperties['Modbus base address'];
+               properties.serialNumber = objProperties['Serial Number'];
+               properties.ratedAmperage = objProperties['Rated Amperage'];
+               properties.unitElectricityCost = objProperties['UnitElectricCost'];
+           } else {
+               properties.iconName = 'sensor';
+               properties.id = objProperties['SensorId'];
+               properties.breakerDetails = objProperties['BreakerDetails'];
+               properties.breakerLabel = objProperties['BreakerLabel'];
+               properties.modbusAdd = objProperties['ModbusBaseAddress'];
+               properties.serialNumber = objProperties['SerialNumber'];
+           }
+
+           return properties;
+        }
         
 
         function clearActives(){
