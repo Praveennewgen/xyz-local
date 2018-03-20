@@ -14,11 +14,11 @@
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
-        
+
         $http.get('./data/chooseLayout.json', false)
         var layoutType = $stateParams.layoutType;
 
-        $http.get('./data/category.json', false)
+        $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
                 vm.menuData = res.data.data;
                 vm.selectedMenu= vm.menuData[0];
