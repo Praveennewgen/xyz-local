@@ -349,3 +349,21 @@ md-menu-bar{
     margin: 0px 10px;
     padding-right:25px;
 }
+.show_loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -o-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    z-index: 10;
+}

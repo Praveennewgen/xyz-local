@@ -7,23 +7,27 @@
         templateUrl: 'app/components/view/view.html',
     });
 
-    viewLayoutController.$inject = ['$scope', '$http', '$stateParams'];
+    viewLayoutController.$inject = ['$scope', '$http', '$stateParams', '$state'];
 
-    function viewLayoutController($scope, $http, $stateParams) {
+    function viewLayoutController($scope, $http, $stateParams, $state) {
         var vm = this;
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
+        vm.showLoading=false;
+
         var layoutType = $stateParams.layoutType;
         vm.properties = {};
 
         $http.get('./data/chooseLayout.json', false)
-            .then(function(res) {
-                vm.menuData = res.data.data;
-                vm.selectedMenu= vm.menuData[0];
+            .then(function(res) {               
+                updateLayoutDetails(res.data.data); 
+             //  vm.showLoading=true;             
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
+               // vm.showLoading=false;
             });
+          
 
         $http.get('./data/selectRange.json', false)
              .then(function(res){
@@ -31,10 +35,26 @@
                  vm.selectedRange=vm.range[0];
              }, function(err){
                  console.log("Error in fetching data from json: " + err);
-             });
-        vm.changeLayout=function(selectedLayout){
-            alert(selectedLayout);
+                 //vm.showLoading=false;     
+             });             
+
+        function updateLayoutDetails(data) {                            
+                vm.menuData = data;               
+                data.forEach(function(item){                   
+                    if(item.LayoutType === layoutType){ 
+                        vm.selectedMenu = item;
+                    }
+                });
+                vm.powerscoutSize=vm.selectedMenu.PowerscoutSize;
+                vm.sensorSize=vm.selectedMenu.SensorSize;
+                vm.weatherSize=vm.selectedMenu.WeatherSize;                    
         }
+        
+
+        vm.changeLayout=function(selectedLayoutObj){
+            $state.go('view', {layoutType:selectedLayoutObj.LayoutType});
+        }
+
         var indexSet = [];
         var dialogBox = null;
         var canvas = Snap("#svg");
@@ -177,11 +197,7 @@
         function createDialog(x, y){          
 
             var dialog = canvas.svg(x-10, y, 255, 36, 0, 0, 250, 36)
-                                .mouseover(function() {
-                                    //this.removeClass('hide');
-                                }).mouseout(function(){
-                                    //this.addClass('hide');
-                                }).addClass('hide');
+                                .addClass('hide');
 
             var diaBox = dialog.rect(24, 0, 215, 36, 3, 3).attr({ fill: "#22221E"});
             var leftArrow = dialog.polygon(16,18, 25,13, 25,23).attr({ fill: "#22221E"});

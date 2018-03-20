@@ -45,7 +45,7 @@
                                 </div>
                             </md-input-container>                            
                                 <md-menu-content  class="select_menu">
-                                    <md-menu-item ng-repeat="item in vm.menuData" ng-click="vm.changeLayout(item.LayoutType)">
+                                    <md-menu-item ng-repeat="item in vm.menuData" ng-click="vm.changeLayout(item)">
                                         <div layout="row" ng-class="{'select_layout_menu': vm.selectedMenu.LayoutType === item.LayoutType}" ng-click="vm.selectedMenu.LayoutType !== item.LayoutType && vm.selectLayoutOption(item)">
                                             <div class="selected_icon_div">
                                                 <div class="selected-icon active_catrgory" ng-if="vm.selectedMenu.LayoutType === item.LayoutType"><i class="material-icons">&#xE876;</i></div>
@@ -157,15 +157,15 @@
             <div flex="70" layout="row" layout-align="end center">
                 <div class="option-box">
                     <span class="icon-box orange"><img src="../img/powerscout.png"></span>
-                    <span class="reading-value ">Powerscout- 10</span>
+                    <span class="reading-value" ng-model="powerscoutSize">Powerscout- {{vm.powerscoutSize}}</span>
                 </div>
                 <div class="option-box">
                     <span class="icon-box green"><img src="../img/sensor.png"></span>
-                    <span class="reading-value ">Sensors- 10</span>
+                    <span class="reading-value">Sensors- {{vm.sensorSize}}</span>
                 </div>
                 <div class="option-box">
                     <span class="icon-box violet"><img src="../img/weather.png"></span>
-                    <span class="reading-value ">Weather- 1</span>
+                    <span class="reading-value">Weather- {{vm.weatherSize}}</span>
                 </div>
             </div>            
         </div>
@@ -194,4 +194,7 @@
     </div>
         </md-content>
     </div>
+</div>
+<div class="show_loading" ng-if="vm.showLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
