@@ -14,16 +14,20 @@
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
+        vm.showLoading=false;
 
         $http.get('./data/chooseLayout.json', false)
         var layoutType = $stateParams.layoutType;
 
         $http.get('./data/chooseLayout.json', false)
-            .then(function(res) {
-                updateLayoutDetails(res.data.data);
+            .then(function(res) {               
+                updateLayoutDetails(res.data.data); 
+             //  vm.showLoading=true;             
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
+               // vm.showLoading=false;
             });
+          
 
         $http.get('./data/selectRange.json', false)
              .then(function(res){
@@ -31,33 +35,25 @@
                  vm.selectedRange=vm.range[0];
              }, function(err){
                  console.log("Error in fetching data from json: " + err);
-             });
+                 //vm.showLoading=false;     
+             });             
 
-        function updateLayoutDetails(data) {
-                vm.menuData = data;
-                // vm.selectedMenu= vm.menuData[0];
-                console.log(layoutType);
-                data.forEach(function(item){
-                    console.log(item.LayoutType);
+        function updateLayoutDetails(data) {                            
+                vm.menuData = data;               
+                data.forEach(function(item){                   
                     if(item.LayoutType === layoutType){ 
                         vm.selectedMenu = item;
+                        vm.selectedLayout=item;
                     }
                 });
-
-                console.log(vm.selectedMenu);
-                
-
                 vm.powerscoutSize=vm.selectedMenu.PowerscoutSize;
                 vm.sensorSize=vm.selectedMenu.SensorSize;
-                vm.weatherSize=vm.selectedMenu.WeatherSize;
+                vm.weatherSize=vm.selectedMenu.WeatherSize; 
+                vm.showLoading=false;                         
         }
+        
 
         vm.changeLayout=function(selectedLayoutObj){
-            //alert(selectedLayout);
-            //vm.selectedMenu=selectedLayoutObj;
-           vm.powerscoutSize=selectedLayoutObj.PowerscoutSize;
-           vm.sensorSize=selectedLayoutObj.SensorSize;
-            vm.weatherSize=selectedLayoutObj.WeatherSize;
             $state.go('view', {layoutType:selectedLayoutObj.LayoutType});
         }
 

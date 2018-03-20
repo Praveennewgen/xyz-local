@@ -12,8 +12,10 @@
 
     function chooseLayoutController($scope, $http, $state) {
       var vm = this;
+       vm.showLoading=false;
       $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
+              //  vm.showLoading=true;
                 vm.layoutData = res.data.data;
                 vm.selectedLayout= vm.layoutData[0];
             }, function(err) {
