@@ -17,7 +17,7 @@
         vm.showLoading=false;
 
         var layoutType = $stateParams.layoutType;
-        vm.properties = {};
+        vm.properties = null;
 
         $http.get('./data/chooseLayout.json', false)
             .then(function(res) {               
@@ -80,11 +80,17 @@
                             .click(function(){
                                 dialogBox.dialog.addClass('hide');
                                 clearActives();
+                                $scope.$apply(function(){
+                                    vm.properties = null;
+                                });
                             });
             var bg = canvas.image("./img/building_bg.png", 100, 0, 900, 510)
                         .click(function(){
                             dialogBox.dialog.addClass('hide');
                             clearActives();
+                            $scope.$apply(function(){
+                                vm.properties = null;
+                            });
                         }); 
             
 
@@ -266,6 +272,7 @@
             allHalo.forEach(function(halo) {
                halo.removeClass('active'); 
             });
+            
         }
     }
 
