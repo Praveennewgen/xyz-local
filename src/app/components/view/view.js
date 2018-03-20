@@ -7,15 +7,18 @@
         templateUrl: 'app/components/view/view.html',
     });
 
-     viewLayoutController.$inject = ['$scope', '$http'];
+    viewLayoutController.$inject = ['$scope', '$http', '$stateParams'];
 
-    function viewLayoutController($scope, $http) {
+    function viewLayoutController($scope, $http, $stateParams) {
         var vm = this;
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
         vm.openOverlay=false;
         
         $http.get('./data/chooseLayout.json', false)
+        var layoutType = $stateParams.layoutType;
+
+        $http.get('./data/category.json', false)
             .then(function(res) {
                 vm.menuData = res.data.data;
                 vm.selectedMenu= vm.menuData[0];
@@ -34,7 +37,7 @@
             alert(selectedLayout);
         }
         var indexSet = [];
-        var counter = 1;
+        var dialogBox = null;
         var canvas = Snap("#svg");
         var objPos = [
             {
@@ -47,6 +50,14 @@
             },
             {
                 x: 290,
+                y: 120
+            },
+            {
+                x: 290,
+                y: 300
+            },
+            {
+                x: 170,
                 y: 300
             },
             {
@@ -86,8 +97,108 @@
                 y: 430
             },
             {
-                x: 935,
+                x: 930,
                 y: 305
+            },
+            {
+                x: 930,
+                y: 425
+            },
+            {
+                x: 850,
+                y: 425
+            },
+            {
+                x: 935,
+                y: 45
+            },
+            {
+                x: 832,
+                y: 305
+            },
+            {
+                x: 970,
+                y: 118
+            },
+            {
+                x: 840,
+                y: 49
+            },
+            {
+                x: 545,
+                y: 300
+            },
+            {
+                x: 450,
+                y: 140
+            },
+            {
+                x: 425,
+                y: 75
+            },
+            {
+                x: 315,
+                y: 185
+            },
+            {
+                x: 643,
+                y: 145
+            },
+            {
+                x: 865,
+                y: 215
+            },
+            {
+                x: 585,
+                y: 265
+            },
+            {
+                x: 828,
+                y: 140
+            },
+            {
+                x: 452,
+                y: 378
+            },
+            {
+                x: 652,
+                y: 450
+            },
+            {
+                x: 718,
+                y: 360
+            },
+            {
+                x: 885,
+                y: 370
+            },
+            {  
+                x: 125,
+                y: 188
+            },
+            {  
+                x: 594,
+                y: 343
+            },
+            {  
+                x: 525,
+                y: 440
+            },
+            {  
+                x: 655,
+                y: 215
+            },
+            {  
+                x: 455,
+                y: 235
+            },
+            {  
+                x: 555,
+                y: 45
+            },
+            {  
+                x: 940,
+                y: 190
             }
         ];
 
@@ -99,34 +210,113 @@
         }
 
         activate();
-        var dialogBox = createDialog(0,0);
+
+
+        
 
         function activate() {
             canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
+            var pseudoRect = canvas.rect(0, 0, 1100, 510).attr({ fill: 'white'})
+                            .click(function(){
+                                dialogBox.dialog.addClass('hide');
+                                clearActives();
+                            });
             var bg = canvas.image("./img/building_bg.png", 100, 0, 900, 510)
                         .click(function(){
                             dialogBox.dialog.addClass('hide');
+                            clearActives();
                         }); 
+            var powerData = null;
+            var sensorData = null;
 
-            while(counter <= 6) {
-                var index = Math.floor((Math.random() * objPos.length));
-                if(isRepeated(index)) { continue; }
-                else { 
-                    var pos = objPos[index];
-                    createPowerIcon(pos.x, pos.y);
-                    counter++;
+            $http.get('./data/layoutDetails-' + layoutType +'.json', false)
+                    .then(function(res) {
+                         powerData = res.data.powerscout.data;
+                         sensorData = res.data.sensors.data;
+                         renderDataToSVG(powerData, sensorData);
+                    }, function(err) {
+                        console.log("Error in fetching data from json: " + err);
+                    });
+
+            function renderDataToSVG(powerData, sensorData) {
+                var counter = 1;
+                if (powerData !== null) {
+                    while(counter <= powerData.length) {
+                        var index = Math.floor((Math.random() * objPos.length));
+                        if(isRepeated(index)) { continue; }
+                        else { 
+                            var pos = objPos[index];
+                            createPowerIcon(pos.x, pos.y, powerData[counter-1]);
+                            counter++;
+                        }
+                    }
                 }
+                counter = 1;
+                if (sensorData !== null) {
+                    while(counter <= sensorData.length) {
+                        var index = Math.floor((Math.random() * objPos.length));
+                        if(isRepeated(index)) { continue; }
+                        else { 
+                            var pos = objPos[index];
+                            createSensorIcon(pos.x, pos.y, sensorData[counter-1]);
+                            counter++;
+                        }
+                    }
+                }
+
+                dialogBox = createDialog(0, 0);
             }
-            counter = 0;
-            while(counter <= 4) {
-                var index = Math.floor((Math.random() * objPos.length));
-                if(isRepeated(index)) { continue; }
-                else { 
-                    var pos = objPos[index];
-                    createSensorIcon(pos.x, pos.y);
-                    counter++;
+        }
+
+        function createPowerIcon(x, y, powerElement) {
+            createIcon(x, y, 'Powerscout &lt;'+ powerElement.Powerscout + '&gt;+ ', 'powerscout');
+        }
+
+        function createSensorIcon(x, y, sensorElement) {
+            createIcon(x, y, 'Sensor &lt;' + sensorElement.SensorId + '&gt;', 'sensor');
+        }
+
+
+        function createIcon(x, y, text, sensorType) {
+
+            var fillColor = '#669933';
+            if(sensorType === 'powerscout') {
+                fillColor = '#ff5e00';
+            }
+            var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
+            var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
+            var halo1 = canvas.circle(x+8.5, y+9, 21).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo2 = canvas.circle(x+8.5, y+9, 17).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+            var halo3 = canvas.circle(x+8.5, y+9, 13).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
+
+            var haloGroup = canvas.g(halo1, halo2, halo3).addClass('halo');
+
+            var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
+
+            g.hover(function(){
+                var diaX = x + 12;
+                var diaY = y;
+
+                if(x + 260 > 1100) {
+                    diaX = x - 262;
+                    dialogBox.leftArrow.addClass('hide');
+                    dialogBox.rightArrow.removeClass('hide');
+                } else {
+                    dialogBox.leftArrow.removeClass('hide');
+                    dialogBox.rightArrow.addClass('hide');
                 }
-            }  
+
+                dialogBox.diaText.node.innerHTML = text;
+                clearActives();
+                haloGroup.addClass('active');
+                dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
+
+
+
+            }, function(){
+                //dialogBox.dialog.addClass('hide');
+                
+            });
         }
 
         function isRepeated(index) {            
@@ -180,53 +370,12 @@
             }
         }
 
-        function createPowerIcon(x, y) {
-            createIcon(x, y, 'Powerscout &lt;PS1039&gt;', 'powerscout');
-        }
+        
 
-        function createSensorIcon(x, y) {
-            createIcon(x, y, 'Sensor &lt;SR1039&gt;', 'sensor');
-        }
-
-
-        function createIcon(x, y, text, sensorType) {
-
-            var fillColor = '#669933';
-            if(sensorType === 'powerscout') {
-                fillColor = '#ff5e00';
-            }
-            var bgBox = canvas.rect(x, y, 17, 18, 3, 3).attr({ fill: fillColor});
-            var icon = canvas.image("./img/" + sensorType + ".png", x, y, 17, 17);
-            var halo1 = canvas.circle(x+8.5, y+9, 21).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
-            var halo2 = canvas.circle(x+8.5, y+9, 17).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
-            var halo3 = canvas.circle(x+8.5, y+9, 13).attr({stroke: 'white', strokeWidth:'1', opacity: '0.33'});
-
-            var haloGroup = canvas.g(halo1, halo2, halo3).addClass('halo');
-
-            var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
-
-            g.hover(function(){
-                var diaX = x + 12;
-                var diaY = y;
-
-                if(x + 260 > 1100) {
-                    diaX = x - 250;
-                    dialogBox.leftArrow.addClass('hide');
-                    dialogBox.rightArrow.removeClass('hide');
-                } else {
-                    dialogBox.leftArrow.removeClass('hide');
-                    dialogBox.rightArrow.addClass('hide');
-                }
-
-                dialogBox.diaText.node.innerHTML = text;
-                g.attr({width: 300});
-                dialogBox.dialog.attr({ x: diaX, y: diaY-10}).removeClass('hide');
-
-
-
-            }, function(){
-                //dialogBox.dialog.addClass('hide');
-                
+        function clearActives(){
+            var allHalo = canvas.selectAll('.halo');
+            allHalo.forEach(function(halo) {
+               halo.removeClass('active'); 
             });
         }
     }

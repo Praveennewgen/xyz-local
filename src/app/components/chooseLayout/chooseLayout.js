@@ -8,9 +8,9 @@
     });
 
     /** @ngInject */
-    chooseLayoutController.$inject = ['$scope', '$http'];
+    chooseLayoutController.$inject = ['$scope', '$http', '$state'];
 
-    function chooseLayoutController($scope, $http) {
+    function chooseLayoutController($scope, $http, $state) {
       var vm = this;
       $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
@@ -20,9 +20,18 @@
                 console.log("Error in fetching data from json: " + err);
             });
             
+            vm.selectLayoutCategory = function(layoutOption){
+                vm.selectedLayout = layoutOption;
+            }
+
+            vm.evtSelectLayout = function(category) {
+                $state.go('view', { layoutType: category});
+            }
+
             vm.selectLayoutCategory = function(layoutItem){
                 vm.selectedLayout = layoutItem;
             } 
+
     } 
       
 

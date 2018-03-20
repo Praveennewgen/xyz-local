@@ -869,7 +869,7 @@ md-nav-bar md-nav-ink-bar {
     }
 
 
-    .icon:hover > .halo {
+    .halo.active {
         animation: pulse 2s infinite linear;
     }
 
