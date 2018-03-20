@@ -174,11 +174,11 @@
             var haloGroup = canvas.g(halo1, halo2, halo3).addClass('halo');
 
             var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
-
+            var objProperties;
             g.hover(function(){
                 var diaX = x + 12;
                 var diaY = y;
-                var objProperties;
+                //var objProperties;
                     
                 if(type === 'powerscout') {
                     objProperties = powerData[index];
