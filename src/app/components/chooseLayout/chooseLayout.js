@@ -17,7 +17,7 @@
             .then(function(res) {
               //  vm.showLoading=true;
                 vm.layoutData = res.data.data;
-                vm.selectedLayout= vm.layoutData[0];
+               // vm.selectedLayout= vm.layoutData[0];
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
             });
