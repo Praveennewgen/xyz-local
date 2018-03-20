@@ -15,9 +15,9 @@
         vm.togglePannel= false;
         vm.openOverlay=false;
         
-        $http.get('./data/category.json', false)
+        $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
-                vm.menuData = res.data.layoutOption;
+                vm.menuData = res.data.data;
                 vm.selectedMenu= vm.menuData[0];
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
@@ -30,7 +30,9 @@
              }, function(err){
                  console.log("Error in fetching data from json: " + err);
              });
-
+        vm.changeLayout=function(selectedLayout){
+            alert(selectedLayout);
+        }
         var indexSet = [];
         var counter = 1;
         var canvas = Snap("#svg");

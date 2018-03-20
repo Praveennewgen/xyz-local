@@ -39,31 +39,31 @@
                                 <label>Select Layout</label>
                                 <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
-                                        <span class="category">{{vm.selectedMenu.category}}</span>
-                                        <span class="category_type">({{vm.selectedMenu.subCategory}})</span>
+                                        <span class="category">{{vm.selectedMenu.LayoutType}}</span>
+                                        <span class="category_type">({{vm.selectedMenu.LayoutName}})</span>
                                     </p>
                                 </div>
                             </md-input-container>                            
                                 <md-menu-content  class="select_menu">
-                                    <md-menu-item ng-repeat="item in vm.menuData">
-                                        <div layout="row" ng-class="{'select_layout_menu': vm.selectedMenu.category === item.category}" ng-click="vm.selectedMenu.category !== item.category && vm.selectLayoutOption(item)">
+                                    <md-menu-item ng-repeat="item in vm.menuData" ng-click="vm.changeLayout(item.LayoutType)">
+                                        <div layout="row" ng-class="{'select_layout_menu': vm.selectedMenu.LayoutType === item.LayoutType}" ng-click="vm.selectedMenu.LayoutType !== item.LayoutType && vm.selectLayoutOption(item)">
                                             <div class="selected_icon_div">
-                                                <div class="selected-icon active_catrgory" ng-if="vm.selectedMenu.category === item.category"><i class="material-icons">&#xE876;</i></div>
+                                                <div class="selected-icon active_catrgory" ng-if="vm.selectedMenu.LayoutType === item.LayoutType"><i class="material-icons">&#xE876;</i></div>
                                                 </div>
                                             <div class="layout-label">
                                                 <p class="title_label">
-                                                    <span class="category">{{item.category}}</span>
-                                                    <span class="category_type">{{item.subCategory}}</span>
+                                                    <span class="category">{{item.LayoutType}}</span>
+                                                    <span class="category_type">{{item.LayoutName}}</span>
                                                 </p>
                                                 <p layout="row" class="reading_row"   layout-align="space-between center">
                                                     <span>
-                                                        <img src="{{item.powerscott.img}}"> {{item.powerscott.quantity}}
+                                                        <img src="../img/powerscout.png"> {{item.PowerscoutSize}}
                                                     </span>
                                                     <span>
-                                                       <img src="{{item.weather.img}}"> {{item.weather.quantity}}
+                                                       <img src="../img/weather.png"> {{item.WeatherSize}}
                                                     </span>
                                                     <span>
-                                                        <img src="{{item.sensors.img}}"> {{item.sensors.quantity}}
+                                                        <img src="../img/sensor.png"> {{item.SensorSize}}
                                                     </span>
                                                 </p>
                                             </div>
