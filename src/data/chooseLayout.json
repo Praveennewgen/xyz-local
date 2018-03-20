@@ -1,0 +1,26 @@
+{
+    "Success": true,
+    "data": [
+        {
+            "LayoutType": "Small",
+            "LayoutName": "Standard",
+            "PowerscoutSize": "5",
+            "WeatherSize": "1",
+            "SensorSize": "5"
+        },
+        {
+            "LayoutType": "Medium",
+            "LayoutName": "Professional",
+            "PowerscoutSize": "10",
+            "WeatherSize": "1",
+            "SensorSize": "10"
+        },
+        {
+            "LayoutType": "Large",
+            "LayoutName": "Enterprise",
+            "PowerscoutSize": "20",
+            "WeatherSize": "1",
+            "SensorSize": "20"
+        }
+    ]
+}

@@ -12,9 +12,9 @@
 
     function chooseLayoutController($scope, $http, $state) {
       var vm = this;
-      $http.get('./data/category.json', false)
+      $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
-                vm.layoutData = res.data.layoutOption;
+                vm.layoutData = res.data.data;
                 vm.selectedLayout= vm.layoutData[0];
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
@@ -24,9 +24,14 @@
                 vm.selectedLayout = layoutOption;
             }
 
-      vm.evtSelectLayout = function(category) {
-          $state.go('view', { layoutType: category});
-      }
+            vm.evtSelectLayout = function(category) {
+                $state.go('view', { layoutType: category});
+            }
+
+            vm.selectLayoutCategory = function(layoutItem){
+                vm.selectedLayout = layoutItem;
+            } 
+
     } 
       
 
