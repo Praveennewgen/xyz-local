@@ -2,9 +2,10 @@
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
         <md-content class="main-container trialContainer dashboard" id="" layout-align="space-between center" layout-padding>
-            <h3 class="text-capitaliz heading"><span>Choose Layout</span></h3>            
-            <div class="trial_view_main layout_view"  layout="row"  layout-align="space-between center">
-                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.LayoutType === layoutItem.LayoutType}" ng-click="vm.selectedLayout.LayoutType !== layoutItem.LayoutType && vm.selectLayoutCategory(layoutItem)" ng-repeat="layoutItem in vm.layoutData">
+            <h3 class="text-capitaliz heading"><span>Choose Layout</span></h3>
+            <div class="trial_view_main layout_view" layout="row" layout-align="space-between center">
+                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.LayoutType === layoutItem.LayoutType}" ng-click="vm.selectedLayout.LayoutType !== layoutItem.LayoutType && vm.selectLayoutCategory(layoutItem)"
+                    ng-repeat="layoutItem in vm.layoutData">
                     <div class="box-header">
                         <h3 class="subheading">{{layoutItem.LayoutType}}</h3>
                         <p class="text-right">{{layoutItem.LayoutName}}</p>
@@ -13,22 +14,22 @@
                         <ul>
                             <li layout="row">
                                 <span flex="70">Powerscout</span>
-                                <span class="text-center" flex="30">{{layoutItem.PowerscoutSize}}</span>                               
+                                <span class="text-center" flex="30">{{layoutItem.PowerscoutSize}}</span>
                             </li>
                             <li layout="row">
                                 <span flex="70">Weather <span class="country_name">(US)</span></span>
-                                <span class="text-center" flex="30">{{layoutItem.WeatherSize}}</span>                               
+                                <span class="text-center" flex="30">{{layoutItem.WeatherSize}}</span>
                             </li>
                             <li layout="row">
                                 <span flex="70">Sensor</span>
-                                <span class="text-center" flex="30">{{layoutItem.SensorSize}}</span>                               
+                                <span class="text-center" flex="30">{{layoutItem.SensorSize}}</span>
                             </li>
-                        </ul>                        
+                        </ul>
                     </div>
                     <div class="box-footer" layout="row" layout-align="center center">
-                       <md-button class="md-raised md-primary" ng-click="vm.evtSelectLayout(layoutItem.LayoutType)">Select</md-button>
+                        <md-button class="md-raised md-primary" ng-click="vm.evtSelectLayout(layoutItem.LayoutType)">Select</md-button>
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="show_loading" ng-if="vm.showProjectLoading">
                 <md-progress-circular md-mode="indeterminate"></md-progress-circular>

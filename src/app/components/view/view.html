@@ -7,22 +7,22 @@
             <div class="overlay_content" layout="row" layout-align="center center">
                 <div class="overlay_text" flex>
                     <img src="../img/simulating.svg">
-                <h2>Simulating data on pushing the IOT hub...</h2>
+                    <h2>Simulating data on pushing the IOT hub...</h2>
                 </div>
             </div>
         </div>
         <!-- ends here-->
 
-       <!-- <sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
-       <div class="side-pannel " ng-class="{'open_pannel' : vm.togglePannel}">
-           <span class="side-pannel-btn blue"  ng-click="vm.togglePannel = !vm.togglePannel">
+        <!-- <sidemenu id="sidebar-wrapper" layout="column"></sidemenu>-->
+        <div class="side-pannel " ng-class="{'open_pannel' : vm.togglePannel}">
+            <span class="side-pannel-btn blue" ng-click="vm.togglePannel = !vm.togglePannel">
                <i class="material-icons">{{vm.togglePannel?'keyboard_arrow_right':'keyboard_arrow_left'}}</i>               
             </span>
-           <div class="pannel-header">
-               <h3 class="heading"><span>Details</span></h3>  
+            <div class="pannel-header">
+                <h3 class="heading"><span>Details</span></h3>
             </div>
             <div class="date-row" layout="row">
-                <div  flex="50" class="border-right">
+                <div flex="50" class="border-right">
                     <input type="text" class="readonly-date" value="12 MAR 2018" readonly>
                 </div>
                 <div flex="50" class="temprature">
@@ -32,12 +32,12 @@
                 </div>
             </div>
             <div class="filter-row" layout="row" layout-align="space-between center">
-                <div flex="50" class="layout-filter" >
+                <div flex="50" class="layout-filter">
                     <md-menu-bar>
                         <md-menu>
                             <md-input-container class="md-block">
                                 <label>Select Layout</label>
-                              <button ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
+                                <button ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
                                         <span class="category">{{vm.selectedMenu.LayoutType}}</span>
                                         <span class="category_type">({{vm.selectedMenu.LayoutName}})</span>
@@ -145,56 +145,64 @@
             </div>
             <div class="simulate-row">
                <button class="md-button button" ng-click="vm.evtSimulate()">Simulate</button>
-            </div> 
-            <div class="clearfix"></div> 
-        </div>
-        <md-content class="main-container trialContainer "  id="trailContent" layout-align="center center" layout-padding>
-        <div class="push_content_div" ng-class="{'push_container' : vm.togglePannel}">
-        <div class="overview-header" layout="row">
-            <div flex="30">
-                <h3 class="heading"><span>Building Overview</span></h3>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div flex="70" layout="row" layout-align="end center">
-                <div class="option-box">
-                    <span class="icon-box orange"><img src="../img/powerscout.png"></span>
-                    <span class="reading-value" ng-model="powerscoutSize">Powerscout- {{vm.powerscoutSize}}</span>
+            <md-content class="main-container trialContainer " id="trailContent" layout-align="center center" layout-padding>
+                <div class="push_content_div" ng-class="{'push_container' : vm.togglePannel}">
+                    <div class="overview-header" layout="row">
+                        <div flex="30">
+                            <h3 class="heading"><span>Building Overview</span></h3>
+                        </div>
+                        <div flex="70" layout="row" layout-align="end center">
+                            <div class="option-box">
+                                <span class="icon-box orange"><img src="../img/powerscout.png"></span>
+                                <span class="reading-value" ng-model="powerscoutSize">Powerscout- {{vm.powerscoutSize}}</span>
+                            </div>
+                            <div class="option-box">
+                                <span class="icon-box green"><img src="../img/sensor.png"></span>
+                                <span class="reading-value">Sensors- {{vm.sensorSize}}</span>
+                            </div>
+                            <div class="option-box">
+                                <span class="icon-box violet"><img src="../img/weather.png"></span>
+                                <span class="reading-value">Weather- {{vm.weatherSize}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <div class="content-header" layout="row" layout-align="start">
+                            <div class="icon-row" layout="row" layout-align="start">
+                                <span class="icon orange"><img src="../img/powerscout.png" width="20px" height="20px"></span>
+                                <md-button md-no-ink class="md-primary status-btn enabled">Enabled
+                                    <div class="blue">{{vm.powerscoutSize - vm.disablePowerscout}}</div>
+                                </md-button>
+                                <md-button md-no-ink class="md-primary status-btn disabled">Disabled
+                                    <div class="ash">{{vm.disablePowerscout}}</div>
+                                </md-button>
+                            </div>
+                            <div class="icon-row" layout="row" layout-align="start">
+                                <span class="icon green"><img src="../img/sensor.png" width="20px" height="20px"></span>
+                                <md-button md-no-ink class="md-primary status-btn enabled">Enabled
+                                    <div class="blue">{{vm.sensorSize - vm.disableSensor}}</div>
+                                </md-button>
+                                <md-button md-no-ink class="md-primary status-btn disabled">Disabled
+                                    <div class="ash">{{vm.disableSensor}}</div>
+                                </md-button>
+                            </div>
+                        </div>
+                        <div class="svg-mapping">
+                            <svg id="svg"></svg>
+                        </div>
+                    </div>
+                    <!-- ui-view for child states starts here -->
+                    <ui-view class="display-block content_area">
+
+                    </ui-view>
+                    <!-- ui-view for child states ends here -->
                 </div>
-                <div class="option-box">
-                    <span class="icon-box green"><img src="../img/sensor.png"></span>
-                    <span class="reading-value">Sensors- {{vm.sensorSize}}</span>
-                </div>
-                <div class="option-box">
-                    <span class="icon-box violet"><img src="../img/weather.png"></span>
-                    <span class="reading-value">Weather- {{vm.weatherSize}}</span>
-                </div>
-            </div>            
+            </md-content>
         </div>
-        <div class="content-section">
-            <div class="content-header" layout="row" layout-align="start">
-                <div class="icon-row" layout="row" layout-align="start">
-                    <span class="icon orange"><img src="../img/powerscout.png" width="20px" height="20px"></span>
-                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">{{vm.powerscoutSize - vm.disablePowerscout}}</div></md-button>
-                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">{{vm.disablePowerscout}}</div></md-button>
-                </div>
-                <div class="icon-row" layout="row" layout-align="start">
-                    <span class="icon green"><img src="../img/sensor.png" width="20px" height="20px"></span>
-                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">{{vm.sensorSize - vm.disableSensor}}</div></md-button>
-                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">{{vm.disableSensor}}</div></md-button>
-                </div>
-            </div>
-            <div class="svg-mapping">
-               <svg id="svg"></svg>
-            </div>
-        </div>
-            <!-- ui-view for child states starts here -->
-            <ui-view class="display-block content_area">
-                
-            </ui-view>
-            <!-- ui-view for child states ends here -->
     </div>
-        </md-content>
+    <div class="show_loading" ng-if="vm.showLoading">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
-</div>
-<div class="show_loading" ng-if="vm.showLoading">
-    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-</div>
