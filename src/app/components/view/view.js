@@ -7,9 +7,9 @@
         templateUrl: 'app/components/view/view.html',
     });
 
-    viewLayoutController.$inject = ['$scope', '$http', '$stateParams'];
+    viewLayoutController.$inject = ['$scope', '$http', '$stateParams', '$state'];
 
-    function viewLayoutController($scope, $http, $stateParams) {
+    function viewLayoutController($scope, $http, $stateParams, $state) {
         var vm = this;
       /* togglePannel for open close side pannel*/
         vm.togglePannel= false;
@@ -20,8 +20,7 @@
 
         $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
-                vm.menuData = res.data.data;
-                vm.selectedMenu= vm.menuData[0];
+                updateLayoutDetails(res.data.data);
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
             });
@@ -33,9 +32,35 @@
              }, function(err){
                  console.log("Error in fetching data from json: " + err);
              });
-        vm.changeLayout=function(selectedLayout){
-            alert(selectedLayout);
+
+        function updateLayoutDetails(data) {
+                vm.menuData = data;
+                // vm.selectedMenu= vm.menuData[0];
+                console.log(layoutType);
+                data.forEach(function(item){
+                    console.log(item.LayoutType);
+                    if(item.LayoutType === layoutType){ 
+                        vm.selectedMenu = item;
+                    }
+                });
+
+                console.log(vm.selectedMenu);
+                
+
+                vm.powerscoutSize=vm.selectedMenu.PowerscoutSize;
+                vm.sensorSize=vm.selectedMenu.SensorSize;
+                vm.weatherSize=vm.selectedMenu.WeatherSize;
         }
+
+        vm.changeLayout=function(selectedLayoutObj){
+            //alert(selectedLayout);
+            //vm.selectedMenu=selectedLayoutObj;
+           vm.powerscoutSize=selectedLayoutObj.PowerscoutSize;
+           vm.sensorSize=selectedLayoutObj.SensorSize;
+            vm.weatherSize=selectedLayoutObj.WeatherSize;
+            $state.go('view', {layoutType:selectedLayoutObj.LayoutType});
+        }
+
         var indexSet = [];
         var dialogBox = null;
         var canvas = Snap("#svg");
