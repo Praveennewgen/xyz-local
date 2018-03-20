@@ -229,7 +229,7 @@ md-menu-content.md-menu-bar-menu.md-dense {
 }
 
 md-menu-content.md-dense md-menu-item {
-    height: 24px;
+    height:auto;
     &.organization_list_parent {
         height: auto;
         min-height: 32px;
@@ -239,7 +239,7 @@ md-menu-content.md-dense md-menu-item {
             padding: 0;
             md-list-item {
                 min-height: 32px;
-                height: 32px;
+                /*height: 32px;*/
                 font-size: 0.9rem;
                 color: rgba(0, 0, 0, 0.74);
             }
@@ -250,7 +250,7 @@ md-menu-content.md-dense md-menu-item {
 .md-dense>.md-button:not(.md-dense-disabled),
 .md-dense :not(.md-dense-disabled) .md-button:not(.md-dense-disabled) {
     min-height: 24px;
-    height: 24px;
+    height: auto;
     line-height: 24px;
     .material-icons {
         float: left;

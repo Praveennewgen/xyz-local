@@ -37,12 +37,12 @@
                         <md-menu>
                             <md-input-container class="md-block">
                                 <label>Select Layout</label>
-                                <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
+                              <button ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
                                         <span class="category">{{vm.selectedMenu.LayoutType}}</span>
                                         <span class="category_type">({{vm.selectedMenu.LayoutName}})</span>
                                     </p>
-                                </div>
+                                </button >
                             </md-input-container>                            
                                 <md-menu-content  class="select_menu">
                                     <md-menu-item ng-repeat="item in vm.menuData" ng-click="vm.changeLayout(item)">
@@ -80,11 +80,11 @@
                         <md-menu>
                             <md-input-container class="md-block">
                                 <label>Select Range</label>
-                                <div ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
+                                <button  data-ng-click="$mdMenu.open()" class="select_dropdown" ng-class="{'active':vm.myDropdownIsActive}">
                                     <p class="title_label">
                                         <span class="category">{{vm.selectedRange.title}}</span>
                                     </p>
-                                </div>
+                                </button >
                             </md-input-container>                            
                                 <md-menu-content  class="select_menu select_date">
                                     <md-menu-item ng-repeat="filterRange in vm.range">
