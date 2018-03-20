@@ -173,13 +173,13 @@
             <div class="content-header" layout="row" layout-align="start">
                 <div class="icon-row" layout="row" layout-align="start">
                     <span class="icon orange"><img src="../img/powerscout.png" width="20px" height="20px"></span>
-                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">1</div></md-button>
-                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">1</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">{{vm.powerscoutSize - vm.disablePowerscout}}</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">{{vm.disablePowerscout}}</div></md-button>
                 </div>
                 <div class="icon-row" layout="row" layout-align="start">
                     <span class="icon green"><img src="../img/sensor.png" width="20px" height="20px"></span>
-                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">1</div></md-button>
-                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">1</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn enabled">Enabled <div class="blue">{{vm.sensorSize - vm.disableSensor}}</div></md-button>
+                    <md-button md-no-ink class="md-primary status-btn disabled">Disabled <div class="ash">{{vm.disableSensor}}</div></md-button>
                 </div>
             </div>
             <div class="svg-mapping">
