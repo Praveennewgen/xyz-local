@@ -194,9 +194,13 @@
                 }
 
                 if(objProperties.enabled) {
+                    dialogBox.sliderText.node.innerHTML = 'On';
+                    dialogBox.sliderText.attr({x: 200});
                     dialogBox.sliderBtn.attr({cx: 220});
                     dialogBox.sliderBg.attr({fill: 'green'});
                 } else {
+                    dialogBox.sliderText.node.innerHTML = 'Off';
+                    dialogBox.sliderText.attr({x: 211});
                     dialogBox.sliderBtn.attr({cx: 200});
                     dialogBox.sliderBg.attr({fill: 'red'});
                 }
@@ -246,13 +250,14 @@
             var leftArrow = dialog.polygon(16,18, 25,13, 25,23).attr({ fill: "#22221E"});
             var rightArrow = dialog.polygon(247,18, 238,14, 238,23).attr({ fill: "#22221E"});
 
-            var sliderBg = dialog.rect(195, 13, 30, 10, 6, 10).attr({ fill: "red", stroke: "white", strikeWidth: "1"});
-            var sliderBtn = dialog.circle(200, 18, 8).attr({ fill: "white"});
+            var sliderBg = dialog.rect(195, 10, 34, 14, 6, 10).attr({ fill: "red", stroke: "white", strikeWidth: "1"});
+            var sliderBtn = dialog.circle(200, 17, 9).attr({ fill: "white"});
+            var sliderText = dialog.text( 211 ,21, 'Off' ).attr({ fill: "white", fontSize: 10});
 
-            var diaText = dialog.text(34, 22, 'PowerScout <PS1309>').attr({fill: "#6e6e6e"});
+            var diaText = dialog.text(34, 22, '').attr({fill: "#6e6e6e"});
 
             var diaBg = dialog.g(diaBox,leftArrow,diaText);
-            var slider = dialog.g(sliderBg,sliderBtn)
+            var slider = dialog.g(sliderBg,sliderBtn,sliderText)
                                 .click(function(){
                                     var type = this.data('type');
                                     var index = this.data('index');
@@ -275,9 +280,13 @@
                                     }
 
                                     if(enable){
-                                      sliderBtn.animate({cx: 220}, 300); 
+                                      sliderText.node.innerHTML = 'On';
+                                      sliderText.attr({x: 200});
+                                      sliderBtn.animate({cx: 225}, 300); 
                                       sliderBg.animate({ fill: "green"}, 300);
                                     } else {
+                                      sliderText.node.innerHTML = 'Off';
+                                      sliderText.attr({x: 211})
                                       sliderBtn.animate({cx: 200}, 300); 
                                       sliderBg.animate({ fill: "red"}, 300); 
                                     }
@@ -290,7 +299,8 @@
                 leftArrow: leftArrow, 
                 rightArrow: rightArrow,
                 sliderBtn: sliderBtn,
-                sliderBg: sliderBg
+                sliderBg: sliderBg,
+                sliderText: sliderText
             }
         }
 
