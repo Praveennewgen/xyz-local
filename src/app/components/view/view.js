@@ -40,7 +40,9 @@
              }, function(err){
                  console.log("Error in fetching data from json: " + err);
                  //vm.showLoading=false;     
-             });             
+             });
+
+             
 
         function updateLayoutDetails(data) {                            
                 vm.menuData = data;               
@@ -71,6 +73,18 @@
 
         vm.selectedRangeOption= function(range){
             vm.selectedRange=range;
+        }
+
+        vm.evtSimulate = function() {
+            var postObject = {};
+            postObject.Powerscout = _.filter(powerData, areEnabled);
+            postObject.Sensors = _.filter(sensorData, areEnabled);
+
+            console.log(postObject);
+
+            function areEnabled(item) {
+                return item.enabled;
+            }
         }
 
         InitializeSVG();
@@ -120,12 +134,13 @@
 
             function renderDataToSVG() {
                 var counter = 1;
+                var pos, index;
                 if (powerData !== null) {
                     while(counter <= powerData.length) {
-                        var index = Math.floor((Math.random() * objPos.length));
+                        index = Math.floor((Math.random() * objPos.length));
                         if(isRepeated(index)) { continue; }
                         else { 
-                            var pos = objPos[index];
+                            pos = objPos[index];
                             powerData[counter-1].enabled = false;
                             createIcon(pos.x, pos.y, 'powerscout', counter-1);
                             counter++;
@@ -135,10 +150,10 @@
                 counter = 1;
                 if (sensorData !== null) {
                     while(counter <= sensorData.length) {
-                        var index = Math.floor((Math.random() * objPos.length));
+                        index = Math.floor((Math.random() * objPos.length));
                         if(isRepeated(index)) { continue; }
                         else { 
-                            var pos = objPos[index];
+                            pos = objPos[index];
                             sensorData[counter-1].enabled = false;
                             createIcon(pos.x, pos.y, 'sensor', counter-1);
                             counter++;
@@ -149,14 +164,6 @@
                 dialogBox = createDialog(0, 0);
             }
         }
-
-        // function createPowerIcon(x, y, index) {
-        //     createIcon(x, y, 'Powerscout &lt;'+ powerElement.Powerscout + '&gt;+ ', 'powerscout', powerElement);
-        // }
-
-        // function createSensorIcon(x, y, sensorElement) {
-        //     createIcon(x, y, 'Sensor &lt;' + sensorElement.SensorId + '&gt;', 'sensor', sensorElement);
-        // }
 
 
         function createIcon(x, y, type, index) {
@@ -175,10 +182,10 @@
 
             var g = canvas.g(haloGroup, bgBox, icon).addClass('icon');
             var objProperties;
+
             g.hover(function(){
                 var diaX = x + 12;
                 var diaY = y;
-                //var objProperties;
                     
                 if(type === 'powerscout') {
                     objProperties = powerData[index];
@@ -219,9 +226,6 @@
 
                     vm.properties = updatePropertyWindow(type, objProperties);
                 })
-                                
-                
-                //console.log(vm.properties);
             });
         }
 
