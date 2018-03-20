@@ -1,5 +1,5 @@
 toolbar {
-    height:50px;
+    height: 50px;
     position: absolute;
     top: 0;
     left: 0px;
@@ -28,10 +28,8 @@ toolbar .md-toolbar-tools .md-button img {
 
 md-toolbar,
 .md-toolbar-tools {
-    min-height: 36px;
-    //height: 46px;
-    height: 50px;
-    //background: #fff;
+    min-height: 36px; //height: 46px;
+    height: 50px; //background: #fff;
     background: #fff;
     max-height: none;
 }
@@ -59,8 +57,7 @@ md-toolbar input {
 }
 
 .md-toolbar-tools {
-    padding: 0 6px;
-    // padding: 0 6px 0 0;
+    padding: 0 6px; // padding: 0 6px 0 0;
 }
 
 .md-button.dropdown {
@@ -176,7 +173,7 @@ md-toolbar input {
 
 .user_profile_name {
     display: block;
-    float:left;
+    float: left;
     text-align: left;
     b {
         display: block;
@@ -184,7 +181,7 @@ md-toolbar input {
         text-transform: none;
         font-weight: 400;
         line-height: 1;
-        margin:10px 10px 5px 0px;
+        margin: 10px 10px 5px 0px;
         color: #4c4d4d;
         &.user_name {
             font-size: 14px;
@@ -201,9 +198,9 @@ toolbar .md-toolbar-tools {
         &::after {
             position: absolute;
             content: url('../img/down_arrow.png');
-            right:-15px;
-            margin-top:1px;
-            bottom:5px;
+            right: -15px;
+            margin-top: 1px;
+            bottom: 5px;
         }
         &:not([disabled]):hover {
             background: none;
@@ -229,7 +226,7 @@ md-menu-content.md-menu-bar-menu.md-dense {
 }
 
 md-menu-content.md-dense md-menu-item {
-    height:auto;
+    height: auto;
     &.organization_list_parent {
         height: auto;
         min-height: 32px;
@@ -260,8 +257,7 @@ md-menu-content.md-dense md-menu-item {
 
 .user_profile_otherProvider {
     button.user_pro_btn {
-        padding:0px 30px 0px 0px !important;
-        // &::after {
+        padding: 0px 30px 0px 0px !important; // &::after {
         //     content: none;
         //     display: none;
         // }
@@ -339,16 +335,19 @@ md-menu-content.md-dense md-menu-item {
         display: block;
     }
 }
-md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
-  
-    border-bottom:1px solid #d8d8d8;
-      background: #fff;
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar),
+md-toolbar:not(.md-menu-toolbar) {
+    border-bottom: 1px solid #d8d8d8;
+    background: #fff;
 }
-md-menu-bar{
+
+md-menu-bar {
     border-right: 1px solid #eaedf0;
     margin: 0px 10px;
-    padding-right:25px;
+    padding-right: 25px;
 }
+
 .show_loading {
     position: fixed;
     top: 0;

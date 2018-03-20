@@ -1,39 +1,39 @@
-.login_page{
-    .login_left_div{
-        height:100vh;
+.login_page {
+    .login_left_div {
+        height: 100vh;
         background: #fff;
     }
-    .login_right_div{
-        height:100vh;
-        background:#2c5f74;
-        -webkit-box-shadow: -4px 0px 5px -1px rgba(97,97,97,1);
-        -moz-box-shadow: -4px 0px 5px -1px rgba(97,97,97,1);
-        box-shadow: -4px 0px 5px -1px rgba(97,97,97,1);
-        color:#adadad;
-        .login_logo{
-            height:64px;
-            border-bottom:1px solid #c7c7c7;
-            img{
+    .login_right_div {
+        height: 100vh;
+        background: #2c5f74;
+        -webkit-box-shadow: -4px 0px 5px -1px rgba(97, 97, 97, 1);
+        -moz-box-shadow: -4px 0px 5px -1px rgba(97, 97, 97, 1);
+        box-shadow: -4px 0px 5px -1px rgba(97, 97, 97, 1);
+        color: #adadad;
+        .login_logo {
+            height: 64px;
+            border-bottom: 1px solid #c7c7c7;
+            img {
                 position: absolute;
                 top: 36px;
                 background: #2c5f74;
             }
         }
-        .login_form{
-            padding:150px 70px;
-            md-content{
+        .login_form {
+            padding: 150px 70px;
+            md-content {
                 background: transparent;
-                width:100%;
+                width: 100%;
             }
-            .login_row{
-                margin:0px 0px 0px;
-                md-input-container{
-                    margin:0px;                    
+            .login_row {
+                margin: 0px 0px 0px;
+                md-input-container {
+                    margin: 0px;
                 }
-                label{
-                    color:#d0d0d0;
+                label {
+                    color: #d0d0d0;
                 }
-                input{
+                input {
                     height: auto;
                     border: 0px;
                     color: #c7c7c7;
@@ -42,15 +42,15 @@
                     font-size: 14px;
                     padding: 5px 0px 5px 30px;
                 }
-                input[type="email"]:before{
-                    content:'<';
+                input[type="email"]:before {
+                    content: '<';
                 }
-                .material-icons{
+                .material-icons {
                     position: absolute;
-                    top:6px;
-                    left:0px;
+                    top: 6px;
+                    left: 0px;
                 }
-                .login_submit{
+                .login_submit {
                     width: 100%;
                     color: #fff;
                     background: #33cc33;
