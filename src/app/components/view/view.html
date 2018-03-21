@@ -190,8 +190,16 @@
                                 </md-button>
                             </div>
                         </div>
-                        <div class="svg-mapping">
-                            <svg id="svg"></svg>
+                        <div class="svg-mapping" ng-if="vm.layoutDetails && vm.objPos">
+                            <!--<svg id="svg"></svg>-->
+                            <custom-svg
+                                layout-details="vm.layoutDetails"
+                                coordinates="vm.objPos"
+                                disable-powerscout="vm.disablePowerscout"
+                                disable-sensor="vm.disableSensor"
+                                properties="vm.properties"
+                                side-panel-open="vm.togglePannel">
+                            </custom-svg>
                         </div>
                     </div>
                     <!-- ui-view for child states starts here -->
