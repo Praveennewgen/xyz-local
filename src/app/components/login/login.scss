@@ -50,13 +50,17 @@
                     top: 6px;
                     left: 0px;
                 }
-                .login_submit {
+                .login-disabled-btn{
+                    background: #f1f1f1;
                     width: 100%;
-                    color: #fff;
-                    background: #33cc33;
+                    color: #888;                    
                     margin: 0px;
                     text-transform: capitalize;
                     border: 1px solid #c3c3c3
+                }
+                .login_submit {   
+                    color:#fff;                 
+                    background: #33cc33;
                 }
             }
         }

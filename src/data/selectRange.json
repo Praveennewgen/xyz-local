@@ -1,20 +1,27 @@
 {
-    "range":[{
-        "title":"Daily"
-    },
-    {
-        "title":"Weekly"
-    },
-    {
-        "title":"Monthly"
-    },
-    {
-        "title":"Quaterly"
-    },
-    {
-        "title":"Half-yearly"
-    },
-    {
-        "title":"Yearly"
-    }]
+    "range": [{
+            "title": "Daily",
+            "id": "daily"
+        },
+        {
+            "title": "Weekly",
+            "id": "weekly"
+        },
+        {
+            "title": "Monthly",
+            "id": "monthly"
+        },
+        {
+            "title": "Quaterly",
+            "id": "quaterly"
+        },
+        {
+            "title": "Half-yearly",
+            "id": "halfyearly"
+        },
+        {
+            "title": "Yearly",
+            "id": "yearly"
+        }
+    ]
 }
