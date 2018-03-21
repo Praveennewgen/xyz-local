@@ -1,18 +1,19 @@
 {
-  "extends": "eslint:recommended",
-  "plugins": [
-    "angular"
-  ],
-  "env": {
-    "browser": true
-  },
-  "globals": {
-    "angular": true,
-    "module": true,
-    "inject": true,
-    "_": true
-  },
-  "rules":{
-        "no-console":0
+    "extends": "eslint:recommended",
+    "plugins": [
+        "angular"
+    ],
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "angular": true,
+        "module": true,
+        "inject": true,
+        "_": true,
+        "Snap": true
+    },
+    "rules": {
+        "no-console": 0
     }
 }
