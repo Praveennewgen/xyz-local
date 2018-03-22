@@ -144,7 +144,7 @@
                  </ul>  
             </div>
             <div class="simulate-row">
-               <button class="md-button button" ng-click="vm.evtSimulate()">Simulate</button>
+               <button class="md-button button" ng-disabled="vm.disablePowerscout === vm.layoutDetails.powerscouts.length && vm.disableSensor === vm.layoutDetails.sensors.length" ng-click="vm.evtSimulate()">Simulate</button>
                 </div>
                 <div class="clearfix"></div>
             </div>

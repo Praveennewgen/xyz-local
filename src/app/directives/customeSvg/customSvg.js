@@ -25,10 +25,13 @@
 
         canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
 
-        canvas.image("./img/building_bg.png", 100, 0, 900, 510);
+        canvas.rect(0, 0, 1100, 510).attr({fill: 'white'}).click(clearActiveData);
+
+        canvas.image("./img/building_bg.png", 100, 0, 900, 510)
+                .click(clearActiveData);
 
         if (scope.layoutDetails !== null) {
-            renderDataToSVG(scope.layoutDetails.powerscout.data, scope.layoutDetails.sensors.data);
+            renderDataToSVG(scope.layoutDetails.powerscouts, scope.layoutDetails.sensors);
         }
 
 
@@ -72,10 +75,10 @@
 
         function createIcon(x, y, type, index) {
 
-            var powerData = scope.layoutDetails.powerscout.data;
-            var sensorData = scope.layoutDetails.sensors.data;
+            var powerData = scope.layoutDetails.powerscouts;
+            var sensorData = scope.layoutDetails.sensors;
 
-            var text = type === 'powerscout' ? 'Powerscout &lt;' + powerData[index].Powerscout + '&gt;' : 'Sensor &lt;' + sensorData[index].SensorId + '&gt;';
+            var text = type === 'powerscout' ? 'Powerscout &lt;' + powerData[index].PowerScout + '&gt;' : 'Sensor &lt;' + sensorData[index].SensorId + '&gt;';
 
             var fillColor = type === 'powerscout' ? '#ff5e00' : '#669933';
 
@@ -206,7 +209,6 @@
             allHalo.forEach(function(halo) {
                 halo.removeClass('active');
             });
-
         }
 
         function updatePropertyWindow(type, objProperties) {
@@ -215,25 +217,28 @@
 
             properties.type = objProperties['Type'];
             properties.building = objProperties['Building'];
+            properties.breakerDetails = objProperties['BreakerDetails'];
+            properties.breakerLabel = objProperties['BreakerLabel'];
+            properties.modbusAdd = objProperties['ModbusBaseAddress'];
+            properties.serialNumber = objProperties['SerialNumber'];
+            properties.ratedAmperage = objProperties['RatedAmperage'];
+            properties.unitElectricityCost = objProperties['UnitElectricCost'] || null;
             if (type === 'powerscout') {
                 properties.iconName = 'electric-tower';
-                properties.id = objProperties['Powerscout'];
-                properties.breakerDetails = objProperties['Breaker Details'];
-                properties.breakerLabel = objProperties['Breaker Label'];
-                properties.modbusAdd = objProperties['Modbus base address'];
-                properties.serialNumber = objProperties['Serial Number'];
-                properties.ratedAmperage = objProperties['Rated Amperage'];
-                properties.unitElectricityCost = objProperties['UnitElectricCost'];
+                properties.id = objProperties['PowerScout'];                
             } else {
                 properties.iconName = 'sensor';
                 properties.id = objProperties['SensorId'];
-                properties.breakerDetails = objProperties['BreakerDetails'];
-                properties.breakerLabel = objProperties['BreakerLabel'];
-                properties.modbusAdd = objProperties['ModbusBaseAddress'];
-                properties.serialNumber = objProperties['SerialNumber'];
+                
             }
-
             scope.properties = properties;
+        }
+
+        function clearActiveData(){
+            clearActives();
+            dialogBox.dialog.addClass('hide');
+            scope.properties = null;
+            scope.$apply();
         }
 
     }

@@ -17,19 +17,45 @@
         vm.showLoading = false;
         vm.disablePowerscout = 0;
         vm.disableSensor = 0;
+        vm.simulateDisabled = true;
 
         var layoutType = $stateParams.layoutType;
         vm.properties = null;
         vm.layoutDetails = null;
         vm.objPos = null;
+        
+
+        vm.changeLayout = function(selectedLayoutObj) {
+            $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
+        }
+
+        vm.selectLayoutOption = function(layoutOption) {
+            vm.selectedMenu = layoutOption;
+        }
+
+        vm.selectedRangeOption = function(range) {
+            vm.selectedRange = range;
+        }
+
+        vm.evtSimulate = function() {
+            var postObject = {};
+            postObject.Powerscout = _.filter(vm.layoutDetails.powerscouts, areEnabled);
+            postObject.Sensors = _.filter(vm.layoutDetails.sensors, areEnabled);
+
+            console.log(postObject);
+
+            function areEnabled(item) {
+                return item.enabled;
+            }
+        }
 
         $http.get('./data/layoutDetails-' + layoutType + '.json', false)
             .then(function(res) {
                 vm.layoutDetails = res.data;
 
-                vm.disablePowerscout = vm.layoutDetails.powerscout.data.length;
-                vm.disableSensor = vm.layoutDetails.sensors.data.length;
-
+                vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
+                vm.disableSensor = vm.layoutDetails.sensors.length;
+                
             }, function(err) {
                 console.log("Error in fetching data: " + err);
             });
@@ -88,32 +114,7 @@
             vm.powerscoutSize = vm.selectedMenu.PowerscoutSize;
             vm.sensorSize = vm.selectedMenu.SensorSize;
             vm.weatherSize = vm.selectedMenu.WeatherSize;
-        }
-
-
-        vm.changeLayout = function(selectedLayoutObj) {
-            $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
-        }
-
-        vm.selectLayoutOption = function(layoutOption) {
-            vm.selectedMenu = layoutOption;
-        }
-
-        vm.selectedRangeOption = function(range) {
-            vm.selectedRange = range;
-        }
-
-        vm.evtSimulate = function() {
-            var postObject = {};
-            postObject.Powerscout = _.filter(vm.layoutDetails.powerscout.data, areEnabled);
-            postObject.Sensors = _.filter(vm.layoutDetails.sensors.data, areEnabled);
-
-            console.log(postObject);
-
-            function areEnabled(item) {
-                return item.enabled;
-            }
-        }
+        }         
     }
 
 })();

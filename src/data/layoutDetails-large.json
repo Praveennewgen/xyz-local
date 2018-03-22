@@ -1,412 +1,427 @@
 {
-    "powerscout": {
-        "Success": true,
-        "data": [
-            {
-                "Powerscout": "PS716821",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP21 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716821",
-                "Type": "PowerScout-6821",
-                "UnitElectricCost": 0.4361
-            },
-            {
-                "Powerscout": "PS716822",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP22 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716822",
-                "Type": "PowerScout-6822",
-                "UnitElectricCost": 0.4356
-            },
-            {
-                "Powerscout": "PS716823",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP23 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716823",
-                "Type": "PowerScout-6823",
-                "UnitElectricCost": 0.4306
-            },
-            {
-                "Powerscout": "PS716824",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP24 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716824",
-                "Type": "PowerScout-6824",
-                "UnitElectricCost": 0.4399
-            },
-            {
-                "Powerscout": "PS716825",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP25 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716825",
-                "Type": "PowerScout-6825",
-                "UnitElectricCost": 0.4389
-            },
-            {
-                "Powerscout": "PS716821",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP21 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716821",
-                "Type": "PowerScout-6821",
-                "UnitElectricCost": 0.4361
-            },
-            {
-                "Powerscout": "PS716822",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP22 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716822",
-                "Type": "PowerScout-6822",
-                "UnitElectricCost": 0.4356
-            },
-            {
-                "Powerscout": "PS716823",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP23 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716823",
-                "Type": "PowerScout-6823",
-                "UnitElectricCost": 0.4306
-            },
-            {
-                "Powerscout": "PS716824",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP24 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716824",
-                "Type": "PowerScout-6824",
-                "UnitElectricCost": 0.4399
-            },
-            {
-                "Powerscout": "PS716825",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP25 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716825",
-                "Type": "PowerScout-6825",
-                "UnitElectricCost": 0.4389
-            },
-            {
-                "Powerscout": "PS716821",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP21 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716821",
-                "Type": "PowerScout-6821",
-                "UnitElectricCost": 0.4361
-            },
-            {
-                "Powerscout": "PS716822",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP22 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716822",
-                "Type": "PowerScout-6822",
-                "UnitElectricCost": 0.4356
-            },
-            {
-                "Powerscout": "PS716823",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP23 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716823",
-                "Type": "PowerScout-6823",
-                "UnitElectricCost": 0.4306
-            },
-            {
-                "Powerscout": "PS716824",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP24 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716824",
-                "Type": "PowerScout-6824",
-                "UnitElectricCost": 0.4399
-            },
-            {
-                "Powerscout": "PS716825",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP25 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716825",
-                "Type": "PowerScout-6825",
-                "UnitElectricCost": 0.4389
-            },
-            {
-                "Powerscout": "PS716821",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP21 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716821",
-                "Type": "PowerScout-6821",
-                "UnitElectricCost": 0.4361
-            },
-            {
-                "Powerscout": "PS716822",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP22 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716822",
-                "Type": "PowerScout-6822",
-                "UnitElectricCost": 0.4356
-            },
-            {
-                "Powerscout": "PS716823",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP23 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716823",
-                "Type": "PowerScout-6823",
-                "UnitElectricCost": 0.4306
-            },
-            {
-                "Powerscout": "PS716824",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP24 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716824",
-                "Type": "PowerScout-6824",
-                "UnitElectricCost": 0.4399
-            },
-            {
-                "Powerscout": "PS716825",
-                "Breaker Details": "New(2018) 3rd floor panel",
-                "Breaker Label": "PP25 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "Modbus base address": "2",
-                "Rated Amperage": "500",
-                "Serial Number": "PS716825",
-                "Type": "PowerScout-6825",
-                "UnitElectricCost": 0.4389
-            }
-        ]
-    },
-    "sensors": {
-        "Success": true,
-        "data": [
-            {
-                "SensorId": "SR9081700",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP30 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081700",
-                "Type": "Sensor-1700"
-            },
-            {
-                "SensorId": "SR9081761",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP31 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081761",
-                "Type": "Sensor-1761"
-            },
-            {
-                "SensorId": "SR9081762",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP32 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081762",
-                "Type": "Sensor-1762"
-            },
-            {
-                "SensorId": "SR9081763",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP33 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081763",
-                "Type": "Sensor-1763"
-            },
-            {
-                "SensorId": "SR9081764",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP34 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081764",
-                "Type": "Sensor-1764"
-            },
-            {
-                "SensorId": "SR9081700",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP30 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081700",
-                "Type": "Sensor-1700"
-            },
-            {
-                "SensorId": "SR9081761",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP31 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081761",
-                "Type": "Sensor-1761"
-            },
-            {
-                "SensorId": "SR9081762",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP32 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081762",
-                "Type": "Sensor-1762"
-            },
-            {
-                "SensorId": "SR9081763",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP33 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081763",
-                "Type": "Sensor-1763"
-            },
-            {
-                "SensorId": "SR9081764",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP34 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081764",
-                "Type": "Sensor-1764"
-            },
-            {
-                "SensorId": "SR9081700",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP30 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081700",
-                "Type": "Sensor-1700"
-            },
-            {
-                "SensorId": "SR9081761",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP31 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081761",
-                "Type": "Sensor-1761"
-            },
-            {
-                "SensorId": "SR9081762",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP32 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081762",
-                "Type": "Sensor-1762"
-            },
-            {
-                "SensorId": "SR9081763",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP33 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081763",
-                "Type": "Sensor-1763"
-            },
-            {
-                "SensorId": "SR9081764",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP34 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081764",
-                "Type": "Sensor-1764"
-            },
-            {
-                "SensorId": "SR9081700",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP30 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081700",
-                "Type": "Sensor-1700"
-            },
-            {
-                "SensorId": "SR9081761",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP31 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081761",
-                "Type": "Sensor-1761"
-            },
-            {
-                "SensorId": "SR9081762",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP32 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081762",
-                "Type": "Sensor-1762"
-            },
-            {
-                "SensorId": "SR9081763",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP33 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081763",
-                "Type": "Sensor-1763"
-            },
-            {
-                "SensorId": "SR9081764",
-                "BreakerDetails": "New(2018) 3rd floor panel",
-                "BreakerLabel": "PP34 - 3rd PI Electric Rm",
-                "Building": "Building - 03",
-                "ModbusBaseAddress": "2",
-                "SerialNumber": "SR9081764",
-                "Type": "Sensor-1764"
-            }
-        ]
-    }
+    
+ "Success": true,
+    "powerscouts": [{
+      "PowerScout": "PS716821",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716821",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716822",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716822",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716823",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716823",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716824",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716824",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716825",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716825",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716826",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716826",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716827",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716827",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716828",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716828",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716829",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716829",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716830",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716830",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716831",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716831",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716832",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716832",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716833",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716833",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716834",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716834",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716835",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716835",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716836",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716836",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716837",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716837",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716838",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716838",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+      },
+      {
+      "PowerScout": "PS716839",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716839",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       },
+       {
+      "PowerScout": "PS716840",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "PS716840",
+      "Type": "PowerScout 2012",
+      "RatedAmperage": "500",
+       "UnitElectricCost": 0.4361
+       }
+       
+    ],
+    "sensors": [{
+      "SensorId": "Pro Sensor 1",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 2",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 3",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 4",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 5",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 6",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 7",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 8",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 9",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 10",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 11",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 12",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 13",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 14",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 15",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 16",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 17",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 18",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 19",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      },
+      {
+      "SensorId": "Pro Sensor 20",
+      "BreakerDetails": "New(2012) 3rd floor panel",
+      "BreakerLabel": "PP12 - 3rd PI Electric Rm",
+      "Building": "Building-12",
+      "ModbusBaseAddress": "2",
+      "SerialNumber": "P371602012",
+      "Type": "Sensor 2012",
+      "RatedAmperage": "500"
+      }
+   ]
 }
