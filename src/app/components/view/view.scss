@@ -862,6 +862,13 @@ md-nav-bar md-nav-ink-bar {
     display: block;
 }
 
+.simulate-row {
+    .md-button[disabled] {
+        background-color: #bfdef1;
+        color: #2f2f2f;
+    }
+}
+
 /*mozila specific css*/
 
 @-moz-document url-prefix() {}
