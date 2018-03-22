@@ -25,6 +25,7 @@
         vm.layoutDetails = null;
         vm.objPos = null;
 
+        activate();
 
         vm.changeLayout = function(selectedLayoutObj) {
             $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
@@ -45,32 +46,16 @@
             postObject.range = vm.selectedRange.id;
             postObject.weather = { "ZipCode": zipCode };
 
+            $http.post('/Home/Simulate', postObject).then(function(response) {
+                console.log(response);
+            })
+
             console.log(postObject);
 
             function areEnabled(item) {
                 return item.enabled;
             }
         }
-
-        $http.get('./data/layoutDetails-' + layoutType + '.json', false)
-            .then(function(res) {
-                vm.layoutDetails = res.data;
-
-                vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
-                vm.disableSensor = vm.layoutDetails.sensors.length;
-
-            }, function(err) {
-                console.log("Error in fetching data: " + err);
-            });
-
-        $http.get('./data/chooseLayout.json', false)
-            .then(function(res) {
-                updateLayoutDetails(res.data.data);
-                //  vm.showLoading=true;             
-            }, function(err) {
-                console.log("Error in fetching data from json: " + err);
-                // vm.showLoading=false;
-            });
 
         $http.get('./data/iconCoordinates.json', false)
             .then(function(res) {
@@ -91,8 +76,6 @@
         getZipCode();
 
         function getZipCode() {
-
-
 
             var geocoder = new google.maps.Geocoder();
             var win = function(position) {
@@ -125,6 +108,32 @@
             vm.powerscoutSize = vm.selectedMenu.PowerscoutSize;
             vm.sensorSize = vm.selectedMenu.SensorSize;
             vm.weatherSize = vm.selectedMenu.WeatherSize;
+        }
+
+        function activate() {
+            vm.showLoading = true;
+            $http.get('/Home/GetLayoutData?type=' + layoutType, false)
+                .then(function(res) {
+                    vm.layoutDetails = res.data;
+
+                    vm.disablePowerscout = vm.layoutDetails.powerscout.data.length;
+                    vm.disableSensor = vm.layoutDetails.sensors.data.length;
+
+                    $http.get('/Home/GetLayout', false)
+                        .then(function(res) {
+                            updateLayoutDetails(res.data.data);
+                            vm.showLoading = false;
+                            //  vm.showLoading=true;             
+                        }, function(err) {
+                            vm.showLoading = false;
+                            console.log("Error in fetching data from json: " + err);
+                            // vm.showLoading=false;
+                        });
+
+                }, function(err) {
+                    vm.showLoading = false;
+                    console.log("Error in fetching data: " + err);
+                });
         }
     }
 
