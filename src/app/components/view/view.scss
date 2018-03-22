@@ -867,6 +867,10 @@ md-nav-bar md-nav-ink-bar {
         background-color: #bfdef1;
         color: #2f2f2f;
     }
+    .md-button[disabled]:hover {
+        background-color: #bfdef1 !important;
+        color: #2f2f2f;
+    }
 }
 
 /*mozila specific css*/
