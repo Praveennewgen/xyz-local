@@ -11,10 +11,10 @@
 
     function viewLayoutController($scope, $http, $stateParams, $state) {
         var vm = this;
-      /* togglePannel for open close side pannel*/
-        vm.togglePannel= false;
-        vm.openOverlay=false;
-        vm.showLoading=false;
+        /* togglePannel for open close side pannel*/
+        vm.togglePannel = false;
+        vm.openOverlay = false;
+        vm.showLoading = false;
         vm.disablePowerscout = 0;
         vm.disableSensor = 0;
 
@@ -23,67 +23,84 @@
         vm.layoutDetails = null;
         vm.objPos = null;
 
-        $http.get('./data/layoutDetails-' + layoutType +'.json', false)
-                .then(function(res) {
-                        vm.layoutDetails = res.data;
+        $http.get('./data/layoutDetails-' + layoutType + '.json', false)
+            .then(function(res) {
+                vm.layoutDetails = res.data;
 
-                        vm.disablePowerscout = vm.layoutDetails.powerscout.data.length;
-                        vm.disableSensor = vm.layoutDetails.sensors.data.length;
+                vm.disablePowerscout = vm.layoutDetails.powerscout.data.length;
+                vm.disableSensor = vm.layoutDetails.sensors.data.length;
 
-                }, function(err) {
-                    console.log("Error in fetching data: " + err);
-                });
+            }, function(err) {
+                console.log("Error in fetching data: " + err);
+            });
 
         $http.get('./data/chooseLayout.json', false)
-            .then(function(res) {               
-                updateLayoutDetails(res.data.data); 
-             //  vm.showLoading=true;             
+            .then(function(res) {
+                updateLayoutDetails(res.data.data);
+                //  vm.showLoading=true;             
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
-               // vm.showLoading=false;
+                // vm.showLoading=false;
             });
-        
-        $http.get('./data/iconCoordinates.json',false)
-            .then(function(res){
+
+        $http.get('./data/iconCoordinates.json', false)
+            .then(function(res) {
                 vm.objPos = res.data.positions;
-            },  function(err) {
+            }, function(err) {
                 console.log("Error in fetching data: " + err);
-            }); 
+            });
 
         $http.get('./data/selectRange.json', false)
-             .then(function(res){
-                 vm.range=res.data.range;
-                 vm.selectedRange=vm.range[0];
-             }, function(err){
-                 console.log("Error in fetching data from json: " + err);
-                 //vm.showLoading=false;     
-             });
+            .then(function(res) {
+                vm.range = res.data.range;
+                vm.selectedRange = vm.range[0];
+            }, function(err) {
+                console.log("Error in fetching data from json: " + err);
+                //vm.showLoading=false;     
+            });
 
-             
+        getZipCode();
 
-        function updateLayoutDetails(data) {                            
-                vm.menuData = data;               
-                data.forEach(function(item){                   
-                    if(item.LayoutType === layoutType){ 
-                        vm.selectedMenu = item;
-                    }
-                });
-                vm.powerscoutSize=vm.selectedMenu.PowerscoutSize;
-                vm.sensorSize=vm.selectedMenu.SensorSize;
-                vm.weatherSize=vm.selectedMenu.WeatherSize;                    
+        function getZipCode() {
+
+
+
+            var geocoder = new google.maps.Geocoder();
+            var win = function(position) {
+                var mylat = position.coords.latitude;
+                var mylng = position.coords.longitude;
+                var latlng = new google.maps.LatLng(mylat, mylng);
+                geocoder.geocode({ 'latLng': latlng },
+                    function(results, status) { if (status == google.maps.GeocoderStatus.OK) { console.log("The user's zipcode is " + results[0].address_components[6].short_name); } });
+            };
+            var fail = function(e) { console.log("GPS Failed:" + e); };
+
+            navigator.geolocation.getCurrentPosition(win, fail, { enableHighAccuracy: true, maximumAge: 600000, timeout: 10000 });
         }
-        
 
-        vm.changeLayout=function(selectedLayoutObj){
-            $state.go('view', {layoutType:selectedLayoutObj.LayoutType});
+        function updateLayoutDetails(data) {
+            vm.menuData = data;
+            data.forEach(function(item) {
+                if (item.LayoutType === layoutType) {
+                    vm.selectedMenu = item;
+                }
+            });
+            vm.powerscoutSize = vm.selectedMenu.PowerscoutSize;
+            vm.sensorSize = vm.selectedMenu.SensorSize;
+            vm.weatherSize = vm.selectedMenu.WeatherSize;
         }
 
-        vm.selectLayoutOption = function(layoutOption){
+
+        vm.changeLayout = function(selectedLayoutObj) {
+            $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
+        }
+
+        vm.selectLayoutOption = function(layoutOption) {
             vm.selectedMenu = layoutOption;
         }
 
-        vm.selectedRangeOption= function(range){
-            vm.selectedRange=range;
+        vm.selectedRangeOption = function(range) {
+            vm.selectedRange = range;
         }
 
         vm.evtSimulate = function() {
@@ -96,7 +113,7 @@
             function areEnabled(item) {
                 return item.enabled;
             }
-        }        
+        }
     }
 
 })();

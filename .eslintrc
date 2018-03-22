@@ -11,7 +11,8 @@
         "module": true,
         "inject": true,
         "_": true,
-        "Snap": true
+        "Snap": true,
+        "google": true
     },
     "rules": {
         "no-console": 0
