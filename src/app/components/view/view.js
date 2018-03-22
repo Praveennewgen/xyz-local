@@ -20,10 +20,11 @@
         vm.simulateDisabled = true;
 
         var layoutType = $stateParams.layoutType;
+        var zipCode = '10001';
         vm.properties = null;
         vm.layoutDetails = null;
         vm.objPos = null;
-        
+
 
         vm.changeLayout = function(selectedLayoutObj) {
             $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
@@ -39,8 +40,10 @@
 
         vm.evtSimulate = function() {
             var postObject = {};
-            postObject.Powerscout = _.filter(vm.layoutDetails.powerscouts, areEnabled);
-            postObject.Sensors = _.filter(vm.layoutDetails.sensors, areEnabled);
+            postObject.powerscouts = _.filter(vm.layoutDetails.powerscouts, areEnabled);
+            postObject.sensors = _.filter(vm.layoutDetails.sensors, areEnabled);
+            postObject.range = vm.selectedRange.id;
+            postObject.weather = { "ZipCode": zipCode };
 
             console.log(postObject);
 
@@ -55,7 +58,7 @@
 
                 vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
                 vm.disableSensor = vm.layoutDetails.sensors.length;
-                
+
             }, function(err) {
                 console.log("Error in fetching data: " + err);
             });
@@ -97,9 +100,17 @@
                 var mylng = position.coords.longitude;
                 var latlng = new google.maps.LatLng(mylat, mylng);
                 geocoder.geocode({ 'latLng': latlng },
-                    function(results, status) { if (status == google.maps.GeocoderStatus.OK) { console.log("The user's zipcode is " + results[0].address_components[6].short_name); } });
+                    function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            console.log("The user's zipcode is " + results[0].address_components[6].short_name);
+                            zipCode = results[0].address_components[6].short_name;
+                        }
+                    });
             };
-            var fail = function(e) { console.log("GPS Failed:" + e); };
+            var fail = function(e) {
+                console.log("GPS Failed:" + e);
+                //return '10001';
+            };
 
             navigator.geolocation.getCurrentPosition(win, fail, { enableHighAccuracy: true, maximumAge: 600000, timeout: 10000 });
         }
@@ -114,7 +125,7 @@
             vm.powerscoutSize = vm.selectedMenu.PowerscoutSize;
             vm.sensorSize = vm.selectedMenu.SensorSize;
             vm.weatherSize = vm.selectedMenu.WeatherSize;
-        }         
+        }
     }
 
 })();
