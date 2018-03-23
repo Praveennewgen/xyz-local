@@ -43,7 +43,7 @@
                     index = Math.floor((Math.random() * scope.objPos.length));
                     if (isRepeated(index)) { continue; } else {
                         pos = scope.objPos[index];
-                        powerscouts[counter - 1].enabled = false;
+                        powerscouts[counter - 1].enabled = true;
                         createIcon(pos.x, pos.y, 'powerscout', counter - 1);
                         counter++;
                     }
@@ -55,7 +55,7 @@
                     index = Math.floor((Math.random() * scope.objPos.length));
                     if (isRepeated(index)) { continue; } else {
                         pos = scope.objPos[index];
-                        sensors[counter - 1].enabled = false;
+                        sensors[counter - 1].enabled = true;
                         createIcon(pos.x, pos.y, 'sensor', counter - 1);
                         counter++;
                     }
@@ -151,9 +151,9 @@
             var leftArrow = dialog.polygon(16, 18, 25, 13, 25, 23).attr({ fill: "#22221E" });
             var rightArrow = dialog.polygon(247, 18, 238, 14, 238, 23).attr({ fill: "#22221E" });
 
-            var sliderBg = dialog.rect(195, 10, 34, 14, 6, 10).attr({ fill: "red", stroke: "white", strikeWidth: "1" });
-            var sliderBtn = dialog.circle(200, 17, 9).attr({ fill: "white" });
-            var sliderText = dialog.text(211, 21, 'Off').attr({ fill: "white", fontSize: 10 });
+            var sliderBg = dialog.rect(195, 10, 34, 14, 6, 10).attr({ fill: "green", stroke: "white", strikeWidth: "1" });
+            var sliderBtn = dialog.circle(225, 17, 9).attr({ fill: "white" });
+            var sliderText = dialog.text(200, 21, 'On').attr({ fill: "white", fontSize: 10 });
 
             var diaText = dialog.text(34, 22, '').attr({ fill: "#6e6e6e" });
 

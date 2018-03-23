@@ -219,11 +219,13 @@
     }
 }
 
+
 /* width */
 
 ::-webkit-scrollbar {
     width: 5px;
 }
+
 
 /* Track */
 
@@ -232,12 +234,14 @@
     border-radius: 10px;
 }
 
+
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
     background: #77858f;
     border-radius: 10px;
 }
+
 
 /* Handle on hover */
 
@@ -421,6 +425,7 @@ md-nav-bar md-nav-ink-bar {
         border-bottom: 1px solid #4c4d4d;
     }
 }
+
 
 /*css for iot*/
 
@@ -872,6 +877,69 @@ md-nav-bar md-nav-ink-bar {
         color: #2f2f2f;
     }
 }
+
+.success_popup {
+    display: none;
+    .response_message {
+        min-width: 500px;
+        min-height: 240px;
+        background: #fff;
+        height: auto;
+        text-align: center;
+        @include border-radius(5px);
+        position: relative;
+        .response_text {
+            .material-icons {
+                font-size: 56px;
+                color: #399b38;
+            }
+            .text {
+                font-size: 33px;
+                color: #535353;
+            }
+        }
+        .close_popup {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
+
+.error_model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    .alert-danger {
+        color: #fff;
+        background-color: #8c3937;
+        border-color: #ebccd1;
+        font-size: 18px;
+        text-align: center;
+        .material-icons {
+            vertical-align: sub;
+            margin-right: 10px;
+        }
+    }
+    .alert {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 0px;
+        /* margin-top: 10px; */
+        width: 100%;
+        -webkit-box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: -1px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
 
 /*mozila specific css*/
 

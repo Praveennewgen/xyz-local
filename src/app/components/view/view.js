@@ -7,9 +7,9 @@
         templateUrl: 'app/components/view/view.html',
     });
 
-    viewLayoutController.$inject = ['$scope', '$http', '$stateParams', '$state'];
+    viewLayoutController.$inject = ['$scope', '$http', '$stateParams', '$state', '$timeout'];
 
-    function viewLayoutController($scope, $http, $stateParams, $state) {
+    function viewLayoutController($scope, $http, $stateParams, $state, $timeout) {
         var vm = this;
         /* togglePannel for open close side pannel*/
         vm.togglePannel = false;
@@ -25,7 +25,21 @@
         vm.layoutDetails = null;
         vm.objPos = null;
 
+        /* variable for simulate submit response*/
+        vm.simulateErr = false;
+        vm.submitResp = false;
+
         activate();
+
+        function closeErrModel() {
+            vm.simulateErr = true;
+            $timeout(function() {
+                vm.simulateErr = false;
+            }, 5000);
+        }
+        vm.close_popup = function() {
+            vm.submitResp = false;
+        }
 
         vm.changeLayout = function(selectedLayoutObj) {
             $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
@@ -50,7 +64,13 @@
             postObject.weather = zipData;
 
             $http.post('/Home/Simulate', postObject).then(function(response) {
+                vm.openOverlay = false;
+                vm.submitResp = true;
                 console.log(response);
+            }, function(error) {
+                vm.openOverlay = false;
+                closeErrModel();
+                console.log(error);
             })
 
             console.log(postObject);
@@ -120,8 +140,8 @@
                     var res1 = JSON.parse(res.data);
                     vm.layoutDetails = res1;
 
-                    vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
-                    vm.disableSensor = vm.layoutDetails.sensors.length;
+                    //vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
+                    //vm.disableSensor = vm.layoutDetails.sensors.length;
 
                     $http.get('/Home/GetLayouts', false)
                         .then(function(res) {
