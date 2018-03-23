@@ -56,8 +56,8 @@
             .then(function(res) {
                 vm.layoutDetails = res.data;
 
-                vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
-                vm.disableSensor = vm.layoutDetails.sensors.length;
+                //vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
+                //vm.disableSensor = vm.layoutDetails.sensors.length;
 
             }, function(err) {
                 console.log("Error in fetching data: " + err);
