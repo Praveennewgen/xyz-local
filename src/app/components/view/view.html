@@ -192,13 +192,8 @@
                         </div>
                         <div class="svg-mapping" ng-if="vm.layoutDetails && vm.objPos">
                             <!--<svg id="svg"></svg>-->
-                            <custom-svg
-                                layout-details="vm.layoutDetails"
-                                coordinates="vm.objPos"
-                                disable-powerscout="vm.disablePowerscout"
-                                disable-sensor="vm.disableSensor"
-                                properties="vm.properties"
-                                side-panel-open="vm.togglePannel">
+                            <custom-svg layout-details="vm.layoutDetails" coordinates="vm.objPos" disable-powerscout="vm.disablePowerscout" disable-sensor="vm.disableSensor"
+                                properties="vm.properties" side-panel-open="vm.togglePannel">
                             </custom-svg>
                         </div>
                     </div>
@@ -213,4 +208,21 @@
     </div>
     <div class="show_loading" ng-if="vm.showLoading">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <div class="error_model" ng-if="vm.smilulateErr">
+        <div class="alert alert-danger">
+            <i class="material-icons">info_outline</i> Error in simulating data
+        </div>
+    </div>
+    <div class="success_popup" ng-if="vm.submitResp">
+        <div class="response_message" layout="row" layout-align="center center">
+            <div class="response_text" ng-if="vm.smilulateScuccess" felx>
+                <i class="material-icons">check_circle</i>
+                <p class="text">Succesfully Submitted</p>
+            </div>
+            <div class="close_popup" ng-click="vm.close_popup();">
+                <i class="material-icons">highlight_off</i>
+            </div>
+        </div>
+
     </div>
