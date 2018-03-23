@@ -30,7 +30,9 @@
             vm.showLoading = true;
             $http.get('/Home/GetLayouts', false)
                 .then(function(res) {
-                    vm.layoutData = res.data.data;
+                    console.log(res);
+                    var res1 = JSON.parse(res.data);
+                    vm.layoutData = res1.data;
                     vm.showLoading = false;
                     // vm.selectedLayout= vm.layoutData[0];
                 }, function(err) {

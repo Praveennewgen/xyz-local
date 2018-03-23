@@ -40,11 +40,14 @@
         }
 
         vm.evtSimulate = function() {
+            vm.openOverlay = true;
             var postObject = {};
+            var zipData = {};
+            zipData.ZipCode = zipCode;
             postObject.powerscouts = _.filter(vm.layoutDetails.powerscouts, areEnabled);
             postObject.sensors = _.filter(vm.layoutDetails.sensors, areEnabled);
             postObject.range = vm.selectedRange.id;
-            postObject.weather = { "ZipCode": zipCode };
+            postObject.weather = zipData;
 
             $http.post('/Home/Simulate', postObject).then(function(response) {
                 console.log(response);
@@ -112,16 +115,18 @@
 
         function activate() {
             vm.showLoading = true;
-            $http.get('/Home/GetLayoutData?type=' + layoutType, false)
+            $http.get('/Home/GetLayoutData?type=' + layoutType.toLowerCase(), false)
                 .then(function(res) {
-                    vm.layoutDetails = res.data;
+                    var res1 = JSON.parse(res.data);
+                    vm.layoutDetails = res1;
 
-                    vm.disablePowerscout = vm.layoutDetails.powerscout.data.length;
-                    vm.disableSensor = vm.layoutDetails.sensors.data.length;
+                    vm.disablePowerscout = vm.layoutDetails.powerscouts.length;
+                    vm.disableSensor = vm.layoutDetails.sensors.length;
 
-                    $http.get('/Home/GetLayout', false)
+                    $http.get('/Home/GetLayouts', false)
                         .then(function(res) {
-                            updateLayoutDetails(res.data.data);
+                            var res2 = JSON.parse(res.data);
+                            updateLayoutDetails(res2.data);
                             vm.showLoading = false;
                             //  vm.showLoading=true;             
                         }, function(err) {

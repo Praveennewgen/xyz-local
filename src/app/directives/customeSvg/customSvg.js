@@ -25,10 +25,10 @@
 
         canvas.attr({ viewBox: "0 0 1100 510", preserveAspectRatio: "xMidYMid meet" });
 
-        canvas.rect(0, 0, 1100, 510).attr({fill: 'white'}).click(clearActiveData);
+        canvas.rect(0, 0, 1100, 510).attr({ fill: 'white' }).click(clearActiveData);
 
         canvas.image("./img/building_bg.png", 100, 0, 900, 510)
-                .click(clearActiveData);
+            .click(clearActiveData);
 
         if (scope.layoutDetails !== null) {
             renderDataToSVG(scope.layoutDetails.powerscouts, scope.layoutDetails.sensors);
@@ -78,7 +78,7 @@
             var powerData = scope.layoutDetails.powerscouts;
             var sensorData = scope.layoutDetails.sensors;
 
-            var text = type === 'powerscout' ? 'Powerscout &lt;' + powerData[index].PowerScout + '&gt;' : 'Sensor &lt;' + sensorData[index].SensorId + '&gt;';
+            var text = type === 'powerscout' ? 'Powerscout &lt;' + powerData[index].Powerscout + '&gt;' : 'Sensor &lt;' + sensorData[index].SensorId + '&gt;';
 
             var fillColor = type === 'powerscout' ? '#ff5e00' : '#669933';
 
@@ -225,16 +225,16 @@
             properties.unitElectricityCost = objProperties['UnitElectricCost'] || null;
             if (type === 'powerscout') {
                 properties.iconName = 'electric-tower';
-                properties.id = objProperties['PowerScout'];                
+                properties.id = objProperties['Powerscout'];
             } else {
                 properties.iconName = 'sensor';
                 properties.id = objProperties['SensorId'];
-                
+
             }
             scope.properties = properties;
         }
 
-        function clearActiveData(){
+        function clearActiveData() {
             clearActives();
             dialogBox.dialog.addClass('hide');
             scope.properties = null;
