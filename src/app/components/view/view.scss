@@ -219,11 +219,13 @@
     }
 }
 
+
 /* width */
 
 ::-webkit-scrollbar {
     width: 5px;
 }
+
 
 /* Track */
 
@@ -232,12 +234,14 @@
     border-radius: 10px;
 }
 
+
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
     background: #77858f;
     border-radius: 10px;
 }
+
 
 /* Handle on hover */
 
@@ -422,6 +426,7 @@ md-nav-bar md-nav-ink-bar {
     }
 }
 
+
 /*css for iot*/
 
 .overview-header {
@@ -590,6 +595,7 @@ md-nav-bar md-nav-ink-bar {
     }
     .date-row {
         padding: 10px;
+        border-bottom: 1px solid #466377;
         .readonly-date {
             padding: 10px;
             background: transparent;
@@ -637,6 +643,7 @@ md-nav-bar md-nav-ink-bar {
                     label {
                         margin-bottom: 0px;
                         font-size: 14px;
+                        text-align: left;
                         color: #4a5359;
                     }
                     .select_dropdown {
@@ -699,14 +706,17 @@ md-nav-bar md-nav-ink-bar {
         }
     }
     .simulate-row {
-        height: 45px;
+        height: auto;
         font-size: 14px;
-        background: #3f515f;
+        background: #1b2933;
         text-align: right;
-        padding: 2px 10px;
+        padding: 2px 5px;
         position: absolute;
         width: 100%;
         bottom: 0px;
+        .simulated_btn {
+            margin: 0px 0px 0px 5px;
+        }
     }
     .date-row {
         height: 58px;
@@ -912,14 +922,14 @@ md-nav-bar md-nav-ink-bar {
     background: rgba(0, 0, 0, 0.2);
     z-index: 999;
     .alert-danger {
-            color: #fff;
+        color: #fff;
         background-color: #8c3937;
         border-color: #ebccd1;
         font-size: 18px;
         text-align: center;
-        .material-icons{
+        .material-icons {
             vertical-align: sub;
-            margin-right:10px;
+            margin-right: 10px;
         }
     }
     .alert {
@@ -937,6 +947,7 @@ md-nav-bar md-nav-ink-bar {
         opacity: 1;
     }
 }
+
 
 /*mozila specific css*/
 

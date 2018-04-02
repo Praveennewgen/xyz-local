@@ -11,30 +11,36 @@
     chooseLayoutController.$inject = ['$scope', '$http', '$state'];
 
     function chooseLayoutController($scope, $http, $state) {
-      var vm = this;
-       vm.showLoading=false;
-      $http.get('./data/chooseLayout.json', false)
+        var vm = this;
+        vm.showLoading = false;
+        vm.messageInfo = false;
+        $http.get('./data/chooseLayout.json', false)
             .then(function(res) {
-              //  vm.showLoading=true;
+                //  vm.showLoading=true;
                 vm.layoutData = res.data.data;
-               // vm.selectedLayout= vm.layoutData[0];
+                // vm.selectedLayout= vm.layoutData[0];
             }, function(err) {
                 console.log("Error in fetching data from json: " + err);
             });
-            
-            vm.selectLayoutCategory = function(layoutOption){
-                vm.selectedLayout = layoutOption;
-            }
+        vm.messagesShow = function() {
+            vm.messageInfo = true;
+        }
+        vm.closeInfo = function() {
+            vm.messageInfo = false;
+        }
+        vm.selectLayoutCategory = function(layoutOption) {
+            vm.selectedLayout = layoutOption;
+        }
 
-            vm.evtSelectLayout = function(category) {
-                $state.go('view', { layoutType: category});
-            }
+        vm.evtSelectLayout = function(category) {
+            $state.go('view', { layoutType: category });
+        }
 
-            vm.selectLayoutCategory = function(layoutItem){
-                vm.selectedLayout = layoutItem;
-            } 
+        vm.selectLayoutCategory = function(layoutItem) {
+            vm.selectedLayout = layoutItem;
+        }
 
-    } 
-      
+    }
+
 
 })();
