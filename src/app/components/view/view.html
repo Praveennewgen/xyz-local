@@ -1,7 +1,27 @@
 <div id="page-wrapper">
     <toolbar></toolbar>
     <div id="content-wrapper" layout="row">
-
+        <div class="message-info" ng-click="vm.messagesShow()"><i class="material-icons">info_outline</i></div>
+        <div class="overlay_box" ng-if="vm.messageInfo">
+            <div class="user-info">
+                <div class="close_info" ng-click="vm.closeInfo()"><i class="material-icons">highlight_off</i></div>
+                <div class="info-header">
+                    Building Overview
+                </div>
+                <div class="message_text">
+                    <p>
+                        This is the ‘Building Overview’ Page. This is where you can get a high-level view of your building layout and the sensors installed throughout.
+                    </p>
+                    <p>
+                        Click on any of the sensor icons, or the blue button in the top right, to view sensor details in the simulator pane. You can also select to turn any sensor On or Off.
+                    </p>
+                    <p>
+                        In the simulator pane, you can view details about the date, weather, and any selected sensors. You can change the building layout using the Select Layout field, and change the range during which data will be simulated using the Select Range field. Set
+                        a range and then press the ‘Simulate’ button to simulate data being generated.
+                    </p>
+                </div>
+            </div>
+        </div>
         <!--overlay background for simulating data process-->
         <div class="overlay" ng-class="{'open_overlay' : vm.openOverlay}">
             <div class="overlay_content" layout="row" layout-align="center center">
@@ -294,10 +314,11 @@
     </div>
 </div>
 <div class="success_popup" ng-if="vm.submitResp">
-    <div class="response_message" layout="row" layout-align="center center">
+    <div class="response_message simulate_response" layout="row" layout-align="center center">
         <div class="response_text" ng-if="vm.smilulateScuccess" felx>
             <i class="material-icons">check_circle</i>
-            <p class="text">Great! You have successfully simulated the sensors collecting environmental data from a physical location.</p>
+            <p class="text simulate_text">Great! You have successfully simulated the sensors collecting environmental data from a physical location.</p>
+            <p class="text simulate_text">At this point, the data should now be available in the EMS monitoring and analysis application. Go there now to view this data and see how you can track energy consumption in real-time using an IoT framework.</p>
         </div>
         <div class="close_popup" ng-click="vm.close_popup();">
             <i class="material-icons">highlight_off</i>

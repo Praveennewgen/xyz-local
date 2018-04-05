@@ -22,7 +22,7 @@
         vm.smilulateScuccess = false;
         vm.smilulateErr = false;
         vm.submitResp = false;
-
+        vm.messageInfo = false;
         var layoutType = $stateParams.layoutType;
         var zipCode = '10001';
         vm.properties = null;
@@ -36,6 +36,12 @@
             $timeout(function() {
                 vm.smilulateErr = false;
             }, 5000);
+        }
+        vm.messagesShow = function() {
+            vm.messageInfo = true;
+        }
+        vm.closeInfo = function() {
+            vm.messageInfo = false;
         }
         vm.close_popup = function() {
             vm.submitResp = false;
@@ -62,7 +68,6 @@
             postObject.weather = {
                 "ZipCode": zipCode
             };
-
             console.log(postObject);
 
             function areEnabled(item) {

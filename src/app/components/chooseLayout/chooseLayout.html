@@ -1,26 +1,26 @@
 <div id="page-wrapper">
     <toolbar></toolbar>
-    <div id="content-wrapper" layout="row">
-        <md-content class="main-container trialContainer dashboard" id="" layout-align="space-between center" layout-padding>
-
-            <div class="message-info" ng-click="vm.messagesShow()"><i class="material-icons">info_outline</i></div>
-            <div class="user-info" ng-if="vm.messageInfo">
+    <div id="content-wrapper" layout="row" class="custom_dialog">
+        <div class="message-info" ng-click="vm.messagesShow()"><i class="material-icons">info_outline</i></div>
+        <div class="overlay_box" ng-if="vm.messageInfo">
+            <div class="user-info">
                 <div class="close_info" ng-click="vm.closeInfo()"><i class="material-icons">highlight_off</i></div>
                 <div class="info-header">
-                    Welcome to the IoT Device Simulation app!
+                    Choose Layout
                 </div>
                 <div class="message_text">
                     <p>
-                        Using this web app, you’ll be able to simulate data collected by environmental sensors installed within a typical office building. The data can then be monitored and analyzed in a separate dashboard as part of the Energy Management System solution, just
-                        as it would in a real-world application of this solution. This demonstrates the overall purpose of this solution, which is to enable users to better understand their energy usage and draw conclusions on how to cut costs, be more
-                        efficient, or otherwise better utilize energy services like heating, air conditioning, and electricity.
+                        This is where you can select the size and scale of your simulated building layout.
                     </p>
                     <p>
-                        You can select a Small, Medium, or Large building layout. Each one has varying amounts of sensors for power usage, temperature, and the weather (Small has fewer then Large, and vice versa). We encourage you to select the size most relevant to your own
-                        needs.
+                        You can select a <b>Small, Medium,</b> or <b>Large</b> building layout. Each one has varying amounts of sensors for power usage, temperature, and the weather. Click ‘Select’ on the option you want to proceed.
                     </p>
                 </div>
             </div>
+        </div>
+        <md-content class="main-container trialContainer dashboard " id="" layout-align="space-between center" layout-padding>
+
+
 
             <h3 class="text-capitaliz heading"><span>Choose Buiding Layout</span></h3>
             <div class="trial_view_main layout_view" layout="row" layout-align="space-between center">

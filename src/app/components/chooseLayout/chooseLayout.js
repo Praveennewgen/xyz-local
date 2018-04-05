@@ -8,9 +8,9 @@
     });
 
     /** @ngInject */
-    chooseLayoutController.$inject = ['$scope', '$http', '$state'];
+    chooseLayoutController.$inject = ['$scope', '$http', '$state', '$mdDialog'];
 
-    function chooseLayoutController($scope, $http, $state) {
+    function chooseLayoutController($scope, $http, $state, $mdDialog) {
         var vm = this;
         vm.showLoading = false;
         vm.messageInfo = false;
@@ -39,6 +39,30 @@
         vm.selectLayoutCategory = function(layoutItem) {
             vm.selectedLayout = layoutItem;
         }
+        welcomeMessage();
+
+        function welcomeMessage() {
+            $mdDialog.show({
+                    template: '<div class="welcome_box"><div class="welcome_header info-header">Welcome to the IoT Device Simulation app! </div>' +
+                        '<p class="message_text">Using this web app, you’ll be able to simulate data collected by environmental sensors installed within a typical office building. The data can then be monitored and analyzed in a separate dashboard as part of the Energy Management System solution, just as it would in a real-world application of this solution. </p>' +
+                        '<div class="model_footer"><button ng-click="hide();" class="md-raised md-primary md-button md-ink-ripple">Next</button></div></div>',
+                    parent: angular.element(document.querySelector('.custom_dialog')),
+                    clickOutsideToClose: true,
+                    controller: function($scope, $mdDialog) {
+                        $scope.hide = function() {
+                            $mdDialog.hide();
+                        };
+                    }
+
+                })
+                .then(function(answer) {
+                    $scope.status = 'You said the information was "' + answer + '".';
+                }, function() {
+                    $scope.status = 'You cancelled the dialog.';
+                });
+        }
+
+
 
     }
 

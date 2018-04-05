@@ -886,7 +886,8 @@ md-nav-bar md-nav-ink-bar {
 .success_popup {
     display: none;
     .response_message {
-        min-width: 500px;
+        max-width: 500px;
+        width: 500%;
         min-height: 240px;
         background: #fff;
         height: auto;
@@ -902,6 +903,9 @@ md-nav-bar md-nav-ink-bar {
                 font-size: 33px;
                 color: #535353;
             }
+            .simulate_text {
+                font-size: 18px;
+            }
         }
         .close_popup {
             position: absolute;
@@ -910,6 +914,9 @@ md-nav-bar md-nav-ink-bar {
             color: red;
             cursor: pointer;
         }
+    }
+    .simulate_response {
+        min-height: 320px;
     }
 }
 

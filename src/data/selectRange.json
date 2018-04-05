@@ -18,10 +18,6 @@
         {
             "title": "Half-yearly",
             "id": "halfyearly"
-        },
-        {
-            "title": "Yearly",
-            "id": "yearly"
         }
     ]
 }
