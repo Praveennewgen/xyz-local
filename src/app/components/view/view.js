@@ -12,13 +12,17 @@
     function viewLayoutController($scope, $http, $stateParams, $state, $timeout) {
         var vm = this;
         /* togglePannel for open close side pannel*/
-        vm.togglePannel = false;
+        vm.togglePannel = true;
         vm.openOverlay = false;
         vm.showLoading = false;
         vm.disablePowerscout = 0;
         vm.disableSensor = 0;
         vm.simulateDisabled = true;
-
+        /* variable for simulate submit response*/
+        vm.smilulateScuccess = false;
+        vm.smilulateErr = false;
+        vm.submitResp = false;
+        vm.messageInfo = false;
         var layoutType = $stateParams.layoutType;
         var zipCode = '10001';
         vm.properties = null;
@@ -31,18 +35,29 @@
 
         activate();
 
-        function closeErrModel() {
-            vm.simulateErr = true;
-            $timeout(function() {
-                vm.simulateErr = false;
-            }, 5000);
-        }
         vm.close_popup = function() {
             vm.submitResp = false;
         }
 
+        function closeErrModel() {
+            vm.smilulateErr = true;
+            $timeout(function() {
+                vm.smilulateErr = false;
+            }, 5000);
+        }
+        vm.messagesShow = function() {
+            vm.messageInfo = true;
+        }
+        vm.closeInfo = function() {
+            vm.messageInfo = false;
+        }
+        vm.close_popup = function() {
+            vm.submitResp = false;
+        }
         vm.changeLayout = function(selectedLayoutObj) {
-            $state.go('view', { layoutType: selectedLayoutObj.LayoutType });
+            $state.go('view', {
+                layoutType: selectedLayoutObj.LayoutType
+            });
         }
 
         vm.selectLayoutOption = function(layoutOption) {
@@ -105,7 +120,9 @@
                 var mylat = position.coords.latitude;
                 var mylng = position.coords.longitude;
                 var latlng = new google.maps.LatLng(mylat, mylng);
-                geocoder.geocode({ 'latLng': latlng },
+                geocoder.geocode({
+                        'latLng': latlng
+                    },
                     function(results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             console.log("The user's zipcode is " + results[0].address_components[6].short_name);
@@ -118,7 +135,11 @@
                 //return '10001';
             };
 
-            navigator.geolocation.getCurrentPosition(win, fail, { enableHighAccuracy: true, maximumAge: 600000, timeout: 10000 });
+            navigator.geolocation.getCurrentPosition(win, fail, {
+                enableHighAccuracy: true,
+                maximumAge: 600000,
+                timeout: 10000
+            });
         }
 
         function updateLayoutDetails(data) {

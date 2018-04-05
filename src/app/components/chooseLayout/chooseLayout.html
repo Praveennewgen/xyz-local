@@ -1,11 +1,30 @@
 <div id="page-wrapper">
     <toolbar></toolbar>
-    <div id="content-wrapper" layout="row">
-        <md-content class="main-container trialContainer dashboard" id="" layout-align="space-between center" layout-padding>
-            <h3 class="text-capitaliz heading"><span>Choose Layout</span></h3>
+    <div id="content-wrapper" layout="row" class="custom_dialog">
+        <div class="message-info" ng-click="vm.messagesShow()"><i class="material-icons">info_outline</i></div>
+        <div class="overlay_box" ng-if="vm.messageInfo">
+            <div class="user-info">
+                <div class="close_info" ng-click="vm.closeInfo()"><i class="material-icons">highlight_off</i></div>
+                <div class="info-header">
+                    Choose Layout
+                </div>
+                <div class="message_text">
+                    <p>
+                        This is where you can select the size and scale of your simulated building layout.
+                    </p>
+                    <p>
+                        You can select a <b>Small, Medium,</b> or <b>Large</b> building layout. Each one has varying amounts of sensors for power usage, temperature, and the weather. Click ‘Select’ on the option you want to proceed.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <md-content class="main-container trialContainer dashboard " id="" layout-align="space-between center" layout-padding>
+
+
+
+            <h3 class="text-capitaliz heading"><span>Choose Buiding Layout</span></h3>
             <div class="trial_view_main layout_view" layout="row" layout-align="space-between center">
-                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.LayoutType === layoutItem.LayoutType}" ng-click="vm.selectedLayout.LayoutType !== layoutItem.LayoutType && vm.selectLayoutCategory(layoutItem)"
-                    ng-repeat="layoutItem in vm.layoutData">
+                <div class="overview_box " ng-class="{'selected-box': vm.selectedLayout.LayoutType === layoutItem.LayoutType}" ng-click="vm.selectedLayout.LayoutType !== layoutItem.LayoutType && vm.selectLayoutCategory(layoutItem)" ng-repeat="layoutItem in vm.layoutData">
                     <div class="box-header">
                         <h3 class="subheading">{{layoutItem.LayoutType}}</h3>
                         <p class="text-right">{{layoutItem.LayoutName}}</p>
