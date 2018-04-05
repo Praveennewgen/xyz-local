@@ -54,7 +54,7 @@
         function welcomeMessage() {
             $mdDialog.show({
                     template: '<div class="welcome_box"><div class="welcome_header info-header">Welcome to the IoT Device Simulation app! </div>' +
-                        '<p class="message_text">Using this web app, you’ll be able to simulate data collected by environmental sensors installed within a typical office building. The data can then be monitored and analyzed in a separate dashboard as part of the Energy Management System solution, just as it would in a real-world application of this solution. </p>' +
+                        '<div class="message_text"><p>Using this web app, you will be able to simulate data collected by environmental sensors installed within a typical office building. The data can then be monitored and analyzed in a separate dashboard as part of the Energy Management System solution, just as it would in a real-world application of this solution. </p><p style="margin-top:15px">Click the info button on the following pages for help</p></div>' +
                         '<div class="model_footer"><button ng-click="hide();" class="md-raised md-primary md-button md-ink-ripple">Next</button></div></div>',
                     parent: angular.element(document.querySelector('.custom_dialog')),
                     clickOutsideToClose: true,
