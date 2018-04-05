@@ -19,7 +19,7 @@
         vm.disableSensor = 0;
         vm.simulateDisabled = true;
         /* variable for simulate submit response*/
-        vm.smilulateScuccess = false;
+        //vm.smilulateScuccess = false;
         vm.smilulateErr = false;
         vm.submitResp = false;
         vm.messageInfo = false;
@@ -31,7 +31,7 @@
 
         /* variable for simulate submit response*/
         vm.simulateErr = false;
-        vm.submitResp = false;
+        //vm.submitResp = false;
 
         activate();
 
